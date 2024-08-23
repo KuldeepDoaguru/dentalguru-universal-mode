@@ -25,7 +25,7 @@ const LabDetailsReport = () => {
   const getListLabDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getLabList`,
+        `http://localhost:4040/api/v1/super-admin/getLabList`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -12,14 +12,21 @@ const PORT = process.env.PORT;
 const getTreatSuggest = (req, res) => {
   try {
     const branch = req.params.branch;
-    const selectQuery = "SELECT * FROM patient_bills WHERE branch_name = ?";
+    const selectQuery =
+      "SELECT * FROM patient_bills WHERE branch_name = ? ORDER BY bill_id DESC";
     db.query(selectQuery, branch, (err, result) => {
       if (err) {
+        // logger.registrationLogger.log("error", err.message);
         res.status(400).json({ success: false, message: err.message });
       }
-      res.status(500).send(result);
+      // logger.registrationLogger.log(
+      //   "info",
+      //   "treat suggest data fetched successfully"
+      // );
+      res.status(200).send(result);
     });
   } catch (error) {
+    // logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
@@ -419,16 +426,23 @@ const labTestDelete = (req, res) => {
 
 const getPatientLabTest = (req, res) => {
   try {
+    const branch = req.params.branch;
     const selectQuery =
-      "SELECT * FROM patient_lab_details JOIN patient_lab_test_details  ON patient_lab_details.testid = patient_lab_test_details.testid JOIN patient_details ON patient_details.uhid = patient_lab_details.patient_uhid";
+      "SELECT * FROM patient_lab_test_details JOIN patient_lab_details ON patient_lab_details.testid = patient_lab_test_details.testid WHERE branch_name = ?";
 
-    db.query(selectQuery, (err, result) => {
+    db.query(selectQuery, branch, (err, result) => {
       if (err) {
+        // logger.registrationLogger.log("error", err.message);
         res.status(400).json({ success: false, message: err.message });
       }
+      // logger.registrationLogger.log(
+      //   "info",
+      //   "patient lab test fetched successful"
+      // );
       res.status(200).send(result);
     });
   } catch (error) {
+    // logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: "internal server error" });
   }
 };
@@ -709,6 +723,60 @@ const getTreatPrescriptionByAppointIdList = (req, res) => {
   });
 };
 
+const getCurrencyList = (req, res) => {
+  try {
+    const selectQuery = "SELECT * FROM currencydetails";
+    db.query(selectQuery, (err, result) => {
+      if (err) {
+        res.status(400).json({ success: false, message: err.message });
+      }
+      res.status(200).send(result);
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
+const getTreatmentDetails = (req, res) => {
+  const branchName = req.params.branch;
+  try {
+    const getQuery =
+      "SELECT * FROM appointments LEFT JOIN treat_suggest ON treat_suggest.appoint_id = appointments.appoint_id WHERE     appointments.branch_name = ? ORDER BY appointments.appoint_id DESC";
+    db.query(getQuery, branchName, (err, result) => {
+      if (err) {
+        console.error("Error retrieving appointment:", err);
+        return res
+          .status(500)
+          .json({ success: false, message: "Error getting appointment" });
+      }
+      res.status(200).send(result);
+    });
+  } catch (error) {
+    console.error("Error in try-catch block:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
+const getPatientLabTestReport = (req, res) => {
+  try {
+    const branch = req.params.branch;
+    const selectQuery =
+      "SELECT * FROM patient_lab_details LEFT JOIN patient_details ON patient_details.uhid = patient_lab_details.patient_uhid WHERE patient_lab_details.branch_name = ?";
+    db.query(selectQuery, branch, (err, result) => {
+      if (err) {
+        // logger.registrationLogger.log("error", "failed to fetch patient lab test");
+        res.status(400).json({ success: false, message: err.message });
+        return;
+      }
+      // logger.registrationLogger.log("info", "patient lab test fetched successfully");
+      res.status(200).send(result);
+    });
+  } catch (error) {
+    // logger.registrationLogger.log("error", "internal server error");
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
 module.exports = {
   getTreatSuggest,
   getTreatmentViaUhid,
@@ -740,4 +808,7 @@ module.exports = {
   getAppointmentsWithPatientDetailsById,
   getTreatmentDataList,
   getTreatPrescriptionByAppointIdList,
+  getCurrencyList,
+  getTreatmentDetails,
+  getPatientLabTestReport,
 };

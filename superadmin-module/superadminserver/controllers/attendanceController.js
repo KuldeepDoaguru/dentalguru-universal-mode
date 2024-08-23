@@ -917,6 +917,9 @@ const updateDoctorPaymentAllowSetting = (req, res) => {
       sharewhatsapp,
       sharemail,
       sharesms,
+      currencyName,
+      currencySymbol,
+      curTimezone,
     } = req.body;
     const selectQuery = "SELECT * FROM branches WHERE branch_name = ?";
     db.query(selectQuery, branch, (err, result) => {
@@ -950,6 +953,21 @@ const updateDoctorPaymentAllowSetting = (req, res) => {
         if (sharesms) {
           updateFields.push("sharesms = ?");
           updateValues.push(sharesms);
+        }
+
+        if (currencyName) {
+          updateFields.push("branch_currency = ?");
+          updateValues.push(currencyName);
+        }
+
+        if (currencySymbol) {
+          updateFields.push("currency_symbol = ?");
+          updateValues.push(currencySymbol);
+        }
+
+        if (curTimezone) {
+          updateFields.push("timezone = ?");
+          updateValues.push(curTimezone);
         }
 
         const updateQuery = `UPDATE branches SET ${updateFields.join(

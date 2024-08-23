@@ -25,7 +25,7 @@ const ViewPatientTotalBill = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getBranchDetails/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getBranchDetails/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const ViewPatientTotalBill = () => {
   const getPatientDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAppointmentsWithPatientDetailsById/${tpid}`,
+        `http://localhost:4040/api/v1/super-admin/getAppointmentsWithPatientDetailsById/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const ViewPatientTotalBill = () => {
   const getExaminDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getDentalDataByTpid/${tpid}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getDentalDataByTpid/${tpid}/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const ViewPatientTotalBill = () => {
   const getTreatDetail = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatmentDetailsViaTpid/${tpid}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatmentDetailsViaTpid/${tpid}/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -121,7 +121,7 @@ const ViewPatientTotalBill = () => {
   const getTreatPrescriptionByAppointId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatPrescriptionByTpid/${tpid}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatPrescriptionByTpid/${tpid}/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -145,7 +145,7 @@ const ViewPatientTotalBill = () => {
   const getTreatmentSuggestAppointId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatSuggestViaTpid/${tpid}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatSuggestViaTpid/${tpid}/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const ViewPatientTotalBill = () => {
   const getBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/billDetailsViaTpid/${tpid}`,
+        `http://localhost:4040/api/v1/super-admin/billDetailsViaTpid/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",

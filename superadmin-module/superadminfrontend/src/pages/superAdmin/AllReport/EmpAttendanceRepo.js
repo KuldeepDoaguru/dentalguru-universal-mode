@@ -101,7 +101,7 @@ const EmpAttendanceRepo = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAttendanceDetails/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getAttendanceDetails/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -139,7 +139,7 @@ const EmpAttendanceRepo = () => {
       const toDateFormatted = new Date(toDate).toISOString().split("T")[0];
 
       const { data } = await axios.post(
-        `http://localhost:6666/api/v1/super-admin/downloadAttendanceReportByTime/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/downloadAttendanceReportByTime/${branch.name}`,
         { fromDate: fromDateFormatted, toDate: toDateFormatted },
         {
           headers: {

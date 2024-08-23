@@ -74,7 +74,7 @@ const DrugSetting = () => {
   const getDrugsData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getDrugs/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getDrugs/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const DrugSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/addDrugs",
+        "http://localhost:4040/api/v1/super-admin/addDrugs",
         addDrugs,
         {
           headers: {
@@ -114,7 +114,7 @@ const DrugSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateDrugDetails/${selected}`,
+        `http://localhost:4040/api/v1/super-admin/updateDrugDetails/${selected}`,
         upaAddDrugs,
         {
           headers: {
@@ -135,7 +135,7 @@ const DrugSetting = () => {
   const deleteDrug = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:6666/api/v1/super-admin/deleteDrug/${id}`,
+        `http://localhost:4040/api/v1/super-admin/deleteDrug/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

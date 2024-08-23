@@ -16,7 +16,7 @@ const ComplaintsEmp = () => {
   const getEmpComByBranch = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getEmployeeComplainByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getEmployeeComplainByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",

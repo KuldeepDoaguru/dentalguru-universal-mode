@@ -28,7 +28,7 @@ const UniversalLogin = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/sendOtpForLogin",
+        "http://localhost:4040/api/v1/super-admin/sendOtpForLogin",
         {
           email,
         }
@@ -44,7 +44,7 @@ const UniversalLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/adminLoginUser",
+        "http://localhost:4040/api/v1/super-admin/adminLoginUser",
         {
           email,
           password,
@@ -93,7 +93,7 @@ const UniversalLogin = () => {
       e.preventDefault();
       try {
         const response = await axios.post(
-          "http://localhost:6666/api/v1/super-admin/verifyOtp",
+          "http://localhost:4040/api/v1/super-admin/verifyOtp",
           {
             email,
             otp,

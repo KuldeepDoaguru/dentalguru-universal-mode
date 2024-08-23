@@ -18,7 +18,7 @@ const DoctorProfile = ({ refresh }) => {
   const getEmployeeData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getEmployeeDetails/${branch.name}/${eid}`,
+        `http://localhost:4040/api/v1/super-admin/getEmployeeDetails/${branch.name}/${eid}`,
         {
           headers: {
             "Content-Type": "application/json",

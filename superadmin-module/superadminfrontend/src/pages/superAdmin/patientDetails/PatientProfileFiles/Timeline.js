@@ -17,7 +17,7 @@ const Timeline = () => {
   const getTimelineDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPatientTimeline/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getPatientTimeline/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",

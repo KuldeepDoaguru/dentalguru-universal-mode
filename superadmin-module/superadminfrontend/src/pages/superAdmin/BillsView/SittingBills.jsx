@@ -25,7 +25,7 @@ const SittingBills = () => {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `http://localhost:6666/api/v1/super-admin/getSittingBill/${branch.name}`,
+          `http://localhost:4040/api/v1/super-admin/getSittingBill/${branch.name}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -176,7 +176,7 @@ const SittingBills = () => {
           </div>
 
           <div>
-            <h4>Total OPD Amount :- {totalOpdAmount}/-</h4>
+            <h4>Total sitting amount this month :- {totalOpdAmount}/-</h4>
           </div>
         </div>
 

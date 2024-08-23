@@ -52,7 +52,7 @@ const MostTakenTreat = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatmentDetails/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatmentDetails/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",

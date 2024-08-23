@@ -13,7 +13,7 @@ const Lab = () => {
   const getLabTest = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPatientLabTestByPatientId/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getPatientLabTestByPatientId/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",

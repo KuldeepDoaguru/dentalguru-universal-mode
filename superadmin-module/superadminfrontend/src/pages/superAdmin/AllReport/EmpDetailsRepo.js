@@ -28,7 +28,7 @@ const EmpDetailsRepo = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getEmployeeDataByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getEmployeeDataByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const EmpDetailsRepo = () => {
   const downloadEmployeeData = async () => {
     try {
       const { data } = await axios.post(
-        `http://localhost:6666/api/v1/super-admin/downloadStaffReport/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/downloadStaffReport/${branch.name}`,
         {},
         {
           headers: {

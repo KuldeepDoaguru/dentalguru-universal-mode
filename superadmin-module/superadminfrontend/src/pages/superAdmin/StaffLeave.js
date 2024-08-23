@@ -28,7 +28,7 @@ const StaffLeave = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getLeaveList/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getLeaveList/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const StaffLeave = () => {
   const handleLeaveApprove = async (id, dates) => {
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/approveLeave/${id}`,
+        `http://localhost:4040/api/v1/super-admin/approveLeave/${id}`,
         {
           status: "Approved",
           email: user.email,
@@ -82,7 +82,7 @@ const StaffLeave = () => {
   const handleLeaveReject = async (id, dates) => {
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/rejectLeave/${id}`,
+        `http://localhost:4040/api/v1/super-admin/rejectLeave/${id}`,
         {
           status: "Rejected",
           email: user.email,

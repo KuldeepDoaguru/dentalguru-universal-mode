@@ -31,7 +31,7 @@ const PrescriptionList = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPrescriptionList/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getPrescriptionList/${branch.name}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

@@ -28,7 +28,7 @@ const Inventory = () => {
   const getPurchaseList = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPurInventoryByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getPurInventoryByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const Inventory = () => {
   const deletePurInvDetails = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:6666/api/v1/super-admin/deletePurInvoice/${branch.name}/${id}`,
+        `http://localhost:4040/api/v1/super-admin/deletePurInvoice/${branch.name}/${id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const Inventory = () => {
     console.log(file);
     try {
       const response = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/downloadBillRecById/${file}`,
+        `http://localhost:4040/api/v1/super-admin/downloadBillRecById/${file}`,
         {
           responseType: "blob",
         },

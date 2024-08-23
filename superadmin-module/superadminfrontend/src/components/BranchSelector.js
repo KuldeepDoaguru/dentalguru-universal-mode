@@ -17,7 +17,7 @@ const BranchSelector = () => {
   const getBranchList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:6666/api/v1/super-admin/getBranch"
+        "http://localhost:4040/api/v1/super-admin/getBranch"
       );
       console.log(response.data);
       setBranchList(response.data);

@@ -32,7 +32,7 @@ const LabPatientReport = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:6666/api/v1/super-admin/getPatientLabTestReport/${branch.name}`,
+          `http://localhost:4040/api/v1/super-admin/getPatientLabTestReport/${branch.name}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -273,9 +273,17 @@ const LabPatientReport = () => {
                                             </td>
                                             <td>{patient.lab_name}</td>
                                             <td>
+                                              {
+                                                patient.created_date?.split(
+                                                  " "
+                                                )[0]
+                                              }{" "}
                                               {moment(
-                                                patient.created_date
-                                              ).format("DD/MM/YYYY")}
+                                                patient.created_date?.split(
+                                                  " "
+                                                )[1],
+                                                "HH:mm:ss"
+                                              ).format("h:mm A")}
                                             </td>
                                             <td>{patient.test}</td>
                                             {patient.test_status === "done" && (

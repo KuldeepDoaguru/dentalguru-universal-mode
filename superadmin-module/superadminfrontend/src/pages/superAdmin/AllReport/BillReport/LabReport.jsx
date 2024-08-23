@@ -28,7 +28,7 @@ const LabReport = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPatientLabTest/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getPatientLabTest/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const LabReport = () => {
   //   e.preventDefault();
   //   try {
   //     const { data } = await axios.post(
-  //       `http://localhost:6666/api/v1/super-admin/downloadLabReportByTime/${branch.name}`,
+  //       `http://localhost:4040/api/v1/super-admin/downloadLabReportByTime/${branch.name}`,
   //       { fromDate: fromDate, toDate: toDate },
   //       {
   //         headers: {

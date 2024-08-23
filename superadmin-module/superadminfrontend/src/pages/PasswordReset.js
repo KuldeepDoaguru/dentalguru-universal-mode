@@ -29,7 +29,7 @@ const PasswordReset = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/sendOtp",
+        "http://localhost:4040/api/v1/super-admin/sendOtp",
         {
           email,
         }
@@ -56,7 +56,7 @@ const PasswordReset = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/verifyOtp",
+        "http://localhost:4040/api/v1/super-admin/verifyOtp",
         {
           email,
           otp,
@@ -79,7 +79,7 @@ const PasswordReset = () => {
     setLoading(true);
     try {
       const response = await axios.put(
-        "http://localhost:6666/api/v1/super-admin/resetPassword",
+        "http://localhost:4040/api/v1/super-admin/resetPassword",
         {
           email,
           password: newPassword,

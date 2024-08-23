@@ -28,7 +28,7 @@ const SuperAdmNotify = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        "http://localhost:6666/api/v1/super-admin/getSuperAdminNotify",
+        "http://localhost:4040/api/v1/super-admin/getSuperAdminNotify",
         {
           headers: {
             "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const SuperAdmNotify = () => {
   const updateMarkRead = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/markRead/${id}`,
+        `http://localhost:4040/api/v1/super-admin/markRead/${id}`,
         {},
         {
           headers: {

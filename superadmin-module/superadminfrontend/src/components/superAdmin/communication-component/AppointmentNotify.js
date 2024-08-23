@@ -64,7 +64,7 @@ const AppointmentNotify = () => {
   const getNotifyList = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:6666/api/v1/super-admin/getNotifyList",
+        "http://localhost:4040/api/v1/super-admin/getNotifyList",
         {
           headers: {
             "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const AppointmentNotify = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/addNotifyCommunication",
+        "http://localhost:4040/api/v1/super-admin/addNotifyCommunication",
         notiDetails,
         {
           headers: {
@@ -104,7 +104,7 @@ const AppointmentNotify = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateNotifyTagsDetails/${selected}`,
+        `http://localhost:4040/api/v1/super-admin/updateNotifyTagsDetails/${selected}`,
         upNotiDetails,
         {
           headers: {
@@ -124,7 +124,7 @@ const AppointmentNotify = () => {
   const deleteNotifyTags = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:6666/api/v1/super-admin/deleteNotifyTags/${id}`,
+        `http://localhost:4040/api/v1/super-admin/deleteNotifyTags/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

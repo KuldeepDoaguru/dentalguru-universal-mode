@@ -51,7 +51,7 @@ const TreatBillReport = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getBillsByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getBillsByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const TreatBillReport = () => {
   //   e.preventDefault();
   //   try {
   //     const { data } = await axios.post(
-  //       `http://localhost:6666/api/v1/super-admin/downloadBillingReportByTime/${branch.name}`,
+  //       `http://localhost:4040/api/v1/super-admin/downloadBillingReportByTime/${branch.name}`,
   //       { fromDate: fromDate, toDate: toDate },
   //       {
   //         headers: {
@@ -290,9 +290,7 @@ const TreatBillReport = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <h4>Total Amount : {totalBillAmount}/-</h4>
-            </div>
+            <div>{/* <h4>Total Amount : {totalBillAmount}/-</h4> */}</div>
             <div className="container-fluid mt-3">
               {loading ? (
                 <Lottie

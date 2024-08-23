@@ -28,6 +28,10 @@ const ClinicConfigSetting = () => {
   const [showAddInsurance, setShowAddInsurance] = useState(false);
   const [insList, setInsList] = useState([]);
   const [showEditInsurance, setShowEditInsurance] = useState(false);
+  const [currency, setCurrency] = useState([]);
+  const [currencyName, setCurrencyName] = useState();
+  const [currencySymbol, setCurrencySymbol] = useState();
+  const [curTimezone, setCurTimezone] = useState();
   const [addIns, setAddIns] = useState({
     branch: branch.name,
     companyname: "",
@@ -93,13 +97,16 @@ const ClinicConfigSetting = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateDoctorPaymentAllowSetting/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/updateDoctorPaymentAllowSetting/${branch.name}`,
         {
           doctor_payment: docPayment,
           allow_insurance: allowInsurance,
           sharewhatsapp: shareWhatapps,
           sharemail: shareEmail,
           sharesms: shareSms,
+          currencyName: currencyName,
+          currencySymbol: currencySymbol,
+          curTimezone: curTimezone,
         },
         {
           headers: {
@@ -118,7 +125,7 @@ const ClinicConfigSetting = () => {
   const getBranchData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -137,7 +144,7 @@ const ClinicConfigSetting = () => {
   const getInsuranceList = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getInsuranceList/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getInsuranceList/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -162,7 +169,7 @@ const ClinicConfigSetting = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:6666/api/v1/super-admin/addInsuranceCompany/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/addInsuranceCompany/${branch.name}`,
         addIns,
         {
           headers: {
@@ -184,7 +191,7 @@ const ClinicConfigSetting = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateInsuranceDetails/${selected.ins_id}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/updateInsuranceDetails/${selected.ins_id}/${branch.name}`,
         upIns,
         {
           headers: {
@@ -207,7 +214,7 @@ const ClinicConfigSetting = () => {
       const confirm = window.confirm("Are you sure you want to delete ?");
       if (confirm) {
         const del = await axios.delete(
-          `http://localhost:6666/api/v1/super-admin/deleteInsurance/${id}/${branch.name}`,
+          `http://localhost:4040/api/v1/super-admin/deleteInsurance/${id}/${branch.name}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -237,6 +244,41 @@ const ClinicConfigSetting = () => {
   const goBack = () => {
     window.history.go(-1);
   };
+
+  const getCurrency = async () => {
+    try {
+      const { data } = await axios.get(
+        "http://localhost:4040/api/v1/super-admin/getCurrencyList"
+      );
+      setCurrency(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getCurrency();
+  }, []);
+
+  console.log(currency);
+
+  const foundCurrency = currency?.find(
+    (item) => item.currency_name === currencyName
+  );
+
+  console.log(foundCurrency);
+
+  const getDataSym = () => {
+    if (foundCurrency) {
+      setCurTimezone(foundCurrency?.timezone);
+      setCurrencySymbol(foundCurrency?.currency_symbol);
+    }
+  };
+
+  useEffect(() => {
+    getDataSym();
+  }, [currencyName]);
+
   return (
     <>
       <Container>
@@ -271,112 +313,177 @@ const ClinicConfigSetting = () => {
                       </h3>
                     </div>
                   </div>
-                  <div>
-                    <h6 className="text-center mt-2 fw-bold text-success">
-                      Doctor Payment Option :{" "}
-                      <span style={{ color: "#004aad" }}>
-                        {branchDetails[0]?.doctor_payment}
-                      </span>
-                    </h6>
-                    <h6 className="text-center mt-2 fw-bold text-success">
-                      Insurance Allowed :{" "}
-                      <span style={{ color: "#004aad" }}>
-                        {branchDetails[0]?.allow_insurance}
-                      </span>
-                    </h6>
-                    <h6 className="text-center mt-2 fw-bold text-success">
-                      Share Whatsapp :{" "}
-                      <span style={{ color: "#004aad" }}>
-                        {branchDetails[0]?.sharewhatsapp}
-                      </span>
-                    </h6>
-                    <h6 className="text-center mt-2 fw-bold text-success">
-                      Share Email :{" "}
-                      <span style={{ color: "#004aad" }}>
-                        {branchDetails[0]?.sharemail}
-                      </span>
-                    </h6>
-                    <h6 className="text-center mt-2 fw-bold text-success">
-                      Share SMS :{" "}
-                      <span style={{ color: "#004aad" }}>
-                        {branchDetails[0]?.sharesms}
-                      </span>
-                    </h6>
+                  <div className="container row mt-3">
+                    <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                      <div>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Doctor Payment Option :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.doctor_payment}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Insurance Allowed :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.allow_insurance}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Share Whatsapp :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.sharewhatsapp}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Share Email :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.sharemail}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Share SMS :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.sharesms}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Currency :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.branch_currency}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Currency Symbol :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.currency_symbol}
+                          </span>
+                        </h6>
+                        <h6 className="text-start mt-2 fw-bold text-success">
+                          Timezone :{" "}
+                          <span style={{ color: "#004aad" }}>
+                            {branchDetails[0]?.timezone}
+                          </span>
+                        </h6>
+                      </div>
+                    </div>
+                    <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                      <form onSubmit={SubmitDocPaymentChange}>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">
+                            Allow doctor to make payment :
+                          </h6>
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) => setDocPayment(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">Allow Insurance :</h6>
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) => setAllowInsurance(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">Share Whatsapp :</h6>
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) => setShareWhatapps(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">Share Email :</h6>
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) => setShareEmail(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">Share SMS :</h6>
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) => setShareSms(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">Branch currency :</h6>
+                          <select
+                            name=""
+                            id=""
+                            onChange={(e) => setCurrencyName(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            {currency?.map((item) => (
+                              <>
+                                <option value={item.currency_name}>
+                                  {item.currency_name}
+                                </option>
+                              </>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">
+                            Currency Symbol: {currencySymbol}
+                          </h6>
+                        </div>
+                        <div className="container d-flex justify-content-start align-item-center mb-2">
+                          <h6 className="fw-bold mx-2">
+                            Time-zone : {curTimezone}
+                          </h6>
+                          {/* <select
+                            name=""
+                            id=""
+                            onChange={(e) => setCurTimezone(e.target.value)}
+                            className="p-1 rounded"
+                          >
+                            <option value="">--select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select> */}
+                        </div>
+                        <div className="d-flex justify-content-start">
+                          <button
+                            className="btn btn-success mx-2"
+                            type="submit"
+                          >
+                            Change
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                  <form onSubmit={SubmitDocPaymentChange}>
-                    <div className="container d-flex justify-content-center align-item-center mb-2">
-                      <h6 className="fw-bold mx-2">
-                        Allow doctor to make payment :
-                      </h6>
-                      <select
-                        name=""
-                        id=""
-                        onChange={(e) => setDocPayment(e.target.value)}
-                        className="p-1 rounded"
-                      >
-                        <option value="">--select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-                    <div className="container d-flex justify-content-center align-item-center mb-2">
-                      <h6 className="fw-bold mx-2">Allow Insurance :</h6>
-                      <select
-                        name=""
-                        id=""
-                        onChange={(e) => setAllowInsurance(e.target.value)}
-                        className="p-1 rounded"
-                      >
-                        <option value="">--select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-                    <div className="container d-flex justify-content-center align-item-center mb-2">
-                      <h6 className="fw-bold mx-2">Share Whatsapp :</h6>
-                      <select
-                        name=""
-                        id=""
-                        onChange={(e) => setShareWhatapps(e.target.value)}
-                        className="p-1 rounded"
-                      >
-                        <option value="">--select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-                    <div className="container d-flex justify-content-center align-item-center mb-2">
-                      <h6 className="fw-bold mx-2">Share Email :</h6>
-                      <select
-                        name=""
-                        id=""
-                        onChange={(e) => setShareEmail(e.target.value)}
-                        className="p-1 rounded"
-                      >
-                        <option value="">--select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-                    <div className="container d-flex justify-content-center align-item-center mb-2">
-                      <h6 className="fw-bold mx-2">Share SMS :</h6>
-                      <select
-                        name=""
-                        id=""
-                        onChange={(e) => setShareSms(e.target.value)}
-                        className="p-1 rounded"
-                      >
-                        <option value="">--select--</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <button className="btn btn-success mx-2" type="submit">
-                        Change
-                      </button>
-                    </div>
-                  </form>
 
                   <div className="container-fluid mt-3">
                     <div className="calender-time mb-2">

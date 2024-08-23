@@ -102,7 +102,7 @@ const LabSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/addLab",
+        "http://localhost:4040/api/v1/super-admin/addLab",
         addLabField,
         {
           headers: {
@@ -123,7 +123,7 @@ const LabSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/addLabTest",
+        "http://localhost:4040/api/v1/super-admin/addLabTest",
         addLabTestField,
         {
           headers: {
@@ -152,7 +152,7 @@ const LabSetting = () => {
   const getListLabDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getLabList/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getLabList/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",

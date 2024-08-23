@@ -74,7 +74,7 @@ const Lab = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getLabList/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getLabList/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -106,7 +106,7 @@ const Lab = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateLabDetails/${selectedItem.lab_id}`,
+        `http://localhost:4040/api/v1/super-admin/updateLabDetails/${selectedItem.lab_id}`,
         upLabField,
         {
           headers: {
@@ -130,7 +130,7 @@ const Lab = () => {
       const isConfirmed = window.confirm("Are you sure you want to delete?");
       if (isConfirmed) {
         const response = await axios.delete(
-          `http://localhost:6666/api/v1/super-admin/labDelete/${id}`,
+          `http://localhost:4040/api/v1/super-admin/labDelete/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -149,7 +149,7 @@ const Lab = () => {
   const getBranchList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:6666/api/v1/super-admin/getBranch"
+        "http://localhost:4040/api/v1/super-admin/getBranch"
       );
       console.log(response.data);
       setBranchList(response.data);

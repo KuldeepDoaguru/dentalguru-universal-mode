@@ -42,7 +42,7 @@ const Card = () => {
   const getAppointList = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAppointmentData/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getAppointmentData/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -57,12 +57,12 @@ const Card = () => {
     }
   };
 
-  console.log(appointmentList);
+  // console.log(appointmentList);
 
   const getEmployeeAvailable = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAvailableEmp/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getAvailableEmp/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const Card = () => {
   const getTreatmentValues = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatSuggest/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatSuggest/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",

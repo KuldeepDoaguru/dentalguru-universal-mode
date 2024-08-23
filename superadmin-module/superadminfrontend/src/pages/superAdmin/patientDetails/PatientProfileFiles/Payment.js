@@ -18,7 +18,7 @@ const Payment = () => {
   const getPaymentDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPaymentDetailsByPatId/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getPaymentDetailsByPatId/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

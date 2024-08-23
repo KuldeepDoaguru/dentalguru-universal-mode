@@ -37,7 +37,7 @@ const Header = () => {
   const getNotifyDetails = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:6666/api/v1/super-admin/getSuperAdminNotify",
+        "http://localhost:4040/api/v1/super-admin/getSuperAdminNotify",
         {
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const Header = () => {
   const updateMarkRead = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/markRead/${id}`,
+        `http://localhost:4040/api/v1/super-admin/markRead/${id}`,
         {},
         {
           headers: {
@@ -101,7 +101,7 @@ const Header = () => {
     };
   }, []);
 
-  console.log(notifyList);
+  // console.log(notifyList);
 
   const filterForRead = notifyList?.filter((item) => {
     return item.status !== "read";

@@ -30,7 +30,7 @@ const ClinicActivity = () => {
     // console.log(branch.name);
     try {
       const response = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAppointmentData/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getAppointmentData/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const ClinicActivity = () => {
   const getPatdetailsByBranch = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPatientDetailsByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getPatientDetailsByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const ClinicActivity = () => {
   const getTreatmentValues = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatSuggest/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatSuggest/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",

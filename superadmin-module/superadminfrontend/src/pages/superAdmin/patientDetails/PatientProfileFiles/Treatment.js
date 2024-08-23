@@ -19,7 +19,7 @@ const Treatment = () => {
   const getAppointDetailsPat = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatmentViaUhid/${branch.name}/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatmentViaUhid/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",

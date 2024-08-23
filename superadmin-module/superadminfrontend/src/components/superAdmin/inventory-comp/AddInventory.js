@@ -97,7 +97,7 @@ const AddInventory = () => {
     console.log(recData, reciept_doc);
     try {
       const { data } = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/purchaseInventory",
+        "http://localhost:4040/api/v1/super-admin/purchaseInventory",
         formData,
         {
           headers: {

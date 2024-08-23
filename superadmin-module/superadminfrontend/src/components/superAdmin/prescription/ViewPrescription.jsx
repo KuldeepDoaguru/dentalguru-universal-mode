@@ -31,7 +31,7 @@ const ViewPrescription = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const ViewPrescription = () => {
   const getPatientDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAppointmentsWithPatientDetailsById/${tpid}`,
+        `http://localhost:4040/api/v1/super-admin/getAppointmentsWithPatientDetailsById/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const ViewPrescription = () => {
   const getLabAllData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getLabDetails/${tpid}`,
+        `http://localhost:4040/api/v1/super-admin/getLabDetails/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -90,7 +90,7 @@ const ViewPrescription = () => {
   const getTreatDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatmentDataList/${tpid}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatmentDataList/${tpid}/${branch.name}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -118,7 +118,7 @@ const ViewPrescription = () => {
   const getExaminDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getDentalDataByTpid/${tpid}/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getDentalDataByTpid/${tpid}/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -154,7 +154,7 @@ const ViewPrescription = () => {
   const getTreatPrescriptionByAppointId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatPrescriptionByAppointIdList/${tpid}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatPrescriptionByAppointIdList/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -177,7 +177,7 @@ const ViewPrescription = () => {
 
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getEmployeeDetails/${branch.name}/${getPatientData[0]?.doctor_id}`,
+        `http://localhost:4040/api/v1/super-admin/getEmployeeDetails/${branch.name}/${getPatientData[0]?.doctor_id}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -255,7 +255,7 @@ const ViewPrescription = () => {
         console.log(key, value);
       }
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/prescriptionOnMail",
+        "http://localhost:4040/api/v1/super-admin/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -308,7 +308,7 @@ const ViewPrescription = () => {
         console.log(key, value);
       }
       const res = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/sendWhatsapp",
+        "http://localhost:4040/api/v1/super-admin/sendWhatsapp",
         formData,
         {
           headers: {

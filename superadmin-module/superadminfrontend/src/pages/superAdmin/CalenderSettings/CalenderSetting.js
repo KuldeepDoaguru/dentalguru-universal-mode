@@ -176,7 +176,7 @@ const CalenderSetting = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -194,7 +194,7 @@ const CalenderSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateBranchCalenderSetting/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/updateBranchCalenderSetting/${branch.name}`,
         upData,
         {
           headers: {
@@ -266,7 +266,7 @@ const CalenderSetting = () => {
   const getHolidayList = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getHolidays/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getHolidays/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -284,7 +284,7 @@ const CalenderSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:6666/api/v1/super-admin/addBlockDays",
+        "http://localhost:4040/api/v1/super-admin/addBlockDays",
         holidays,
         {
           headers: {
@@ -316,7 +316,7 @@ const CalenderSetting = () => {
     console.log(selected);
     try {
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateHolidays/${selected.holiday_id}`,
+        `http://localhost:4040/api/v1/super-admin/updateHolidays/${selected.holiday_id}`,
         upHolidays,
         {
           headers: {
@@ -344,7 +344,7 @@ const CalenderSetting = () => {
     }
     try {
       const response = await axios.delete(
-        `http://localhost:6666/api/v1/super-admin/deleteHolidays/${id}`,
+        `http://localhost:4040/api/v1/super-admin/deleteHolidays/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

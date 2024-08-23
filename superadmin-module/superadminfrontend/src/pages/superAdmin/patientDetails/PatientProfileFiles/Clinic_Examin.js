@@ -18,7 +18,7 @@ const ClinicExamin = () => {
   const getExamineDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getExaminationViaUhid/${branch.name}/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getExaminationViaUhid/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,12 @@ const ClinicExamin = () => {
                 {exmData?.map((item) => (
                   <>
                     <tr>
-                      <td>{moment(item.date).format("DD-MM-YYYY hh:mm A")}</td>
+                      <td>
+                        {item.date?.split(" ")[0]}{" "}
+                        {moment(item.date?.split(" ")[1], "HH:mm:ss").format(
+                          "h:mm A"
+                        )}
+                      </td>
                       <td>{item.diagnosis_category}</td>
                       <td>{item.disease}</td>
 

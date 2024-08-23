@@ -26,7 +26,7 @@ const InventoryReport = () => {
   const getPurchaseList = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPurInventoryByBranch/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getPurInventoryByBranch/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const InventoryReport = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `http://localhost:6666/api/v1/super-admin/downloadExpenseReportByTime/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/downloadExpenseReportByTime/${branch.name}`,
         { fromDate: fromDate, toDate: toDate },
         {
           headers: {

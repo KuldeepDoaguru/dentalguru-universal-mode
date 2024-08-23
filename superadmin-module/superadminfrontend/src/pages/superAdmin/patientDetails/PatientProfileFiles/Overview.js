@@ -28,7 +28,7 @@ const Overview = () => {
   const getPresDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPrescriptionViaUhid/${branch.name}/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getPrescriptionViaUhid/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Overview = () => {
   const getPendingBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getPatientBillByBranchAndId/${branch.name}/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getPatientBillByBranchAndId/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Overview = () => {
   const getAppointDetailsPat = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAppointmentByBranchAndId/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getAppointmentByBranchAndId/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const Overview = () => {
   const getExamineDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getExaminationViaUhid/${branch.name}/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getExaminationViaUhid/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const Overview = () => {
   const fetchLatestTreatPatientData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getTreatmentViaUhid/${branch.name}/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/getTreatmentViaUhid/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -204,7 +204,7 @@ const Overview = () => {
   const getPatBills = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/get-patientBill-data/${pid}`,
+        `http://localhost:4040/api/v1/super-admin/get-patientBill-data/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -360,7 +360,11 @@ const Overview = () => {
                       <>
                         <tr>
                           <td>
-                            {moment(item.date).format("DD-MM-YYYY hh:mm A")}
+                            {item.date?.split(" ")[0]}{" "}
+                            {moment(
+                              item.date?.split(" ")[1],
+                              "HH:mm:ss"
+                            ).format("h:mm A")}
                           </td>
                           <td>{item.disease}</td>
                           <td>{item.chief_complain}</td>

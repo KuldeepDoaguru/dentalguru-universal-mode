@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 });
 
 // PORT
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT || 4040;
 
 // zipLogs();
 // run listen

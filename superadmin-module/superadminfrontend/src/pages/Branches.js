@@ -94,7 +94,7 @@ const Branches = () => {
       console.log(upData, branchHeadImg, branchFootImg);
 
       const response = await axios.put(
-        `http://localhost:6666/api/v1/super-admin/updateBranchDetails/${id}`,
+        `http://localhost:4040/api/v1/super-admin/updateBranchDetails/${id}`,
         formData,
         {
           headers: {
@@ -131,7 +131,7 @@ const Branches = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:6666/api/v1/super-admin/getBranch"
+        "http://localhost:4040/api/v1/super-admin/getBranch"
       );
       setLoading(false);
       console.log(response.data);

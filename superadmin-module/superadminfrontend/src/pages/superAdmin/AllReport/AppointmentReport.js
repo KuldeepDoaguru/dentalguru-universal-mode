@@ -51,7 +51,7 @@ const AppointmentReport = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:6666/api/v1/super-admin/getAppointmentData/${branch.name}`,
+        `http://localhost:4040/api/v1/super-admin/getAppointmentData/${branch.name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -116,7 +116,7 @@ const AppointmentReport = () => {
   //   e.preventDefault();
   //   try {
   //     const { data } = await axios.post(
-  //       `http://localhost:6666/api/v1/super-admin/downloadAppointReportByTime/${branch.name}`,
+  //       `http://localhost:4040/api/v1/super-admin/downloadAppointReportByTime/${branch.name}`,
   //       { fromDate: fromDate, toDate: toDate },
   //       {
   //         headers: {

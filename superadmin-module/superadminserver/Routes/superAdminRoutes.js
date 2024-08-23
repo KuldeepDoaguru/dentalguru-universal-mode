@@ -126,6 +126,9 @@ const {
   getAppointmentsWithPatientDetailsById,
   getTreatmentDataList,
   getTreatPrescriptionByAppointIdList,
+  getCurrencyList,
+  getTreatmentDetails,
+  getPatientLabTestReport,
 } = require("../controllers/superTreatController");
 // const multer = require("multer");
 const authenticate = require("../middleware/authMiddleware.js");
@@ -405,7 +408,7 @@ router.post("/addLabTest", authenticate, addLabTest);
 router.get("/getLabTest", authenticate, getLabTest);
 router.put("/updateLabTestDetails/:ltid", authenticate, updateLabTestDetails);
 router.delete("/labTestDelete/:ltid", authenticate, labTestDelete);
-router.get("/getPatientLabTest", authenticate, getPatientLabTest);
+router.get("/getPatientLabTest/:branch", authenticate, getPatientLabTest);
 router.get(
   "/getPatientLabTestCompleted",
   authenticate,
@@ -475,6 +478,13 @@ router.get("/getTreatmentDataList/:tpid/:branch", getTreatmentDataList);
 router.get(
   "/getTreatPrescriptionByAppointIdList/:tpid",
   getTreatPrescriptionByAppointIdList
+);
+router.get("/getCurrencyList", getCurrencyList);
+router.get("/getTreatmentDetails/:branch", authenticate, getTreatmentDetails);
+router.get(
+  "/getPatientLabTestReport/:branch",
+  authenticate,
+  getPatientLabTestReport
 );
 
 module.exports = router;
