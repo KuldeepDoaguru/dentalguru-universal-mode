@@ -15,6 +15,26 @@ const Bill = () => {
   const branch = useSelector((state) => state.branch);
   console.log(`User Name: ${branch.name}`);
   const [billData, setBillData] = useState([]);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
 
   const getBillDetails = async () => {
     try {
@@ -35,8 +55,9 @@ const Bill = () => {
   };
 
   useEffect(() => {
+    getBranchDetails();
     getBillDetails();
-  }, []);
+  }, [branch.name]);
 
   console.log(billData);
 
@@ -71,9 +92,21 @@ const Bill = () => {
                         <td>{item?.bill_date?.split(" ")[0]}</td>
                         <td>{item.bill_id}</td>
 
-                        <td>{item.total_amount}</td>
-                        <td>{item.paid_amount}</td>
-                        <td>{item.pay_by_sec_amt}</td>
+                        <td>
+                          {" "}
+                          {branchData[0]?.currency_symbol}
+                          {item.total_amount}
+                        </td>
+                        <td>
+                          {" "}
+                          {branchData[0]?.currency_symbol}
+                          {item.paid_amount}
+                        </td>
+                        <td>
+                          {" "}
+                          {branchData[0]?.currency_symbol}
+                          {item.pay_by_sec_amt}
+                        </td>
                         <td>{item.payment_mode}</td>
                         <td>{item.payment_date_time?.split(" ")[0]} </td>
                         <td>{item.payment_status}</td>

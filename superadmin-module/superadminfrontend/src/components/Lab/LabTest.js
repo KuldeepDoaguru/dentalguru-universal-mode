@@ -23,7 +23,8 @@ const LabTest = () => {
   const [labList, setLabList] = useState([]);
   const complaintsPerPage = 5; // Number of complaints per page
   const [currentPage, setCurrentPage] = useState(0);
-  const [showAddLabTest, setShowAddLabTest] = useState(false); // Start from the first page
+  const [showAddLabTest, setShowAddLabTest] = useState(false);
+  const [branchData, setBranchData] = useState([]);
   const [upLabTestField, setUpLabTestField] = useState({
     test_name: "",
     test_code: "",
@@ -75,6 +76,25 @@ const LabTest = () => {
   };
 
   console.log(selectedItem);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
 
   const closeUpdatePopup = () => {
     setShowPopup(false);
@@ -148,7 +168,8 @@ const LabTest = () => {
 
   useEffect(() => {
     getListLabDetails();
-  }, []);
+    getBranchDetails();
+  }, [branch.name]);
 
   const deleteLabTestData = async (id) => {
     try {
@@ -306,7 +327,11 @@ const LabTest = () => {
                         <td>{item.waiting_days}</td>
                         <td>{item.default_lab}</td>
 
-                        <td>{item.test_cost}</td>
+                        <td>
+                          {" "}
+                          {branchData[0]?.currency_symbol}
+                          {item.test_cost}
+                        </td>
                         <td>
                           <button
                             className="btn btn-warning text-light"

@@ -18,6 +18,26 @@ const LabBills = () => {
   const [loading, setLoading] = useState(false);
   const [keyword, setkeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
 
   useEffect(() => {
     const getAppointList = async () => {
@@ -41,6 +61,10 @@ const LabBills = () => {
     };
 
     getAppointList();
+  }, [branch.name]);
+
+  useEffect(() => {
+    getBranchDetails();
   }, [branch.name]);
 
   const defaultOptions = {
@@ -169,7 +193,11 @@ const LabBills = () => {
                             {/* <td className="table-small">{item.tpid}</td> */}
                             <td className="table-small">{item.patient_name}</td>
                             {/* <td className="table-small">{item.cost}</td> */}
-                            <td className="table-small">{item.payment}</td>
+                            <td className="table-small">
+                              {" "}
+                              {branchData[0]?.currency_symbol}
+                              {item.payment}
+                            </td>
                             <td>{item.payment_status}</td>
                             <td>{item.test_status}</td>
                             <td>{item?.created_date}</td>

@@ -15,7 +15,7 @@ const TreatBills = () => {
   console.log(`User Name: ${user.name}, User ID: ${user.id}`);
   console.log("User State:", user);
   const branch = useSelector((state) => state.branch);
-  console.log(`User Name: ${branch.name}`);
+  console.log(`User Name: ${branch}`);
   const [loading, setLoading] = useState(false);
   const [listBills, setListBills] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -24,6 +24,7 @@ const TreatBills = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [placehold, setPlacehold] = useState([]);
   const [keyword, setkeyword] = useState("");
+  const [branchData, setBranchData] = useState([]);
   // const [currentPage, setCurrentPage] = useState(1);
   // const [itemsPerPage] = useState(10);
   const complaintsPerPage = 8; // Number of complaints per page
@@ -66,6 +67,25 @@ const TreatBills = () => {
   const closeUpdatePopup = () => {
     setShowPopup(false);
   };
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
 
   const getBillDetailsList = async () => {
     setLoading(true);
@@ -150,6 +170,7 @@ const TreatBills = () => {
 
   useEffect(() => {
     getBillDetailsList();
+    getBranchDetails();
   }, [branch.name]);
 
   useEffect(() => {
@@ -283,7 +304,11 @@ const TreatBills = () => {
             </div>
           </div>
           <div>
-            <h4>Total received amount this month :- {totalBillAmount}/-</h4>
+            <h4>
+              Total received amount this month :-{" "}
+              {branchData[0]?.currency_symbol}
+              {totalBillAmount}/-
+            </h4>
           </div>
 
           <div>
@@ -349,13 +374,26 @@ const TreatBills = () => {
                             <td>{item.patient_mobile}</td>
                             <td>{item.patient_email}</td>
                             <td>{item.assigned_doctor_name}</td>
-                            <td>{item.total_amount}</td>
-                            <td>{item.paid_amount}</td>
-                            <td>{item.pay_by_sec_amt}</td>
+                            <td>
+                              {branchData[0]?.currency_symbol}
+                              {item.total_amount}
+                            </td>
+                            <td>
+                              {" "}
+                              {branchData[0]?.currency_symbol}
+                              {item.paid_amount}
+                            </td>
+                            <td>
+                              {" "}
+                              {branchData[0]?.currency_symbol}
+                              {item.pay_by_sec_amt}
+                            </td>
                             <td>{item.payment_status}</td>
                             <td>{item?.payment_date_time}</td>
                             <td>
                               <td>
+                                {" "}
+                                {branchData[0]?.currency_symbol}
                                 {item.paid_amount + item.pay_by_sec_amt >=
                                 item.total_amount
                                   ? 0

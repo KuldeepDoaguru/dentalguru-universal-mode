@@ -511,8 +511,12 @@ const ViewPrescription = () => {
                             <td>{item.treatment_name}</td>
                             <td>{item.selected_teeth}</td>
                             <td>{item?.selected_teeth?.split(", ").length}</td>
-                            <td>{item.totalCost}</td>
                             <td>
+                              {getBranch[0]?.currency_symbol}
+                              {item.totalCost}
+                            </td>
+                            <td>
+                              {getBranch[0]?.currency_symbol}
                               {item.totalCost *
                                 item?.selected_teeth?.split(", ").length}
                             </td>

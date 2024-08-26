@@ -27,6 +27,30 @@ const TreatBillReport = () => {
   const [loading, setLoading] = useState(false);
   const [toDate, setToDate] = useState("");
   const [error, setError] = useState(false);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, [branch.name]);
 
   const differenceError = () => {
     const from = new Date(fromDate).getTime();
@@ -371,12 +395,18 @@ const TreatBillReport = () => {
                                 <td>{item.patient_mobile}</td>
                                 <td>{item.assigned_doctor_name}</td>
                                 <td className="table-small">
+                                  {branchData[0]?.currency_symbol}
                                   {item.total_amount}
                                 </td>
                                 <td className="table-small">
+                                  {branchData[0]?.currency_symbol}
                                   {item.paid_amount}
                                 </td>
-                                <td>{item.pay_by_sec_amt}</td>
+                                <td>
+                                  {" "}
+                                  {branchData[0]?.currency_symbol}
+                                  {item.pay_by_sec_amt}
+                                </td>
                                 <td>{item.payment_status}</td>
                                 <td>
                                   {item.payment_date_time?.split(" ")[0]}{" "}

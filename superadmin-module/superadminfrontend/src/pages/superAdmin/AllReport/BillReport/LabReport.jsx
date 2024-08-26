@@ -23,6 +23,30 @@ const LabReport = () => {
   const { refreshTable } = useSelector((state) => state.user);
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, [branch.name]);
 
   const getBillDetailsList = async () => {
     setLoading(true);
@@ -248,8 +272,13 @@ const LabReport = () => {
                                       {item.patient_name}
                                     </td>
                                     <td>{item.test}</td>
-                                    <td className="table-small">{item.cost}</td>
                                     <td className="table-small">
+                                      {" "}
+                                      {branchData[0]?.currency_symbol}
+                                      {item.cost}
+                                    </td>
+                                    <td className="table-small">
+                                      {branchData[0]?.currency_symbol}
                                       {item.payment}
                                     </td>
                                     <td>{item.payment_status}</td>
@@ -284,8 +313,13 @@ const LabReport = () => {
                                       {item.patient_name}
                                     </td>
                                     <td>{item.test}</td>
-                                    <td className="table-small">{item.cost}</td>
                                     <td className="table-small">
+                                      {" "}
+                                      {branchData[0]?.currency_symbol}
+                                      {item.cost}
+                                    </td>
+                                    <td className="table-small">
+                                      {branchData[0]?.currency_symbol}
                                       {item.payment}
                                     </td>
                                     <td>{item.payment_status}</td>

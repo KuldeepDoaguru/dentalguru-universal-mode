@@ -9,7 +9,6 @@ const Overview = () => {
   const dispatch = useDispatch();
   const { pid } = useParams();
   const user = useSelector((state) => state.user);
-
   console.log(`User Name: ${user.name}, User ID: ${user.id}`);
   console.log("User State:", user);
   const branch = useSelector((state) => state.branch);
@@ -22,8 +21,31 @@ const Overview = () => {
   const [sortedAppointments, setSortedAppointments] = useState([]);
   const [treatData, setTreatData] = useState([]);
   const [exmData, setExmData] = useState([]);
-
+  const [branchData, setBranchData] = useState([]);
   const [presData, setPresData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   const getPresDetails = async () => {
     try {
@@ -252,7 +274,10 @@ const Overview = () => {
               <div className="mt-3">
                 {" "}
                 <p className="text-center">Payment Pending</p>
-                <h5 className="text-center">INR {total}</h5>
+                <h5 className="text-center">
+                  {" "}
+                  {branchData[0]?.currency_symbol} {total}
+                </h5>
               </div>
             </div>
           </div>
@@ -333,8 +358,16 @@ const Overview = () => {
                       <>
                         <tr>
                           <td>{item.bill_date}</td>
-                          <td>{item.total_amount}</td>
-                          <td>{item.paid_amount}</td>
+                          <td>
+                            {" "}
+                            {branchData[0]?.currency_symbol}
+                            {item.total_amount}
+                          </td>
+                          <td>
+                            {" "}
+                            {branchData[0]?.currency_symbol}
+                            {item.paid_amount}
+                          </td>
                           <td>{item.payment_status}</td>
                         </tr>
                       </>

@@ -18,6 +18,26 @@ const OpdBills = () => {
   const [doctor, setDoctor] = useState("");
   const [keyword, setkeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
 
   useEffect(() => {
     const getAppointList = async () => {
@@ -41,6 +61,10 @@ const OpdBills = () => {
     };
 
     getAppointList();
+  }, [branch.name]);
+
+  useEffect(() => {
+    getBranchDetails();
   }, [branch.name]);
 
   const defaultOptions = {
@@ -179,7 +203,10 @@ const OpdBills = () => {
           </div>
 
           <div>
-            <h4>Total OPD amount this month :- {totalOpdAmount}/-</h4>
+            <h4>
+              Total OPD amount this month :- {branchData[0]?.currency_symbol}
+              {totalOpdAmount}/-
+            </h4>
           </div>
         </div>
 
@@ -229,7 +256,11 @@ const OpdBills = () => {
                             </td>
                             <td className="table-small">{item.patient_name}</td>
                             <td>{item.assigned_doctor_name}</td>
-                            <td className="table-small">{item.opd_amount}</td>
+                            <td className="table-small">
+                              {" "}
+                              {branchData[0]?.currency_symbol}
+                              {item.opd_amount}
+                            </td>
                             <td>{item.payment_Status}</td>
                           </tr>
                         </>

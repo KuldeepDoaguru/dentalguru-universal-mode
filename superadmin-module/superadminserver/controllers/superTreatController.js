@@ -777,6 +777,40 @@ const getPatientLabTestReport = (req, res) => {
   }
 };
 
+const getRefundAmountData = (req, res) => {
+  try {
+    const branch = req.params.branch;
+    const selectQuery =
+      "SELECT * FROM security_amount WHERE branch_name = ? AND refund_amount IS NOT NULL";
+    db.query(selectQuery, branch, (err, result) => {
+      if (err) {
+        res.status(400).json({ success: false, message: err.message });
+      }
+      res.status(200).send(result);
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
+const getRefundOpdAmountData = (req, res) => {
+  try {
+    const branch = req.params.branch;
+    const selectQuery =
+      "SELECT * FROM appointments JOIN patient_details ON patient_details.uhid = appointments.patient_uhid WHERE appointments.branch_name = ? AND appointments.payment_Status = 'Refund'";
+    db.query(selectQuery, branch, (err, result) => {
+      if (err) {
+        res.status(400).json({ success: false, message: err.message });
+      }
+      res.status(200).send(result);
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
 module.exports = {
   getTreatSuggest,
   getTreatmentViaUhid,
@@ -811,4 +845,6 @@ module.exports = {
   getCurrencyList,
   getTreatmentDetails,
   getPatientLabTestReport,
+  getRefundAmountData,
+  getRefundOpdAmountData,
 };

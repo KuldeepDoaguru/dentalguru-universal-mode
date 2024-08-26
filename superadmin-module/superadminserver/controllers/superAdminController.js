@@ -523,7 +523,7 @@ const superAdminLoginUser = async (req, res) => {
           { id: user.sa_id },
           process.env.JWT_SECRET,
           {
-            expiresIn: "7d",
+            expiresIn: "12h",
           }
         );
 

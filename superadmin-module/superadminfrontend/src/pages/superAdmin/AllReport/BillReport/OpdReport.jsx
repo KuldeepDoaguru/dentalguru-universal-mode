@@ -25,6 +25,30 @@ const OpdReport = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [toDate, setToDate] = useState("");
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, [branch.name]);
 
   const getBillDetailsList = async () => {
     setLoading(true);
@@ -324,7 +348,11 @@ const OpdReport = () => {
                               </td>
                               <td>{item.mobileno}</td>
                               <td>{item.assigned_doctor_name}</td>
-                              <td className="table-small">{item.opd_amount}</td>
+                              <td className="table-small">
+                                {" "}
+                                {branchData[0]?.currency_symbol}
+                                {item.opd_amount}
+                              </td>
                               <td>{item.payment_Status}</td>
                               <td>
                                 {item?.appointment_dateTime

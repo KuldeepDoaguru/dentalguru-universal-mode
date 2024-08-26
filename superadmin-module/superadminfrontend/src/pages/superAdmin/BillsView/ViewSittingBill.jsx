@@ -509,13 +509,30 @@ const ViewSittingBill = () => {
                         <td>{item.treatment}</td>
                         <td>{item.teeth_number}</td>
                         <td>{item.teeth_qty}</td>
-                        <td>{item.treatment_cost}</td>
-                        <td>{item.cost_per_qty}</td>
-                        <td>{item.discount}%</td>
-                        <td>{item.final_cost}</td>
-                        <td>{item.sitting_amount}</td>
                         <td>
                           {" "}
+                          {getBranch[0]?.currency_symbol}
+                          {item.treatment_cost}
+                        </td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.cost_per_qty}
+                        </td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.discount}%
+                        </td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.final_cost}
+                        </td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.sitting_amount}
+                        </td>
+                        <td>
+                          {" "}
+                          {getBranch[0]?.currency_symbol}
                           {item.payment_status === "Pending"
                             ? 0
                             : item.paid_amount === null
@@ -657,6 +674,7 @@ const ViewSittingBill = () => {
                           Total Amount Recieved:
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
+                          {getBranch[0]?.currency_symbol}
                           {sittingBill[0]?.payment_status === "Credit"
                             ? sittingBill[0]?.final_cost
                             : sittingBill[0]?.paid_amount}

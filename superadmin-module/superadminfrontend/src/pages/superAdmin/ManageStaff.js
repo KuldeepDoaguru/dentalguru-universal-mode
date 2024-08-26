@@ -30,6 +30,7 @@ const ManageStaff = () => {
   const [morningError, setMorningError] = useState("");
 
   const [branchDetails, setBranchDetails] = useState([]);
+  const [branchData, setBranchData] = useState([]);
   const [inEmpData, setInEmpData] = useState({
     branch: "",
     empName: "",
@@ -55,6 +56,25 @@ const ManageStaff = () => {
     language: "",
     speciality: "",
   });
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
 
   const getBranchData = async () => {
     try {
@@ -324,6 +344,7 @@ const ManageStaff = () => {
   useEffect(() => {
     getDocDetailsList();
     getBranchData();
+    getBranchDetails();
   }, [branch.name]);
 
   console.log(doctorList);
@@ -747,7 +768,11 @@ const ManageStaff = () => {
                                     <td className="thead">
                                       {item.employee_role}
                                     </td>
-                                    <td className="thead">{item.salary}</td>
+                                    <td className="thead">
+                                      {" "}
+                                      {branchData[0]?.currency_symbol}
+                                      {item.salary}
+                                    </td>
                                     <td className="thead">{item.address}</td>
                                     <td className="thead">
                                       {item.employee_status}

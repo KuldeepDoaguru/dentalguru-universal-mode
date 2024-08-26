@@ -129,6 +129,8 @@ const {
   getCurrencyList,
   getTreatmentDetails,
   getPatientLabTestReport,
+  getRefundAmountData,
+  getRefundOpdAmountData,
 } = require("../controllers/superTreatController");
 // const multer = require("multer");
 const authenticate = require("../middleware/authMiddleware.js");
@@ -485,6 +487,13 @@ router.get(
   "/getPatientLabTestReport/:branch",
   authenticate,
   getPatientLabTestReport
+);
+
+router.get("/getRefundAmountData/:branch", authenticate, getRefundAmountData);
+router.get(
+  "/getRefundOpdAmountData/:branch",
+  authenticate,
+  getRefundOpdAmountData
 );
 
 module.exports = router;

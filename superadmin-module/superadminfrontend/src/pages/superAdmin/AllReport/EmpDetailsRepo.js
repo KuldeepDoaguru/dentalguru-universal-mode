@@ -23,6 +23,30 @@ const EmpDetailsRepo = () => {
   const [doctorList, setDoctorList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [designation, setDesignation] = useState("");
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, [branch.name]);
 
   const getDocDetailsList = async () => {
     setLoading(true);
@@ -243,6 +267,7 @@ const EmpDetailsRepo = () => {
                                             {item.employee_role}
                                           </td>
                                           <td className="thead">
+                                            {branchData[0]?.currency_symbol}
                                             {item.salary}
                                           </td>
                                           <td className="thead">

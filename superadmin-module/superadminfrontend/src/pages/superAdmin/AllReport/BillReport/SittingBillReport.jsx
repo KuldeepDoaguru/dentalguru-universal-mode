@@ -27,6 +27,30 @@ const SittingBillReport = () => {
   const [loading, setLoading] = useState(false);
   const [toDate, setToDate] = useState("");
   const [error, setError] = useState(false);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:4040/api/v1/super-admin/getBranchDetailsByBranch/${branch.name}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, [branch.name]);
 
   const differenceError = () => {
     const from = new Date(fromDate).getTime();
@@ -348,12 +372,18 @@ const SittingBillReport = () => {
                               <td>{item.mobileno}</td>
                               <td>{item.doctor_name}</td>
                               <td className="table-small">
+                                {branchData[0]?.currency_symbol}
                                 {item.sitting_amount}
                               </td>
                               <td className="table-small">
+                                {branchData[0]?.currency_symbol}
                                 {item.paid_amount}
                               </td>
-                              <td>{item.pay_security_amount}</td>
+                              <td>
+                                {" "}
+                                {branchData[0]?.currency_symbol}
+                                {item.pay_security_amount}
+                              </td>
                               <td>
                                 {item.payment_status === "paid"
                                   ? "Paid"
