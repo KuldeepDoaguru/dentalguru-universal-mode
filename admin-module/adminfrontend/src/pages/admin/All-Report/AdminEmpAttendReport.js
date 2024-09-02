@@ -99,7 +99,7 @@ const EmpAttendanceRepo = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getAttendanceDetails/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getAttendanceDetails/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -137,7 +137,7 @@ const EmpAttendanceRepo = () => {
       const toDateFormatted = new Date(toDate).toISOString().split("T")[0];
 
       const { data } = await axios.post(
-        `http://localhost:8888/api/v1/admin/downloadAttendanceReportByTime/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/downloadAttendanceReportByTime/${branch}`,
         { fromDate: fromDateFormatted, toDate: toDateFormatted },
         {
           headers: {

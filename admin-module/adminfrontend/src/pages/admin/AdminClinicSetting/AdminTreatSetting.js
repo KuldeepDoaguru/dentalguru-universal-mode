@@ -71,7 +71,7 @@ const AdminTreatSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/addTreatment",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addTreatment",
         treatData,
         {
           headers: {
@@ -96,7 +96,7 @@ const AdminTreatSetting = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        "http://localhost:8888/api/v1/admin/getTreatmentList",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatmentList",
         {
           headers: {
             "Content-Type": "application/json",
@@ -118,7 +118,7 @@ const AdminTreatSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updateTreatmentDetails/${id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updateTreatmentDetails/${id}`,
         treatData,
         {
           headers: {
@@ -140,7 +140,7 @@ const AdminTreatSetting = () => {
   const deleteTreatment = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8888/api/v1/admin/deleteTreatment/${id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/deleteTreatment/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

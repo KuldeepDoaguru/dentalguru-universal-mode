@@ -12,9 +12,7 @@ import Lottie from "react-lottie";
 const TreatBills = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
-
   const branch = user.branch_name;
-
   const [loading, setLoading] = useState(false);
   const [listBills, setListBills] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -22,6 +20,7 @@ const TreatBills = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [placehold, setPlacehold] = useState([]);
   const [keyword, setkeyword] = useState("");
+  const [branchData, setBranchData] = useState([]);
   // const [currentPage, setCurrentPage] = useState(1);
   // const [itemsPerPage] = useState(10);
 
@@ -43,6 +42,23 @@ const TreatBills = () => {
     payment_date_time: "",
   });
 
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUpData({ ...upData, [name]: value });
@@ -61,7 +77,7 @@ const TreatBills = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatSuggest/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatSuggest/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -83,7 +99,7 @@ const TreatBills = () => {
   const deleteBillData = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8888/api/v1/admin/deleteBills/${id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/deleteBills/${id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -103,7 +119,7 @@ const TreatBills = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getBillBYBillId/${selectedItem}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBillBYBillId/${selectedItem}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -123,7 +139,7 @@ const TreatBills = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updateBillDetailsByBillId/${selectedItem}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updateBillDetailsByBillId/${selectedItem}`,
         upData,
         {
           headers: {
@@ -225,7 +241,7 @@ const TreatBills = () => {
             />
 
             <p className="fw-bold mb-3">
-              Total Treatment Bills : {listBills.length}
+              Total Treatment Bills :{listBills.length}
             </p>
           </div>
 
@@ -239,7 +255,9 @@ const TreatBills = () => {
               <>
                 <div class="table-responsive rounded mt-4">
                   <h4 className="mb-3 mx-3">
-                    Total received amount this month :- {totalBillAmount}/-
+                    Total received amount this month :-{" "}
+                    {branchData[0]?.currency_symbol}
+                    {totalBillAmount}
                   </h4>
                   <table class="table table-bordered rounded shadow mx-3">
                     <thead className="table-head">
@@ -279,9 +297,18 @@ const TreatBills = () => {
                             <td className="table-small">{item.patient_name}</td>
                             <td>{item.patient_mobile}</td>
                             <td>{item.patient_email}</td>
-                            <td className="table-small">{item.total_amount}</td>
-                            <td className="table-small">{item.paid_amount}</td>
-                            <td>{item.pay_by_sec_amt}</td>
+                            <td className="table-small">
+                              {branchData[0]?.currency_symbol}
+                              {item.total_amount}
+                            </td>
+                            <td className="table-small">
+                              {branchData[0]?.currency_symbol}
+                              {item.paid_amount}
+                            </td>
+                            <td>
+                              {branchData[0]?.currency_symbol}
+                              {item.pay_by_sec_amt}
+                            </td>
                             <td>
                               {item.payment_status
                                 ? item.payment_status
@@ -290,6 +317,7 @@ const TreatBills = () => {
                             <td>{item?.payment_date_time}</td>
                             <td>
                               <td>
+                                {branchData[0]?.currency_symbol}
                                 {item.paid_amount + item.pay_by_sec_amt >=
                                 item.total_amount
                                   ? 0

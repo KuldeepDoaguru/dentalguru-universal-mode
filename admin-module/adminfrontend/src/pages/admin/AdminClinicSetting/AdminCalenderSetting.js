@@ -179,7 +179,7 @@ const CalenderSetting = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getBranchDetailsByBranch/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -197,7 +197,7 @@ const CalenderSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updateBranchCalenderSetting/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updateBranchCalenderSetting/${branch}`,
         upData,
         {
           headers: {
@@ -259,7 +259,7 @@ const CalenderSetting = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getHolidays/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getHolidays/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -280,7 +280,7 @@ const CalenderSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/addBlockDays",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addBlockDays",
         holidays,
         {
           headers: {
@@ -312,7 +312,7 @@ const CalenderSetting = () => {
     console.log(selected);
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updateHolidays/${selected.holiday_id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updateHolidays/${selected.holiday_id}`,
         upHolidays,
         {
           headers: {
@@ -340,7 +340,7 @@ const CalenderSetting = () => {
     }
     try {
       const response = await axios.delete(
-        `http://localhost:8888/api/v1/admin/deleteHolidays/${id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/deleteHolidays/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

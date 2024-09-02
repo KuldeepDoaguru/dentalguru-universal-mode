@@ -16,7 +16,7 @@ const LabTest = () => {
   const [labTestList, setLabTestList] = useState([]);
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user.currentUser);
-  const {} = useSelector((state) => state.user);
+  // const {} = useSelector((state) => state.user);
   const [selectedItem, setSelectedItem] = useState([]);
   const branch = user.branch_name;
   const [keyword, setkeyword] = useState("");
@@ -24,6 +24,7 @@ const LabTest = () => {
   const complaintsPerPage = 5; // Number of complaints per page
   const [currentPage, setCurrentPage] = useState(0);
   const [showAddLabTest, setShowAddLabTest] = useState(false); // Start from the first page
+  const [branchData, setBranchData] = useState([]);
   const [upLabTestField, setUpLabTestField] = useState({
     test_name: "",
     test_code: "",
@@ -41,6 +42,23 @@ const LabTest = () => {
     test_date: "",
     test_cost: "",
   });
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   const handleUpLabTestChange = (event) => {
     const { name, value } = event.target;
@@ -86,7 +104,7 @@ const LabTest = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        "http://localhost:8888/api/v1/admin/getLabTest",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabTest",
         {
           headers: {
             "Content-Type": "application/json",
@@ -112,7 +130,7 @@ const LabTest = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updateLabTestDetails/${selectedItem.lab_tid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updateLabTestDetails/${selectedItem.lab_tid}`,
         upLabTestField,
         {
           headers: {
@@ -132,7 +150,7 @@ const LabTest = () => {
   const getListLabDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getLabList/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabList/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -155,7 +173,7 @@ const LabTest = () => {
       const isConfirmed = window.confirm("Are you sure you want to delete?");
       if (isConfirmed) {
         const response = await axios.delete(
-          `http://localhost:8888/api/v1/admin/labTestDelete/${id}`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/labTestDelete/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -219,7 +237,7 @@ const LabTest = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/addLabTest",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addLabTest",
         addLabTestField,
         {
           headers: {
@@ -303,7 +321,10 @@ const LabTest = () => {
                         <td>{item.waiting_days}</td>
                         <td>{item.default_lab}</td>
 
-                        <td>{item.test_cost}</td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.test_cost}
+                        </td>
                         <td>
                           <button
                             className="btn btn-warning text-light"

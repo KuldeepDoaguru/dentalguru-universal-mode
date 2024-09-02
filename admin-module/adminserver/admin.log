@@ -1770,3 +1770,553 @@
 {"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-08-31 20:54:47.366 GMT+5:30"}
 {"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-08-31 20:55:30.416 GMT+5:30"}
 {"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-08-31 20:55:30.448 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:17.787 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:18.042 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 11:00:18.145 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:18.205 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:18.375 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:18.392 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 11:00:18.504 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:18.584 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:23.942 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:23.950 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:28.918 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:28.937 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:34.095 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:34.134 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:38.546 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:38.556 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:00:43.476 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:00:43.486 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:00:47.399 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:00:47.405 GMT+5:30"}
+{"level":"info","message":"Login successful","timestamp":"2024-09-02 11:00:59.633 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:00.140 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:00.158 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 11:01:00.176 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:00.307 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:00.324 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 11:01:00.328 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:00.388 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:00.542 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:05.097 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:05.101 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:10.860 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:10.863 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:15.886 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:15.891 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:20.070 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:20.074 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:28.780 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:28.783 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 11:01:28.827 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:28.919 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:28.949 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 11:01:28.978 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:29.070 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:29.147 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:33.642 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:33.654 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 11:01:38.664 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:38.665 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:52.436 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:01:52.438 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:01:52.486 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:01:52.490 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:07:12.377 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:07:12.613 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:09:15.921 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:09:15.923 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:09:15.944 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:09:15.959 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:14:50.394 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:14:50.397 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:15:26.604 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:15:26.621 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:15:26.631 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:15:26.657 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:15:26.810 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:15:26.838 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:15:38.881 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:15:38.911 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:15:38.915 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:17:43.528 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:17:43.538 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:17:43.568 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:18:07.774 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:18:07.824 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:18:07.860 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:18:07.863 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:18:07.925 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:18:08.036 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:18:16.430 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:18:16.535 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:18:16.549 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:18:33.477 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:18:33.499 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:18:33.529 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:18:41.160 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:18:41.202 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:18:41.205 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:19:52.175 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:19:52.685 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:19:55.517 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:20:10.310 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:21:05.027 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:21:05.808 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:21:09.654 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:22:26.966 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:22:27.010 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:22:27.036 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:22:27.272 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:22:30.569 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:22:30.583 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:22:30.610 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:22:30.615 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:22:30.618 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:22:30.706 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:22:30.714 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:22:30.753 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:24:31.903 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:24:31.911 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:24:31.941 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:24:31.976 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:24:50.916 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:24:50.922 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:24:50.941 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:24:50.945 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:24:50.948 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:24:50.967 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:24:51.005 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:25:18.045 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:25:18.060 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:25:18.394 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:25:18.405 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:25:18.412 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:25:18.438 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:25:18.498 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:26:48.548 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:26:48.556 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:26:48.569 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:26:48.596 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:27:16.930 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:27:16.940 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:27:16.989 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:27:17.036 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:28:10.518 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:10.520 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:28:10.585 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:28:10.625 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:16.496 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:16.530 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:28:16.553 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:28:16.572 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 11:28:16.612 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 11:28:16.616 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:21.697 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:21.712 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:35.367 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:28:35.376 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:28:35.414 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:28:35.423 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:28:35.430 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:28:35.438 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:30:04.892 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:30:04.902 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 11:30:04.910 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:30:28.380 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:30:28.457 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:30:28.466 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:30:28.476 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:30:28.491 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:30:28.498 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:30:28.542 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:30:28.583 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 11:30:28.591 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 11:30:28.607 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 11:30:28.616 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 11:30:28.647 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:30:28.656 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:30:28.699 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:30:28.727 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:30:28.739 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:30:28.759 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:30:28.773 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:30:28.778 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:30:28.799 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 11:30:28.838 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 11:30:28.856 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 11:30:28.903 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 11:30:28.932 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:30:28.979 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:30:28.989 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:30:28.997 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:30:29.007 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:30:29.046 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:30:29.058 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:30:29.070 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:30:29.076 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:30:29.079 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:30:29.091 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:07.842 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:07.858 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:07.889 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:07.897 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:07.981 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:08.001 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:08.015 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 11:38:08.029 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 11:38:08.116 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 11:38:08.131 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:38:08.154 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 11:38:08.224 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:08.249 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:08.265 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:08.338 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:08.429 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:08.433 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:08.444 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:08.454 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 11:38:08.482 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:38:08.519 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 11:38:08.532 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 11:38:08.567 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 11:38:08.581 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:08.607 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:08.625 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:08.639 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:08.646 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:08.663 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:08.696 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:08.715 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:08.718 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:08.724 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:08.727 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:23.365 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:23.375 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:23.382 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:23.395 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:23.464 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:38:23.466 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:23.469 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:23.481 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 11:38:23.492 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 11:38:23.518 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:38:23.561 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 11:38:23.603 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 11:38:23.651 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:23.715 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:23.726 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:23.791 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:38:23.801 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:23.814 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:23.852 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:23.876 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:23.902 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 11:38:23.904 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 11:38:23.935 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 11:38:23.942 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 11:38:23.975 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 11:38:23.983 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:24.009 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:24.015 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:24.045 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:24.048 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:24.063 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:38:24.081 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:38:24.101 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:38:24.107 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:38:24.112 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:38:24.126 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:45:46.873 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:45:46.930 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:45:46.943 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:45:46.950 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:45:46.981 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:45:46.992 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:45:47.000 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:45:47.008 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:45:47.013 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:45:47.055 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:45:47.058 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:45:47.065 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:45:47.071 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:45:47.107 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:45:47.110 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:45:47.112 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:52:35.240 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:52:35.357 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:52:35.370 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:52:35.423 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:52:35.463 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:52:35.508 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:52:35.553 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:52:35.561 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:53:12.900 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 11:53:12.961 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:53:13.022 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:53:13.024 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 11:53:13.039 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 11:53:13.058 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 11:53:13.061 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:53:13.065 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:54:14.898 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:54:14.916 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:54:37.933 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:54:37.946 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:54:37.949 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:54:37.964 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:55:03.909 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:55:03.934 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:55:13.924 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 11:55:13.941 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:55:42.501 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:55:42.537 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:42.548 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:42.570 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:42.596 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:42.627 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:42.644 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:42.705 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:45.556 GMT+5:30"}
+{"level":"info","message":"lab test fetched successfully","timestamp":"2024-09-02 11:55:45.560 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:55:45.609 GMT+5:30"}
+{"level":"info","message":"lab test fetched successfully","timestamp":"2024-09-02 11:55:45.617 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:56:39.945 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:56:39.961 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:56:39.971 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:56:39.987 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:56:40.003 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:56:40.019 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:56:40.036 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:56:40.053 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:57:01.939 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:57:01.956 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:57:01.959 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:57:01.965 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:57:01.982 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:57:02.015 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 11:57:02.020 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 11:57:02.027 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:57:02.041 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 11:57:02.058 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:02:32.130 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:02:32.187 GMT+5:30"}
+{"level":"info","message":"lab test fetched successfully","timestamp":"2024-09-02 12:02:32.190 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:02:32.193 GMT+5:30"}
+{"level":"info","message":"lab test fetched successfully","timestamp":"2024-09-02 12:02:32.224 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:02:32.256 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:02:41.580 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:02:41.627 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:18:51.042 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:18:51.081 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:22:16.959 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:22:16.983 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:22:16.985 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:22:17.002 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:22:32.880 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:22:32.905 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:22:42.390 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:22:42.409 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:24:34.217 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:24:34.250 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:13.258 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:13.305 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:13.774 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:13.824 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:14.433 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:14.477 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:41.285 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:41.306 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:42.348 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:26:42.380 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:27:01.876 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:35.203 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:35.238 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:35.799 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:35.944 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:36.765 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:47.140 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:47.162 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:29:47.167 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:29:47.209 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:49.053 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:49.083 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:49.432 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:49.465 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:49.904 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:49.935 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:50.848 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:29:50.867 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:29:50.874 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:29:50.915 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:05.724 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:05.741 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:06.903 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:06.930 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:36.655 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:38.652 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:30:38.677 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:30:47.536 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:30:47.583 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:32:03.208 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:36:10.906 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:36:10.925 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:36:10.939 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:36:10.962 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:36:25.075 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:36:25.096 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:36:29.557 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:36:29.650 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:36:29.788 GMT+5:30"}
+{"level":"info","message":"employee data fetched successfully","timestamp":"2024-09-02 12:36:29.940 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:32.129 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:32.169 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:32.200 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:32.297 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:37.301 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:37.334 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:40.846 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:40.890 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:40.933 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:36:40.963 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:37:34.911 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:37:34.942 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:37:57.899 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:38:46.194 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:38:46.269 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:38:48.091 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:44:42.126 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:44:42.165 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:49:28.786 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:49:28.803 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:49:28.839 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:49:28.905 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:49:28.952 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:49:28.956 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:49:29.024 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:49:29.121 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:49:34.622 GMT+5:30"}
+{"level":"info","message":"holidays fetched successfully","timestamp":"2024-09-02 12:49:34.730 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:49:34.733 GMT+5:30"}
+{"level":"info","message":"holidays fetched successfully","timestamp":"2024-09-02 12:49:34.766 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:29.277 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:29.318 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:50:29.419 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:29.515 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:29.519 GMT+5:30"}
+{"level":"info","message":"bill data fetched successfully","timestamp":"2024-09-02 12:50:29.570 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:29.646 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:29.698 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:35.014 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:35.020 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:39.983 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:39.985 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:44.997 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:45.000 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:49.982 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:50.000 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:54.963 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:54.969 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:50:59.959 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:50:59.962 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:51:05.030 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:51:05.033 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:51:09.971 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:51:09.977 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:51:14.955 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:51:14.969 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:51:19.921 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:51:19.926 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:51:24.987 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:51:24.990 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:51:29.974 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:51:29.980 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:52:17.955 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:52:17.977 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:53:17.978 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:53:17.991 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:54:17.972 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:54:17.992 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:54:41.905 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:54:41.909 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:54:44.190 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:54:44.198 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:54:49.997 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:54:50.002 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:54:54.976 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:54:54.981 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:54:59.969 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:54:59.972 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:55:04.998 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:05.003 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:55:09.951 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:09.981 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:55:14.961 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:14.963 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:55:19.928 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:19.935 GMT+5:30"}
+{"level":"info","message":"available employee's data fetched successfully","timestamp":"2024-09-02 12:55:24.629 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:24.633 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:30.078 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:30.136 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:30.139 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 12:55:30.148 GMT+5:30"}
+{"level":"info","message":"treatment suggestions fetched successfully","timestamp":"2024-09-02 12:55:30.247 GMT+5:30"}
+{"level":"info","message":"bill details fetched successfully","timestamp":"2024-09-02 12:55:30.249 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:33.933 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 12:55:34.023 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 12:55:34.057 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 12:55:34.084 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 12:55:34.115 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 12:55:34.126 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:34.159 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 12:55:34.168 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 12:55:34.244 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 12:55:34.261 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:55:34.300 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 12:55:34.312 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 12:55:34.334 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 12:55:34.366 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 12:55:34.383 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 12:55:34.404 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 12:55:34.412 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:34.433 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 12:55:34.448 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 12:55:34.475 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 12:55:34.518 GMT+5:30"}
+{"level":"info","message":"patient data fetched successfully","timestamp":"2024-09-02 12:55:34.531 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 12:55:34.535 GMT+5:30"}
+{"level":"info","message":"payment details fetched successfully","timestamp":"2024-09-02 12:55:34.560 GMT+5:30"}
+{"level":"info","message":"patient lab test fetched successfully","timestamp":"2024-09-02 12:55:34.569 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:34.605 GMT+5:30"}
+{"level":"info","message":"patient timeline fetched successfully","timestamp":"2024-09-02 12:55:34.638 GMT+5:30"}
+{"level":"info","message":"treatment fetched successfully","timestamp":"2024-09-02 12:55:34.644 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 12:55:34.650 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 12:55:34.692 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:34.716 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 12:55:34.796 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 12:55:34.802 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 12:55:34.816 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:34.838 GMT+5:30"}
+{"level":"info","message":"Appointment data fetched successfully","timestamp":"2024-09-02 12:55:34.848 GMT+5:30"}
+{"level":"info","message":"examination data fetched successfully","timestamp":"2024-09-02 12:55:34.867 GMT+5:30"}
+{"level":"info","message":"treatment details fetched successfully","timestamp":"2024-09-02 12:55:34.900 GMT+5:30"}
+{"level":"info","message":"prescription data fetched successfully","timestamp":"2024-09-02 12:55:34.904 GMT+5:30"}
+{"level":"info","message":"patient bill fetched successfully ","timestamp":"2024-09-02 12:55:34.908 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 12:55:38.610 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:38.642 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:55:38.658 GMT+5:30"}
+{"level":"info","message":"branch data fetched successfully","timestamp":"2024-09-02 12:55:38.667 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:55:38.693 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:55:38.811 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:55:38.830 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:55:38.855 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:55:38.886 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:55:38.907 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:56:17.474 GMT+5:30"}
+{"level":"info","message":"branch details fetched successfully","timestamp":"2024-09-02 12:56:17.522 GMT+5:30"}
+{"level":"info","message":"lab test fetched successfully","timestamp":"2024-09-02 12:56:17.526 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:56:17.530 GMT+5:30"}
+{"level":"info","message":"lab test fetched successfully","timestamp":"2024-09-02 12:56:17.579 GMT+5:30"}
+{"level":"info","message":"lab list fetched successfully","timestamp":"2024-09-02 12:56:17.582 GMT+5:30"}

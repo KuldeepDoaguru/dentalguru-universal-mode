@@ -17,10 +17,10 @@ const Prescription = () => {
   const getPresDetails = async () => {
     try {
       // const { data } = await axios.get(
-      //   `http://localhost:8888/api/v1/super-admin/getPrescriptionDetailsById/${pid}`
+      //   `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/super-admin/getPrescriptionDetailsById/${pid}`
       // );
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPrescriptionViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPrescriptionViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

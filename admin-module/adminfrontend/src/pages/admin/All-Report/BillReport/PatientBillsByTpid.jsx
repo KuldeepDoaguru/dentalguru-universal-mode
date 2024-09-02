@@ -31,7 +31,7 @@ const PatientBillsByTpid = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getBranchDetailsByBranch/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const PatientBillsByTpid = () => {
   const getPatientDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8888/api/v1/admin/getAppointmentsWithPatientDetailsById/${tpid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getAppointmentsWithPatientDetailsById/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const PatientBillsByTpid = () => {
   const getExaminDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8888/api/v1/admin/getDentalDataByTpid/${tpid}/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getDentalDataByTpid/${tpid}/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -102,7 +102,7 @@ const PatientBillsByTpid = () => {
   const getTreatDetail = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatmentDetailsViaTpid/${tpid}/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatmentDetailsViaTpid/${tpid}/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -127,7 +127,7 @@ const PatientBillsByTpid = () => {
   const getTreatPrescriptionByAppointId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatPrescriptionByTpid/${tpid}/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatPrescriptionByTpid/${tpid}/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -151,7 +151,7 @@ const PatientBillsByTpid = () => {
   const getTreatmentSuggestAppointId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatSuggestViaTpid/${tpid}/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatSuggestViaTpid/${tpid}/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -180,7 +180,7 @@ const PatientBillsByTpid = () => {
   const getBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/billDetailsViaTpid/${tpid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/billDetailsViaTpid/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -211,7 +211,7 @@ const PatientBillsByTpid = () => {
   const getDoctorDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getEmployeeDetails/${branch}/${getTreatData[0]?.dir_rec_doctor_id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getEmployeeDetails/${branch}/${getTreatData[0]?.dir_rec_doctor_id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -324,7 +324,7 @@ const PatientBillsByTpid = () => {
         console.log(key, value);
       }
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/prescriptionOnMail",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -379,7 +379,7 @@ const PatientBillsByTpid = () => {
       }
 
       const res = await axios.post(
-        "http://localhost:8888/api/v1/admin/sendWhatsapp",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/sendWhatsapp",
         formData,
         {
           headers: {
@@ -402,7 +402,7 @@ const PatientBillsByTpid = () => {
   const billDetailsSms = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8888/api/v1/admin/sendSMS",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/sendSMS",
         formDetails,
         {
           headers: {

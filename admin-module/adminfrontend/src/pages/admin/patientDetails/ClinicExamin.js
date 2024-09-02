@@ -18,10 +18,10 @@ const ClinicExamin = () => {
   const getExamineDetails = async () => {
     try {
       // const { data } = await axios.get(
-      //   `http://localhost:8888/api/v1/super-admin/examinDetailsByPatId/${pid}`
+      //   `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/super-admin/examinDetailsByPatId/${pid}`
       // );
       const respsData = await axios.get(
-        `http://localhost:8888/api/v1/admin/getExaminationViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getExaminationViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

@@ -28,14 +28,32 @@ const Overview = () => {
   const [prescpData, setPrescpData] = useState([]);
   const [billData, setBillData] = useState([]);
   const [ongoing, setOngoing] = useState([]);
+  const [branchData, setBranchData] = useState([]);
   console.log(treatData);
   console.log(prescpData);
   console.log(billData);
 
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
+
   const getPresDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPrescriptionDetailsById/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPrescriptionDetailsById/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -52,7 +70,7 @@ const Overview = () => {
   const getPendingBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPatientBillByBranchAndId/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPatientBillByBranchAndId/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -70,7 +88,7 @@ const Overview = () => {
   const getAppointDetailsPat = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getAppointmentByBranchAndId/${branch}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getAppointmentByBranchAndId/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -89,7 +107,7 @@ const Overview = () => {
   const getExamineDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/examinDetailsByPatId/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/examinDetailsByPatId/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -163,7 +181,7 @@ const Overview = () => {
   const fetchLatestDentalPatientData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getExaminationViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getExaminationViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -186,7 +204,7 @@ const Overview = () => {
   const fetchLatestTreatPatientData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatmentViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatmentViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -208,7 +226,7 @@ const Overview = () => {
   const fetchLatestPrescriptionPatientData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPrescriptionViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPrescriptionViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -230,7 +248,7 @@ const Overview = () => {
   const fetchLatestBillPatientData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/v1/admin/get-patientBill-data/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/get-patientBill-data/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -265,7 +283,7 @@ const Overview = () => {
   const onGoingTreat = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/v1/admin/onGoingTreat/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/onGoingTreat/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -310,7 +328,9 @@ const Overview = () => {
             <div className="d-flex justify-content-center align-item-center mt-2 h-100 w-100 shadow rounded">
               <div className="mt-3">
                 <p className="text-center">Payment Pending</p>
-                <h5 className="text-center">INR {total}</h5>
+                <h5 className="text-center">
+                  {branchData[0]?.currency_symbol} {total}
+                </h5>
               </div>
             </div>
           </div>
@@ -398,8 +418,14 @@ const Overview = () => {
                       <>
                         <tr>
                           <td>{item.bill_date?.split("T")[0]}</td>
-                          <td>{item.total_amount}</td>
-                          <td>{item.paid_amount}</td>
+                          <td>
+                            {branchData[0]?.currency_symbol}
+                            {item.total_amount}
+                          </td>
+                          <td>
+                            {branchData[0]?.currency_symbol}
+                            {item.paid_amount}
+                          </td>
                           <td>{item.payment_status}</td>
                         </tr>
                       </>

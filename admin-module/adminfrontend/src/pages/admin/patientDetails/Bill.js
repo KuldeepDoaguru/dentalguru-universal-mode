@@ -12,13 +12,30 @@ const Bill = () => {
   console.log(`User Name: ${user.name}, User ID: ${user.id}`);
   console.log("User State:", user);
   const branch = user.branch_name;
-
+  const [branchData, setBranchData] = useState([]);
   const [billData, setBillData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   const getBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/get-patientBill-data/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/get-patientBill-data/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -69,9 +86,18 @@ const Bill = () => {
                         <td>{item?.bill_date?.split("T")[0]}</td>
                         <td>{item.bill_id}</td>
                         <td>{item.assigned_doctor_name}</td>
-                        <td>{item.total_amount}</td>
-                        <td>{item.paid_amount}</td>
-                        <td>{item.pay_by_sec_amt}</td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.total_amount}
+                        </td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.paid_amount}
+                        </td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.pay_by_sec_amt}
+                        </td>
                         <td>{item.payment_mode}</td>
                         <td>{item.payment_date_time?.split("T")[0]}</td>
                         <td>{item.payment_status}</td>

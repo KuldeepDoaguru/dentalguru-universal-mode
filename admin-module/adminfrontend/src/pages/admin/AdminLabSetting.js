@@ -20,7 +20,7 @@ const AdminLabSetting = () => {
   const user = useSelector((state) => state.user.currentUser);
 
   const branch = user.branch_name;
-
+  const [branchData, setBranchData] = useState([]);
   const [showAddLabTest, setShowAddLabTest] = useState(false);
   const [showAddLabTask, setShowAddLabTask] = useState(false);
   const [addLabField, setAddLabField] = useState({
@@ -41,6 +41,23 @@ const AdminLabSetting = () => {
     test_date: "",
     test_cost: "",
   });
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   const handleAddLabChange = (event) => {
     const { name, value } = event.target;
@@ -90,7 +107,7 @@ const AdminLabSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/addLab",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addLab",
         addLabField,
         {
           headers: {
@@ -111,7 +128,7 @@ const AdminLabSetting = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/addLabTest",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addLabTest",
         addLabTestField,
         {
           headers: {
@@ -140,7 +157,7 @@ const AdminLabSetting = () => {
   const getListLabDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getLabList/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabList/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",

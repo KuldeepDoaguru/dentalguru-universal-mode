@@ -17,13 +17,31 @@ const LabBills = () => {
   const [loading, setLoading] = useState(false);
   const [keyword, setkeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   useEffect(() => {
     const getAppointList = async () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:8888/api/v1/admin/getLabData/${branch}`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabData/${branch}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -127,7 +145,9 @@ const LabBills = () => {
               <>
                 <div class="table-responsive rounded mt-4">
                   <h4 className="mb-3">
-                    Total received amount this month :- {totalBillAmount}/-
+                    Total received amount this month :-{" "}
+                    {branchData[0]?.currency_symbol}
+                    {totalBillAmount}
                   </h4>
                   <table class="table table-bordered rounded shadow">
                     <thead className="table-head">
@@ -165,7 +185,10 @@ const LabBills = () => {
                             <td className="table-small">{item.patient_name}</td>
                             <td className="table-small">{item.test}</td>
                             {/* <td className="table-small">{item.cost}</td> */}
-                            <td className="table-small">{item.payment}</td>
+                            <td className="table-small">
+                              {branchData[0]?.currency_symbol}
+                              {item.payment}
+                            </td>
                             <td>{item.payment_status}</td>
                             <td>{item?.created_date?.split(" ")[0]}</td>
 

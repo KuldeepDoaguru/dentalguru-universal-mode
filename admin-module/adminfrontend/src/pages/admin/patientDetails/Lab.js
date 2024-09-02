@@ -14,7 +14,7 @@ const Lab = () => {
   const getLabTest = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPatientLabTestByPatientId/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPatientLabTestByPatientId/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

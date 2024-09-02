@@ -19,12 +19,30 @@ const TreatBillReport = () => {
   const [fromDate, setFromDate] = useState("");
   const [loading, setLoading] = useState(false);
   const [toDate, setToDate] = useState("");
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   const getBillDetailsList = async () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getBillsByBranch/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBillsByBranch/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -200,9 +218,11 @@ const TreatBillReport = () => {
                                     </td>
                                     <td>{item.patient_mobile}</td>
                                     <td className="table-small">
+                                      {branchData[0]?.currency_symbol}
                                       {item.total_amount}
                                     </td>
                                     <td className="table-small">
+                                      {branchData[0]?.currency_symbol}
                                       {item.paid_amount}
                                     </td>
                                     <td>{item.payment_status}</td>
@@ -249,9 +269,11 @@ const TreatBillReport = () => {
                                     </td>
                                     <td>{item.patient_mobile}</td>
                                     <td className="table-small">
+                                      {branchData[0]?.currency_symbol}
                                       {item.total_amount}
                                     </td>
                                     <td className="table-small">
+                                      {branchData[0]?.currency_symbol}
                                       {item.paid_amount}
                                     </td>
                                     <td>{item.payment_status}</td>

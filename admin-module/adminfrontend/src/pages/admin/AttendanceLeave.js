@@ -36,7 +36,7 @@ const AttendanceLeave = () => {
   const getAttendance = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/v1/admin/getAttendancebyempId/${branch}/${employeeId}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getAttendancebyempId/${branch}/${employeeId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const AttendanceLeave = () => {
   const getLeaves = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/v1/admin/get-leaves/${branch}/${employeeId}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/get-leaves/${branch}/${employeeId}`,
         {
           headers: {
             "Content-Type": "application/json",

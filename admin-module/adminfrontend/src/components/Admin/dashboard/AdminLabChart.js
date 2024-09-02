@@ -42,7 +42,7 @@ const AdminLabChart = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:8888/api/v1/admin/getLabData/${branch}`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabData/${branch}`,
           {
             headers: {
               "Content-Type": "application/json",

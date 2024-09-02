@@ -275,7 +275,7 @@ const AdminManageStaff = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getEmployeeDataByBranch/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getEmployeeDataByBranch/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -359,7 +359,7 @@ const AdminManageStaff = () => {
       console.log(inEmpData, empProfilePicture);
 
       const { data } = await axios.post(
-        "http://localhost:8888/api/v1/admin/enroll-employee",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/enroll-employee",
         formData,
         {
           headers: {
@@ -413,7 +413,7 @@ const AdminManageStaff = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `http://localhost:8888/api/v1/admin/addSuperAdminNotify`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addSuperAdminNotify`,
         {
           branch_name: branch,
           title: "New Employee Registered",

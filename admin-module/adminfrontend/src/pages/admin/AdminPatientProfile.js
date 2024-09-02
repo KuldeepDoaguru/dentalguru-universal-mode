@@ -14,15 +14,34 @@ const AdminPatientProfile = () => {
   const { pid } = useParams();
   const user = useSelector((state) => state.user.currentUser);
   console.log(user);
+  const branch = user.branch_name;
   const [patientData, setPatientData] = useState([]);
   const [ongoingTreat, setOngoingTreat] = useState([]);
+  const [branchData, setBranchData] = useState([]);
   const goBack = () => {
     window.history.go(-1);
   };
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
   const patientProfileData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPatientDataByBranchAndId/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPatientDataByBranchAndId/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -40,7 +59,7 @@ const AdminPatientProfile = () => {
   const getOngoingTreat = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPatientBillByBranchAndId/${user.branch_name}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPatientBillByBranchAndId/${user.branch_name}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

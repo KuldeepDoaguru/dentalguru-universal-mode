@@ -65,7 +65,7 @@ const Lab = () => {
     setLoading(true);
     try {
       const data = await axios.get(
-        `http://localhost:8888/api/v1/admin/getLabList/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabList/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const Lab = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updateLabDetails/${selectedItem.lab_id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updateLabDetails/${selectedItem.lab_id}`,
         upLabField,
         {
           headers: {
@@ -121,7 +121,7 @@ const Lab = () => {
       const isConfirmed = window.confirm("Are you sure you want to delete?");
       if (isConfirmed) {
         const response = await axios.delete(
-          `http://localhost:8888/api/v1/admin/labDelete/${id}`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/labDelete/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const Lab = () => {
   const getBranchList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8888/api/v1/admin/getBranch"
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranch"
       );
       console.log(response.data);
       setBranchList(response.data);

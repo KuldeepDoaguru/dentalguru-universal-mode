@@ -29,7 +29,7 @@ const ViewPrescription = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getBranchDetailsByBranch/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const ViewPrescription = () => {
   const getPatientDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8888/api/v1/admin/getAppointmentsWithPatientDetailsById/${tpid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getAppointmentsWithPatientDetailsById/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const ViewPrescription = () => {
   const getLabAllData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8888/api/v1/admin/getLabDetails/${tpid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabDetails/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const ViewPrescription = () => {
   const getTreatDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatmentDataList/${tpid}/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatmentDataList/${tpid}/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -116,7 +116,7 @@ const ViewPrescription = () => {
   const getExaminDetail = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8888/api/v1/admin/getDentalDataByTpid/${tpid}/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getDentalDataByTpid/${tpid}/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -152,7 +152,7 @@ const ViewPrescription = () => {
   const getTreatPrescriptionByAppointId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getTreatPrescriptionByAppointIdList/${tpid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getTreatPrescriptionByAppointIdList/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -175,7 +175,7 @@ const ViewPrescription = () => {
 
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getEmployeeDetails/${user.branch_name}/${getPatientData[0]?.doctor_id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getEmployeeDetails/${user.branch_name}/${getPatientData[0]?.doctor_id}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -253,7 +253,7 @@ const ViewPrescription = () => {
         console.log(key, value);
       }
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/prescriptionOnMail",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -306,7 +306,7 @@ const ViewPrescription = () => {
         console.log(key, value);
       }
       const res = await axios.post(
-        "http://localhost:8888/api/v1/admin/sendWhatsapp",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/sendWhatsapp",
         formData,
         {
           headers: {
@@ -509,8 +509,12 @@ const ViewPrescription = () => {
                             <td>{item.treatment_name}</td>
                             <td>{item.selected_teeth}</td>
                             <td>{item?.selected_teeth?.split(", ").length}</td>
-                            <td>{item.totalCost}</td>
                             <td>
+                              {getBranch[0]?.currency_symbol}
+                              {item.totalCost}
+                            </td>
+                            <td>
+                              {getBranch[0]?.currency_symbol}
                               {item.totalCost *
                                 item?.selected_teeth?.split(", ").length}
                             </td>

@@ -13,17 +13,36 @@ const SittingBill = () => {
   const user = useSelector((state) => state.user.currentUser);
   const [loading, setLoading] = useState(false);
   console.log(user);
+  const branch = user.branch_name;
   const [appointmentList, setAppointmentList] = useState([]);
   const [doctor, setDoctor] = useState("");
   const [keyword, setkeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   useEffect(() => {
     const getAppointList = async () => {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `http://localhost:8888/api/v1/admin/getSittingBill/${user.branch_name}`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getSittingBill/${user.branch_name}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -174,7 +193,10 @@ const SittingBill = () => {
           </div>
 
           <div>
-            <h4>Total OPD amount this month :- {totalOpdAmount}/-</h4>
+            <h4>
+              Total OPD amount this month :- {branchData[0]?.currency_symbol}
+              {totalOpdAmount}
+            </h4>
           </div>
         </div>
 
@@ -228,6 +250,7 @@ const SittingBill = () => {
                             <td>{item.doctor_name}</td>
                             <td>{item.treatment}</td>
                             <td className="table-small">
+                              {branchData[0]?.currency_symbol}
                               {item.sitting_amount}
                             </td>
                             <td>

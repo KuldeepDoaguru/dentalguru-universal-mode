@@ -19,6 +19,7 @@ const ViewSittingBill = () => {
   const navigate = useNavigate();
   const [getPatientData, setGetPatientData] = useState([]);
   const user = useSelector((state) => state.user.currentUser);
+  const branch = user.branch_name;
   const [getExaminData, setGetExaminData] = useState([]);
   const [getTreatData, setGetTreatData] = useState([]);
   const [getTreatMedicine, setGetTreatMedicine] = useState([]);
@@ -31,7 +32,7 @@ const ViewSittingBill = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getBranchDetailsByBranch/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +53,7 @@ const ViewSittingBill = () => {
   const getPatientDetail = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPatientDataByBranchAndId/${uhid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPatientDataByBranchAndId/${uhid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -71,7 +72,7 @@ const ViewSittingBill = () => {
   const getLabAllData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getLabDetails/${tpid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getLabDetails/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -89,7 +90,7 @@ const ViewSittingBill = () => {
   const getSittingBillbyId = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getSittingBillbyId/${user.branch_name}/${sitting}/${tpid}/${treatment}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getSittingBillbyId/${user.branch_name}/${sitting}/${tpid}/${treatment}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -108,7 +109,7 @@ const ViewSittingBill = () => {
   const getDoctorDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getEmployeeDetails/${user.branch_name}/${sittingBill[0]?.doctor_id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getEmployeeDetails/${user.branch_name}/${sittingBill[0]?.doctor_id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -127,7 +128,7 @@ const ViewSittingBill = () => {
   const getExamineDetails = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8888/api/v1/admin/getDentalDataByTpid/${tpid}/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getDentalDataByTpid/${tpid}/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -226,7 +227,7 @@ const ViewSittingBill = () => {
         console.log(key, value);
       }
       const response = await axios.post(
-        "http://localhost:8888/api/v1/admin/prescriptionOnMail",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -281,7 +282,7 @@ const ViewSittingBill = () => {
       }
 
       const res = await axios.post(
-        "http://localhost:8888/api/v1/admin/sendWhatsapp",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/sendWhatsapp",
         formData,
         {
           headers: {
@@ -303,7 +304,7 @@ const ViewSittingBill = () => {
   const billDetailsSms = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8888/api/v1/admin/sendSMS",
+        "https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/sendSMS",
         formDetails,
         {
           headers: {
@@ -505,13 +506,26 @@ const ViewSittingBill = () => {
                         <td>{item.treatment}</td>
                         <td>{item.teeth_number}</td>
                         <td>{item.teeth_qty}</td>
-                        <td>{item.treatment_cost}</td>
-                        <td>{item.cost_per_qty}</td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.treatment_cost}
+                        </td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.cost_per_qty}
+                        </td>
                         <td>{item.discount}%</td>
-                        <td>{item.final_cost}</td>
-                        <td>{item.sitting_amount}</td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.final_cost}
+                        </td>
+                        <td>
+                          {getBranch[0]?.currency_symbol}
+                          {item.sitting_amount}
+                        </td>
                         <td>
                           {" "}
+                          {getBranch[0]?.currency_symbol}
                           {item.payment_status === "Pending"
                             ? 0
                             : item.paid_amount === null
@@ -653,6 +667,7 @@ const ViewSittingBill = () => {
                           Total Amount Recieved:
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
+                          {getBranch[0]?.currency_symbol}
                           {sittingBill[0]?.payment_status === "Credit"
                             ? sittingBill[0]?.final_cost
                             : sittingBill[0]?.paid_amount}

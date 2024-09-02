@@ -20,7 +20,7 @@ const PendingTest = () => {
     const fetchPatientDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8888/api/v1/admin/getPatientLabTest`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPatientLabTest`,
           {
             headers: {
               "Content-Type": "multipart/form-data",

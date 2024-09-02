@@ -28,7 +28,7 @@ const PrescriptionList = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPrescriptionList/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPrescriptionList/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

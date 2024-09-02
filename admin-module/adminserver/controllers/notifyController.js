@@ -17,14 +17,20 @@ const getNotifyList = (req, res) => {
     const selectQuery = "SELECT * FROM appointment_notification";
     db.query(selectQuery, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to fetch notification list");
+        logger.registrationLogger.log(
+          "error",
+          "failed to fetch notification list"
+        );
         res.status(400).json({ success: false, message: err.message });
       }
-      logger.registrationLogger.log("info", "failed to fetch notification list");
+      logger.registrationLogger.log(
+        "info",
+        "failed to fetch notification list"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -38,11 +44,17 @@ const addNotifyCommunication = (req, res) => {
       "SELECT * FROM appointment_notification WHERE notification_tag = ?";
     db.query(selectQuery, notification_tag, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to add notification communication");
+        logger.registrationLogger.log(
+          "error",
+          "failed to add notification communication"
+        );
         res.status(400).json({ success: false, message: err.message });
       }
       if (result && result.length > 0) {
-          logger.registrationLogger.log("error", "this notification already exists");
+        logger.registrationLogger.log(
+          "error",
+          "this notification already exists"
+        );
         return res.status(400).send("this notification already exists");
       } else {
         const insertQuery =
@@ -52,19 +64,25 @@ const addNotifyCommunication = (req, res) => {
           [notification_tag, notification_msg, sms, email, whatsapp],
           (err, result) => {
             if (err) {
-                logger.registrationLogger.log("error", "failed to add notification");
+              logger.registrationLogger.log(
+                "error",
+                "failed to add notification"
+              );
               return res
                 .status(400)
                 .json({ success: false, message: err.message });
             }
-            logger.registrationLogger.log("info", "notification added successfully");
+            logger.registrationLogger.log(
+              "info",
+              "notification added successfully"
+            );
             return res.status(200).send(result);
           }
         );
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -79,7 +97,7 @@ const updateNotifyTagsDetails = (req, res) => {
       "SELECT * FROM appointment_notification WHERE notify_id = ?";
     db.query(selectQuery, ntid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid notification ID");
+        logger.registrationLogger.log("error", "invalid notification ID");
         res.status(500).json({ success: false, message: err.message });
       }
       if (result && result.length > 0) {
@@ -117,13 +135,16 @@ const updateNotifyTagsDetails = (req, res) => {
 
         db.query(updateQuery, [...updateValues, ntid], (err, result) => {
           if (err) {
-              logger.registrationLogger.log("error", "failed to update details");
+            logger.registrationLogger.log("error", "failed to update details");
             return res.status(500).json({
               success: false,
               message: "Failed to update details",
             });
           } else {
-              logger.registrationLogger.log("info", "notification tag details updated successfully");
+            logger.registrationLogger.log(
+              "info",
+              "notification tag details updated successfully"
+            );
             return res.status(200).json({
               success: true,
               message: "Notification Tags Details updated successfully",
@@ -131,7 +152,7 @@ const updateNotifyTagsDetails = (req, res) => {
           }
         });
       } else {
-          logger.registrationLogger.log("error", "notification ID not found");
+        logger.registrationLogger.log("error", "notification ID not found");
         return res.status(404).json({
           success: false,
           message: "ID not found",
@@ -139,7 +160,7 @@ const updateNotifyTagsDetails = (req, res) => {
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -152,14 +173,17 @@ const deleteNotifyTags = (req, res) => {
       "DELETE FROM appointment_notification WHERE notify_id = ?";
     db.query(deleteQuery, ntid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid notification ID");
+        logger.registrationLogger.log("error", "invalid notification ID");
         res.status(400).json({ success: false, message: err.message });
       }
-      logger.registrationLogger.log("info", "notification tags deleted successfully");
+      logger.registrationLogger.log(
+        "info",
+        "notification tags deleted successfully"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -172,14 +196,17 @@ const getPrescription = (req, res) => {
       "SELECT * FROM clinic_prescription WHERE branch_name = ?";
     db.query(selectQuery, branch, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid branch");
+        logger.registrationLogger.log("error", "invalid branch");
         res.status(400).json({ success: false, message: err.message });
       }
-      logger.registrationLogger.log("info", "prescription fetched successfully");
+      logger.registrationLogger.log(
+        "info",
+        "prescription fetched successfully"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -193,11 +220,11 @@ const addPrescription = (req, res) => {
       "SELECT * FROM clinic_prescription WHERE medicine_name = ?";
     db.query(selectQuery, medicine_name, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid medicine name");
+        logger.registrationLogger.log("error", "invalid medicine name");
         return res.status(400).json({ success: false, message: err.message });
       }
       if (result && result.length > 0) {
-          logger.registrationLogger.log("error", "medicine already exists");
+        logger.registrationLogger.log("error", "medicine already exists");
         return res.status(400).send("medicine already exists");
       } else {
         const insertQuery =
@@ -207,19 +234,22 @@ const addPrescription = (req, res) => {
           [branch, medicine_name, dosage, frequency, duration, notes],
           (err, result) => {
             if (err) {
-                logger.registrationLogger.log("error", "failed to add medicine");
+              logger.registrationLogger.log("error", "failed to add medicine");
               return res
                 .status(400)
                 .json({ success: false, message: err.message });
             }
-            logger.registrationLogger.log("info", "medicine added successfully");
+            logger.registrationLogger.log(
+              "info",
+              "medicine added successfully"
+            );
             return res.status(200).send(result);
           }
         );
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -232,14 +262,17 @@ const getPrescriptionById = (req, res) => {
     const selectQuery = "SELECT * FROM clinic_prescription WHERE pr_id = ?";
     db.query(selectQuery, prid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid prescription ID");
+        logger.registrationLogger.log("error", "invalid prescription ID");
         res.status(400).json({ success: false, message: err.message });
       }
-      logger.registrationLogger.log("info", "prescription data fetched successfully");
+      logger.registrationLogger.log(
+        "info",
+        "prescription data fetched successfully"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "Internal server error");
+    logger.registrationLogger.log("error", "Internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -252,7 +285,7 @@ const updatePrescriptionDetails = (req, res) => {
     const selectQuery = "SELECT * FROM clinic_prescription WHERE pr_id = ?";
     db.query(selectQuery, prid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid prescription data");
+        logger.registrationLogger.log("error", "invalid prescription data");
         res.status(500).json({ success: false, message: err.message });
       }
       if (result && result.length > 0) {
@@ -290,13 +323,16 @@ const updatePrescriptionDetails = (req, res) => {
 
         db.query(updateQuery, [...updateValues, prid], (err, result) => {
           if (err) {
-              logger.registrationLogger.log("error", "failed to update details");
+            logger.registrationLogger.log("error", "failed to update details");
             return res.status(500).json({
               success: false,
               message: "Failed to update details",
             });
           } else {
-              logger.registrationLogger.log("info", "Prescription details updated successfully");
+            logger.registrationLogger.log(
+              "info",
+              "Prescription details updated successfully"
+            );
             return res.status(200).json({
               success: true,
               message: "Prescription Details updated successfully",
@@ -304,7 +340,7 @@ const updatePrescriptionDetails = (req, res) => {
           }
         });
       } else {
-          logger.registrationLogger.log("error", "prescription ID not found");
+        logger.registrationLogger.log("error", "prescription ID not found");
         return res.status(404).json({
           success: false,
           message: "Prescription ID not found",
@@ -312,7 +348,7 @@ const updatePrescriptionDetails = (req, res) => {
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -324,16 +360,19 @@ const deletePrescription = (req, res) => {
     const deleteQuery = "DELETE FROM clinic_prescription WHERE pr_id = ?";
     db.query(deleteQuery, prid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid prescription ID");
+        logger.registrationLogger.log("error", "invalid prescription ID");
         return res.status(400).json({ success: false, message: err.message });
       }
-      logger.registrationLogger.log("info", "prescription deleted successfully");
+      logger.registrationLogger.log(
+        "info",
+        "prescription deleted successfully"
+      );
       return res
         .status(200)
         .json({ success: true, message: "prescription deleted successfully" });
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     return res.status(500).json({ success: false, message: error.message });
   }
@@ -344,18 +383,19 @@ const addTreatment = (req, res) => {
     const { treatName, treatCost, treatDiscount } = req.body;
     const requiredFields = [treatName, treatCost, treatDiscount];
     if (requiredFields.some((field) => !field)) {
-        logger.registrationLogger.log("error", "All field are required");
+      logger.registrationLogger.log("error", "All field are required");
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    const selectQuery = "SELECT * FROM treatment_list_copy WHERE treatment_name = ?";
+    const selectQuery =
+      "SELECT * FROM treatment_list_copy WHERE treatment_name = ?";
     db.query(selectQuery, [treatName], (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid treatment name");
+        logger.registrationLogger.log("error", "invalid treatment name");
         return res.status(500).json({ success: false, error: err.message });
       }
       if (result.length > 0) {
-          logger.registrationLogger.log("error", "treatment already exists");
+        logger.registrationLogger.log("error", "treatment already exists");
         return res.status(400).send("Treatment already exists");
       }
 
@@ -364,7 +404,10 @@ const addTreatment = (req, res) => {
 
       db.query(insertQuery, insertUserParams, (errInsert, resultInsert) => {
         if (errInsert) {
-            logger.registrationLogger.log("error", "an error occured while inserting treatment");
+          logger.registrationLogger.log(
+            "error",
+            "an error occured while inserting treatment"
+          );
           return res.status(500).json({
             success: false,
             message: "Error while inserting treatment",
@@ -378,7 +421,7 @@ const addTreatment = (req, res) => {
       });
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.error(error);
     res.status(500).json({ success: false, message: "Internal server error" });
   }
@@ -389,15 +432,18 @@ const getTreatmentList = (req, res) => {
     const getQuery = "SELECT * FROM treatment_list_copy";
     db.query(getQuery, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to fetch treatments");
+        logger.registrationLogger.log("error", "failed to fetch treatments");
         res.status(400).send(err.message);
       } else {
-          logger.registrationLogger.log("info", "treatments fetched successfully");
+        logger.registrationLogger.log(
+          "info",
+          "treatments fetched successfully"
+        );
         res.status(200).send(result);
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: "Internal server error" });
   }
@@ -408,10 +454,11 @@ const updateTreatmentDetails = (req, res) => {
     const treatID = req.params.id;
     const { treatName, treatCost, treatDiscount } = req.body;
 
-    const selectQuery = "SELECT * FROM treatment_list_copy WHERE treatment_id = ?";
+    const selectQuery =
+      "SELECT * FROM treatment_list_copy WHERE treatment_id = ?";
     db.query(selectQuery, [treatID], (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid treatment ID");
+        logger.registrationLogger.log("error", "invalid treatment ID");
         res.status(400).send(err);
       } else {
         if (result && result.length > 0) {
@@ -439,19 +486,26 @@ const updateTreatmentDetails = (req, res) => {
 
           db.query(updateQuery, [...updateValues, treatID], (err, result) => {
             if (err) {
-                logger.registrationLogger.log("error", "failed to update details");
+              logger.registrationLogger.log(
+                "error",
+                "failed to update details"
+              );
               return res
                 .status(500)
                 .json({ success: false, message: "failed to update details" });
             } else {
-                logger.registrationLogger.log("info", "treatment details updated successfully");
+              logger.registrationLogger.log(
+                "info",
+                "treatment details updated successfully"
+              );
               return res.status(200).json({
                 success: true,
                 message: "Details updated successfully",
               });
             }
           });
-        } else {logger.registrationLogger.log("error", "treatment not found");
+        } else {
+          logger.registrationLogger.log("error", "treatment not found");
           return res
             .status(404)
             .json({ success: false, message: "treatment not found" });
@@ -459,7 +513,7 @@ const updateTreatmentDetails = (req, res) => {
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: "Internal server error" });
   }
@@ -468,10 +522,11 @@ const updateTreatmentDetails = (req, res) => {
 const deleteTreatment = (req, res) => {
   try {
     const tid = req.params.tid;
-    const deleteQuery = "DELETE FROM treatment_list_copy WHERE treatment_id = ?";
+    const deleteQuery =
+      "DELETE FROM treatment_list_copy WHERE treatment_id = ?";
     db.query(deleteQuery, tid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid treatment ID");
+        logger.registrationLogger.log("error", "invalid treatment ID");
         return res.status(400).json({ success: false, message: err.message });
       }
       logger.registrationLogger.log("info", "treatment deleted successfully");
@@ -480,7 +535,7 @@ const deleteTreatment = (req, res) => {
         .json({ success: true, message: "Treatment deleted successfully" });
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     return res.status(500).json({ success: false, message: error.message });
   }
@@ -525,7 +580,7 @@ const markRead = (req, res) => {
     const selectQuery = "SELECT * FROM employee_timeline WHERE event_id = ?";
     db.query(selectQuery, snid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid event ID");
+        logger.registrationLogger.log("error", "invalid event ID");
         res.status(400).json({ success: false, message: err.message });
       }
       if (result && result.length > 0) {
@@ -533,14 +588,14 @@ const markRead = (req, res) => {
           "UPDATE employee_timeline SET status=? WHERE event_id = ?";
         db.query(updateQuery, [read, snid], (err, result) => {
           if (err) {
-              logger.registrationLogger.log("error", "invalid event ID");
+            logger.registrationLogger.log("error", "invalid event ID");
             res.status(400).json({ success: false, message: err.message });
           }
           logger.registrationLogger.log("info", "notification marked as read");
           res.status(200).send(result);
         });
       } else {
-          logger.registrationLogger.log("error", "event ID not found");
+        logger.registrationLogger.log("error", "event ID not found");
         return res.status(404).json({
           success: false,
           message: "ID not found",
@@ -548,7 +603,7 @@ const markRead = (req, res) => {
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
@@ -561,14 +616,17 @@ const getEmployeeDataByBranchAndId = (req, res) => {
     const getQuery = `SELECT * FROM employee_register WHERE branch_name = ? AND employee_ID = ?`;
     db.query(getQuery, [branch, empId], (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid employee ID");
+        logger.registrationLogger.log("error", "invalid employee ID");
         res.status(400).send({ message: "error in fetching employee" });
       }
-      logger.registrationLogger.log("info", "employee details fetched successful");
+      logger.registrationLogger.log(
+        "info",
+        "employee details fetched successful"
+      );
       res.json(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({
       success: false,
@@ -587,7 +645,10 @@ const addSuperAdminNotify = (req, res) => {
       [title, branch, event_msg, open, status],
       (err, result) => {
         if (err) {
-            logger.registrationLogger.log("error", "failed to insert employee timeline");
+          logger.registrationLogger.log(
+            "error",
+            "failed to insert employee timeline"
+          );
           res.status(400).json({ success: false, message: err.message });
         }
         logger.registrationLogger.log("info", "notificatio added successfully");
@@ -595,32 +656,34 @@ const addSuperAdminNotify = (req, res) => {
       }
     );
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
-
 const getTreatSuggest = (req, res) => {
   try {
     const branch = req.params.branch;
-    const selectQuery = "SELECT * FROM patient_bills WHERE branch_name = ? ORDER BY bill_id DESC";
+    const selectQuery =
+      "SELECT * FROM patient_bills WHERE branch_name = ? ORDER BY bill_id DESC";
     db.query(selectQuery, branch, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid branch");
+        logger.registrationLogger.log("error", "invalid branch");
         res.status(400).json({ success: false, message: err.message });
       }
-      logger.registrationLogger.log("info", "treatment suggestions fetched successfully");
+      logger.registrationLogger.log(
+        "info",
+        "treatment suggestions fetched successfully"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
-
 
 const getTreatmentViaUhid = (req, res) => {
   const branch = req.params.branch;
@@ -631,16 +694,19 @@ const getTreatmentViaUhid = (req, res) => {
 
     db.query(sql, [branch, uhid], (err, results) => {
       if (err) {
-          logger.registrationLogger.log("error", "error fetching treatment");
+        logger.registrationLogger.log("error", "error fetching treatment");
         console.error("Error fetching Treatment from MySql:", err);
         res.status(500).json({ error: "Error fetching Treatment" });
       } else {
-          logger.registrationLogger.log("info", "treatment details fetched successfully");
+        logger.registrationLogger.log(
+          "info",
+          "treatment details fetched successfully"
+        );
         res.status(200).send(results);
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.error("Error fetching Treatment from MySql:", error);
     res.status(500).json({
       success: false,
@@ -657,18 +723,21 @@ const getPatientBillUHID = (req, res) => {
 
   db.query(sql, [patientUHID], (err, result) => {
     if (err) {
-        logger.registrationLogger.log("error", "invalid patient uhid");
+      logger.registrationLogger.log("error", "invalid patient uhid");
       console.error("Error retrieving data: ", err);
       res.status(500).send("Error retrieving data: " + err.message);
       return;
     }
 
     if (result.length === 0) {
-        logger.registrationLogger.log("error", "no data found for give patient uhid");
+      logger.registrationLogger.log(
+        "error",
+        "no data found for give patient uhid"
+      );
       res.status(404).send("No data found for Patient UHID: " + patientUHID);
       return;
     }
-        logger.registrationLogger.log("info", "patient bill fetched successfully ");
+    logger.registrationLogger.log("info", "patient bill fetched successfully ");
     res.status(200).json(result); // Return the result
   });
 };
@@ -682,16 +751,19 @@ const getExaminationViaUhid = (req, res) => {
 
     db.query(sql, [branch, uhid], (err, results) => {
       if (err) {
-          logger.registrationLogger.log("error", "error fetching examination");
+        logger.registrationLogger.log("error", "error fetching examination");
         console.error("Error fetching Examination from MySql:", err);
         res.status(500).json({ error: "Error fetching Examination" });
       } else {
-          logger.registrationLogger.log("info", "examination data fetched successfully");
+        logger.registrationLogger.log(
+          "info",
+          "examination data fetched successfully"
+        );
         res.status(200).send(results);
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.error("Error fetching Examination from MySql:", error);
     res.status(500).json({
       success: false,
@@ -710,16 +782,19 @@ const getPrescriptionViaUhid = (req, res) => {
 
     db.query(sql, [branch, uhid], (err, results) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid patient uhid");
+        logger.registrationLogger.log("error", "invalid patient uhid");
         console.error("Error fetching Prescription from MySql:", err);
         res.status(500).json({ error: "Error fetching Prescription" });
       } else {
-          logger.registrationLogger.log("info", "prescription data fetched successfully");
+        logger.registrationLogger.log(
+          "info",
+          "prescription data fetched successfully"
+        );
         res.status(200).send(results);
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.error("Error fetching Prescription from MySql:", error);
     res.status(500).json({
       success: false,
@@ -730,20 +805,24 @@ const getPrescriptionViaUhid = (req, res) => {
 };
 
 const getLeaveList = (req, res) => {
-    const branch = req.params.branch;
+  const branch = req.params.branch;
   try {
-    const selectQuery = "SELECT * FROM employee_leave WHERE branch_name = ? ORDER BY created_at DESC";
+    const selectQuery =
+      "SELECT * FROM employee_leave WHERE branch_name = ? ORDER BY created_at DESC";
     db.query(selectQuery, branch, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid branch");
+        logger.registrationLogger.log("error", "invalid branch");
         return res.status(400).json({ success: false, message: err.message });
       } else {
-          logger.registrationLogger.log("info", "leave list fetched successfully");
+        logger.registrationLogger.log(
+          "info",
+          "leave list fetched successfully"
+        );
         return res.status(200).send(result);
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: "internal server error" });
   }
@@ -757,17 +836,17 @@ const approveLeave = (req, res) => {
       "UPDATE employee_leave SET leave_status = ? WHERE id = ?";
     db.query(updateQuery, [status, lid], (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid leave ID");
+        logger.registrationLogger.log("error", "invalid leave ID");
         return res.status(400).json({ success: false, message: err.message });
       } else {
-          logger.registrationLogger.log("info", "leave approved successfully");
+        logger.registrationLogger.log("info", "leave approved successfully");
         return res
           .status(200)
           .json({ success: true, message: "leave approved successfully" });
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(500).json({ success: false, message: "internal server error" });
   }
@@ -779,7 +858,7 @@ const addLab = (req, res) => {
     const selectQuery = "SELECT * FROM lab_details WHERE lab_email = ?";
     db.query(selectQuery, email, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid email");
+        logger.registrationLogger.log("error", "invalid email");
         return res.status(400).json({ success: false, message: err.message });
       }
       if (result && result.length <= 0) {
@@ -790,7 +869,7 @@ const addLab = (req, res) => {
           [branch, name, type, contact, email, address, status],
           (upErr, upResult) => {
             if (upErr) {
-                logger.registrationLogger.log("error", "failed to add lab");
+              logger.registrationLogger.log("error", "failed to add lab");
               res.status(400).json({ success: false, message: upErr.message });
             }
             logger.registrationLogger.log("info", "lab added successfully");
@@ -798,12 +877,12 @@ const addLab = (req, res) => {
           }
         );
       } else {
-          logger.registrationLogger.log("error", "lab already exist");
+        logger.registrationLogger.log("error", "lab already exist");
         res.status(400).json({ success: false, message: "lab already exist" });
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
   }
 };
@@ -814,14 +893,14 @@ const getLabList = (req, res) => {
     const SelectQuery = "SELECT * FROM lab_details WHERE branch_name = ?";
     db.query(SelectQuery, branch, (err, results) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid branch");
+        logger.registrationLogger.log("error", "invalid branch");
         res.status(400).json({ success: false, message: err.message });
       }
       logger.registrationLogger.log("info", "lab list fetched successfully");
       res.status(200).send(results);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: "internal server error" });
   }
 };
@@ -829,29 +908,32 @@ const getLabList = (req, res) => {
 const updateLabDetails = (req, res) => {
   const lid = req.params.lid;
   const { branch, name, type, contact, email, address, status } = req.body;
-  
+
   const selectQuery = "SELECT * FROM lab_details WHERE lab_id = ?";
   db.query(selectQuery, lid, (err, result) => {
     if (err) {
-        logger.registrationLogger.log("error", "invalid lab id");
+      logger.registrationLogger.log("error", "invalid lab id");
       console.error("Database error:", err);
-      return res.status(500).json({ success: false, message: "Database error" });
+      return res
+        .status(500)
+        .json({ success: false, message: "Database error" });
     }
 
     if (result.length === 0) {
-        logger.registrationLogger.log("error", "Lab ID not found");
-      return res.status(404).json({ success: false, message: "Lab ID not found" });
+      logger.registrationLogger.log("error", "Lab ID not found");
+      return res
+        .status(404)
+        .json({ success: false, message: "Lab ID not found" });
     }
 
     const updateFields = [];
     const updateValues = [];
 
-if (branch) {
+    if (branch) {
       updateFields.push("branch_name = ?");
       updateValues.push(branch);
     }
-    
-    
+
     if (name) {
       updateFields.push("lab_name = ?");
       updateValues.push(name);
@@ -882,17 +964,23 @@ if (branch) {
       updateValues.push(status);
     }
 
-    const updateQuery = `UPDATE lab_details SET ${updateFields.join(", ")} WHERE lab_id = ?`;
+    const updateQuery = `UPDATE lab_details SET ${updateFields.join(
+      ", "
+    )} WHERE lab_id = ?`;
 
     db.query(updateQuery, [...updateValues, lid], (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to update lab details");
+        logger.registrationLogger.log("error", "failed to update lab details");
         console.error("Update error:", err);
-        return res.status(500).json({ success: false, message: "Failed to update lab details" });
+        return res
+          .status(500)
+          .json({ success: false, message: "Failed to update lab details" });
       }
       logger.registrationLogger.log("info", "Lab details updated successfully");
-      
-      return res.status(200).json({ success: true, message: "Lab details updated successfully" });
+
+      return res
+        .status(200)
+        .json({ success: true, message: "Lab details updated successfully" });
     });
   });
 };
@@ -903,7 +991,7 @@ const labDelete = (req, res) => {
     const deleteQuery = "DELETE FROM lab_details WHERE lab_id = ?";
     db.query(deleteQuery, lid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid lab ID");
+        logger.registrationLogger.log("error", "invalid lab ID");
         res.status(400).json({ success: false, message: err.message });
       }
       logger.registrationLogger.log("info", "lab deleted successfully");
@@ -912,7 +1000,7 @@ const labDelete = (req, res) => {
         .json({ success: true, message: "lab deleted successfully" });
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -930,8 +1018,10 @@ const addLabTest = (req, res) => {
     const selectQuery = "SELECT * FROM lab_tests WHERE 	test_code = ?";
     db.query(selectQuery, test_code, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "test code already exists");
-        return res.status(400).json({ success: false, message: "test code already exist" });
+        logger.registrationLogger.log("error", "test code already exists");
+        return res
+          .status(400)
+          .json({ success: false, message: "test code already exist" });
       }
       if (result && result.length <= 0) {
         const insertQuery =
@@ -948,7 +1038,7 @@ const addLabTest = (req, res) => {
           ],
           (upErr, upResult) => {
             if (upErr) {
-                logger.registrationLogger.log("error", "failed to add lab");
+              logger.registrationLogger.log("error", "failed to add lab");
               res.status(400).json({ success: false, message: upErr.message });
             }
             logger.registrationLogger.log("info", "lab added successfully");
@@ -956,12 +1046,12 @@ const addLabTest = (req, res) => {
           }
         );
       } else {
-          logger.registrationLogger.log("error", "lab already exists");
+        logger.registrationLogger.log("error", "lab already exists");
         res.status(400).json({ success: false, message: "lab already exist" });
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
   }
 };
@@ -971,14 +1061,14 @@ const getLabTest = (req, res) => {
     const selectQuery = "SELECT * FROM lab_tests";
     db.query(selectQuery, (err, results) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to fetch lab tests");
+        logger.registrationLogger.log("error", "failed to fetch lab tests");
         res.status(500).json({ success: false, message: err.message });
       }
       logger.registrationLogger.log("info", "lab test fetched successfully");
       res.status(200).send(results);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: "internal server error" });
   }
 };
@@ -997,7 +1087,7 @@ const updateLabTestDetails = (req, res) => {
     const selectQuery = "SELECT * FROM lab_tests WHERE lab_tid = ?";
     db.query(selectQuery, ltid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid lab test ID");
+        logger.registrationLogger.log("error", "invalid lab test ID");
         return res.status(400).json({ success: false, message: err.message });
       }
       if (result && result.length > 0) {
@@ -1040,13 +1130,16 @@ const updateLabTestDetails = (req, res) => {
         console.log("221");
         db.query(updateQuery, [...updateValues, ltid], (err, result) => {
           if (err) {
-              logger.registrationLogger.log("error", "failed to update details");
+            logger.registrationLogger.log("error", "failed to update details");
             return res.status(500).json({
               success: false,
               message: "Failed to update details",
             });
           } else {
-              logger.registrationLogger.log("info", "Lab test details updated successfully");
+            logger.registrationLogger.log(
+              "info",
+              "Lab test details updated successfully"
+            );
             return res.status(200).json({
               success: true,
               message: "Lab test details updated successfully",
@@ -1054,7 +1147,7 @@ const updateLabTestDetails = (req, res) => {
           }
         });
       } else {
-          logger.registrationLogger.log("error", "Lab test ID not found");
+        logger.registrationLogger.log("error", "Lab test ID not found");
         return res.status(404).json({
           success: false,
           message: "Lab  test ID not found",
@@ -1062,7 +1155,7 @@ const updateLabTestDetails = (req, res) => {
       }
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     console.log(error);
     res.status(400).json({ success: false, message: error.message });
   }
@@ -1074,7 +1167,7 @@ const labTestDelete = (req, res) => {
     const deleteQuery = "DELETE FROM lab_tests WHERE lab_tid = ?";
     db.query(deleteQuery, ltid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "invalid lab test ID");
+        logger.registrationLogger.log("error", "invalid lab test ID");
         res.status(400).json({ success: false, message: err.message });
       }
       logger.registrationLogger.log("info", "lab deleted successfully");
@@ -1083,39 +1176,45 @@ const labTestDelete = (req, res) => {
         .json({ success: true, message: "lab deleted successfully" });
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: error.message });
   }
 };
 
 const getPatientLabTest = (req, res) => {
   try {
-  const selectQuery =
-  "SELECT * FROM patient_lab_details LEFT JOIN patient_details ON patient_details.uhid = patient_lab_details.patient_uhid";
+    const selectQuery =
+      "SELECT * FROM patient_lab_details LEFT JOIN patient_details ON patient_details.uhid = patient_lab_details.patient_uhid";
     db.query(selectQuery, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to fetch patient lab test");
+        logger.registrationLogger.log(
+          "error",
+          "failed to fetch patient lab test"
+        );
         res.status(400).json({ success: false, message: err.message });
-        return; 
+        return;
       }
-      logger.registrationLogger.log("info", "patient lab test fetched successfully");
+      logger.registrationLogger.log(
+        "info",
+        "patient lab test fetched successfully"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
 
 const getPatientLabTestCompleted = (req, res) => {
-  try { 
-   const selectQuery = `
+  try {
+    const selectQuery = `
       SELECT * FROM patient_lab_test_details JOIN patient_lab_details ON patient_lab_details.testid = patient_lab_test_details.testid LEFT JOIN patient_details ON patient_details.uhid = patient_lab_details.patient_uhid
     `;
-      
+
     db.query(selectQuery, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to fetch lab test");
+        logger.registrationLogger.log("error", "failed to fetch lab test");
         res.status(400).json({ success: false, message: err.message });
         return;
       }
@@ -1123,7 +1222,7 @@ const getPatientLabTestCompleted = (req, res) => {
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
@@ -1135,15 +1234,21 @@ const getPatientLabTestByPatientId = (req, res) => {
       "SELECT * FROM patient_lab_details LEFT JOIN patient_details ON patient_details.uhid = patient_lab_details.patient_uhid WHERE patient_lab_details.patient_uhid = ?";
     db.query(selectQuery, pid, (err, result) => {
       if (err) {
-          logger.registrationLogger.log("error", "failed to fetch patient lab test");
+        logger.registrationLogger.log(
+          "error",
+          "failed to fetch patient lab test"
+        );
         res.status(400).json({ success: false, message: err.message });
         return;
       }
-      logger.registrationLogger.log("info", "patient lab test fetched successfully");
+      logger.registrationLogger.log(
+        "info",
+        "patient lab test fetched successfully"
+      );
       res.status(200).send(result);
     });
   } catch (error) {
-      logger.registrationLogger.log("error", "internal server error");
+    logger.registrationLogger.log("error", "internal server error");
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
@@ -1175,8 +1280,11 @@ module.exports = {
   getLabList,
   updateLabDetails,
   labDelete,
-   addLabTest,
+  addLabTest,
   getLabTest,
   updateLabTestDetails,
-  labTestDelete, getPatientLabTest, getPatientLabTestCompleted, getPatientLabTestByPatientId
+  labTestDelete,
+  getPatientLabTest,
+  getPatientLabTestCompleted,
+  getPatientLabTestByPatientId,
 };

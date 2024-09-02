@@ -16,14 +16,34 @@ const AdminEmpDetailReport = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
   console.log(user);
+  const branch = user.branch_name;
   const [doctorList, setDoctorList] = useState([]);
   const [designation, setDesignation] = useState("");
   const [loading, setLoading] = useState("");
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
+
   const getDocDetailsList = async () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getEmployeeDataByBranch/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getEmployeeDataByBranch/${user.branch_name}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +71,7 @@ const AdminEmpDetailReport = () => {
   const downloadEmployeeData = async () => {
     try {
       const { data } = await axios.post(
-        `http://localhost:8888/api/v1/admin/downloadStaffReport/${user.branch_name}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/downloadStaffReport/${user.branch_name}`,
         {},
         {
           headers: {
@@ -226,6 +246,7 @@ const AdminEmpDetailReport = () => {
                                             {item.employee_role}
                                           </td>
                                           <td className="thead">
+                                            {branchData[0]?.currency_symbol}
                                             {item.salary}
                                           </td>
                                           <td className="thead">

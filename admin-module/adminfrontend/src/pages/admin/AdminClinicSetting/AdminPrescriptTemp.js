@@ -96,7 +96,7 @@ const AdminPrescriptTemp = () => {
   const getPrescriptionDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPrescription/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPrescription/${branch}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -114,7 +114,7 @@ const AdminPrescriptTemp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:8888/api/v1/admin/addPrescription/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/addPrescription/${branch}`,
         addPres,
         {
           headers: {
@@ -135,7 +135,7 @@ const AdminPrescriptTemp = () => {
   const getPresDetailsById = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPrescriptionById/${selected}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPrescriptionById/${selected}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -153,7 +153,7 @@ const AdminPrescriptTemp = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8888/api/v1/admin/updatePrescriptionDetails/${selected}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/updatePrescriptionDetails/${selected}`,
         upPres,
         {
           headers: {
@@ -174,7 +174,7 @@ const AdminPrescriptTemp = () => {
     // alert(id);
     try {
       const response = await axios.delete(
-        `http://localhost:8888/api/v1/admin/deletePrescription/${id}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/deletePrescription/${id}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",

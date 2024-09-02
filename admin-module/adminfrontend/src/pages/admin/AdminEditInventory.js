@@ -74,7 +74,7 @@ const AdminEditInventory = () => {
   const getInvListDetails = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getPurchaseInvByPurId/${branch.name}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPurchaseInvByPurId/${branch.name}/${pid}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -108,7 +108,7 @@ const AdminEditInventory = () => {
     console.log(updateData, reciept_doc);
     try {
       const { data } = await axios.put(
-        `http://localhost:8888//api/v1/admin/updatePurInvoice/${branch.name}/${pid}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com//api/v1/admin/updatePurInvoice/${branch.name}/${pid}`,
         formData,
         {
           headers: {

@@ -22,6 +22,24 @@ const Refundamount = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState("");
   const [toDate, setToDate] = useState("");
+  const [branchData, setBranchData] = useState([]);
+
+  const getBranchDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getBranchDetailsByBranch/${branch}`
+      );
+      setBranchData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(branchData);
+
+  useEffect(() => {
+    getBranchDetails();
+  }, []);
 
   const differenceError = () => {
     const from = new Date(fromDate).getTime();
@@ -46,7 +64,7 @@ const Refundamount = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `http://localhost:8888/api/v1/admin/getRefundAmountData/${branch}`,
+        `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getRefundAmountData/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -253,6 +271,7 @@ const Refundamount = () => {
                                 </td>
 
                                 <td className="table-small">
+                                  {branchData[0]?.currency_symbol}
                                   {item.refund_amount}
                                 </td>
                                 <td className="table-small">

@@ -37,7 +37,7 @@ const ExpenseTMAdmin = () => {
     const getAppointList = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8888/api/v1/admin/getPurInventoryByBranch/${user.branch_name}`,
+          `https://dentalguru-global-admin.vimubds5.a2hosted.com/api/v1/admin/getPurInventoryByBranch/${user.branch_name}`,
           {
             headers: {
               "Content-Type": "multipart/form-data",
