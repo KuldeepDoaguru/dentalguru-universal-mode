@@ -680,7 +680,7 @@ const CreditSittingBill = () => {
                         {numToWords(
                           sittingBill[0]?.paid_amount
                         ).toUpperCase()}{" "}
-                        RUPEES ONLY
+                         ONLY
                       </p>
                     </div>
                   </div>

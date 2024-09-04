@@ -25,6 +25,11 @@ export const userReducer = createReducer(initialState, (builder) => {
       state.hospital_name = action.payload.hospital_name;
       state.branch_address = action.payload.branch_address;
       state.branch_contact = action.payload.branch_contact;
+
+      state.branchCurrency = action.payload.branchCurrency;
+      state.currencySymbol = action.payload.currencySymbol;
+      state.timeZone = action.payload.timeZone;
+
       state.token = action.payload.token;
       console.log("User State after setUser:", state);
     })
@@ -44,6 +49,12 @@ export const userReducer = createReducer(initialState, (builder) => {
       state.hospital_name = null;
       state.branch_address = null;
       state.branch_contact = null;
+
+       
+      state.branchCurrency = null;
+      state.currencySymbol = null;
+      state.timeZone = null;
+
       state.token = null;
     })
     .addCase(toggleTableRefresh, (state) => {

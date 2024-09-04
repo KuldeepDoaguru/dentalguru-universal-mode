@@ -655,12 +655,12 @@ const SecurityAmtPrint = () => {
                     ></th>
 
                     <th scope="col" className="text-start pt-4 second-th">
-                      Payable Amount INR
+                      Payable Amount 
                     </th>
 
                     <th scope="col" className="text-end pe-4 pt-4">
                       {" "}
-                      {recData[0]?.amount}
+                      {` ${user.currencySymbol} ${recData[0]?.amount}`}
                       {".00"}
                     </th>
                   </tr>
@@ -668,11 +668,11 @@ const SecurityAmtPrint = () => {
                     <th scope="col" className="" style={{ width: "30%" }}></th>
                     <th scope="col" className="text-start second-th">
                       {" "}
-                      Amount Paid INR
+                      Amount Paid 
                     </th>
 
                     <th scope="col" className="text-end pe-4">
-                      {recData[0]?.amount}
+                      {` ${user.currencySymbol} ${recData[0]?.amount}`}
                       {".00"}
                     </th>
                   </tr>

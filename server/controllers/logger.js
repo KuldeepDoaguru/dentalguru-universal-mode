@@ -7,12 +7,12 @@ const { format: dateFormat } = require("date-fns-tz");
 // Define the format with timezone
 const customFormat = printf(({ level, message, timestamp }) => {
   const tzTimestamp = dateFormat(timestamp, "yyyy-MM-dd HH:mm:ss zzz", {
-    timeZone: "Asia/Kolkata",
+    timeZone: process.env.TIMEZONE,
   });
   return `${tzTimestamp} [${level.toUpperCase()}]: ${message}`;
 });
 
-const IST_TIMEZONE = "Asia/Kolkata";
+const IST_TIMEZONE =  process.env.TIMEZONE;
 
 const customTimestamp = () => {
   return dateFormat(new Date(), "yyyy-MM-dd HH:mm:ss.SSS zzz", {

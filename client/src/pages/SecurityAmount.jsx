@@ -238,12 +238,14 @@ const SecurityAmount = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRefundAmount/${selected}`,
+        // `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRefundAmount/${selected}`,
+        `http://localhost:8888/api/v2/accountant/updateRefundAmount/${selected}`,
         {
           refund_by: user.name,
           payment_status: "Refunded",
           refund_amount: filterForSecAmountDef[0]?.remaining_amount,
           remaining_amount: 0,
+          timeZone: user.timeZone,
         },
         {
           headers: {
@@ -252,6 +254,9 @@ const SecurityAmount = () => {
           },
         }
       );
+      console.log(response);
+      return;
+
       if (filterForSecAmountDef[0].patient_number && user?.sharesms === "Yes") {
         refundBillDetailsSms();
       }
@@ -274,10 +279,12 @@ const SecurityAmount = () => {
     const updatedData = {
       ...data,
       remaining_amount: filterForSecAmountDef[0]?.amount,
+      timeZone: user.timeZone,
     };
     try {
       const response = await axios.put(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
+        // `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
+        `http://localhost:8888/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
         updatedData,
         {
           headers: {
@@ -286,6 +293,7 @@ const SecurityAmount = () => {
           },
         }
       );
+      return;
       if (filterForSecAmountDef[0].patient_number && user?.sharesms === "Yes") {
         billDetailsSms();
       }
@@ -543,7 +551,7 @@ const SecurityAmount = () => {
                                         <td>{item.refund_amount}</td>
                                         <td>
                                           {/* {item?.remaining_amount === 0 && ( */}
-                                          {item.payment_status === "pending" ? (
+                                          {true ? (
                                             <>
                                               <button
                                                 className="mx-2 btn btn-info"
@@ -558,7 +566,7 @@ const SecurityAmount = () => {
                                             <>
                                               <button
                                                 className={`mx-2 btn btn-warning ${
-                                                  item.remaining_amount == 0
+                                                  item.remaining_amount != 0
                                                     ? "disabled"
                                                     : ""
                                                 } `}

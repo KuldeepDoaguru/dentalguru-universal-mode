@@ -4,8 +4,10 @@ import { FaCcPaypal } from "react-icons/fa";
 import { FaCcAmex } from "react-icons/fa6";
 import { FaCcMastercard } from "react-icons/fa";
 import { FaCcDiscover } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 const Payment = () => {
+  const user = useSelector((state) => state.user);
   return (
     <>
       <Container>
@@ -127,7 +129,7 @@ const Payment = () => {
                             </p>
                             <p class="mb-0">
                               <span class="fw-bold ms-1">Price :</span>
-                              <span class="c-green"> ₹ 2,425.00</span>
+                              <span class="c-green"> { user.currencySymbol } 2,425.00</span>
                             </p>
                             <p class="mb-0 mt-1 ms-1">
                               This Amount is for the Treatment of Braces.

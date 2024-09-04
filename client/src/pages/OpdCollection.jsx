@@ -358,22 +358,22 @@ function OpdCollection() {
                 </div>
                 <div className="d-flex mx-2 mt-2">
                   <h6 className="mx-2">
-                    Total - <FaIndianRupeeSign /> {total}
+                    Total - {user.currencySymbol} {total}
                   </h6>
                   <h6 className="mx-2">
-                    Cash - <FaIndianRupeeSign /> {cash}
+                    Cash - {user.currencySymbol} {cash}
                   </h6>
                   <h6 className="mx-2">
-                    Credit - <FaIndianRupeeSign /> {credit}
+                    Credit - {user.currencySymbol} {credit}
                   </h6>
                   <h6 className="mx-2">
-                    UPI -<FaIndianRupeeSign /> {upi}
+                    UPI -{user.currencySymbol} {upi}
                   </h6>
                   <h6 className="mx-2">
-                    Card - <FaIndianRupeeSign /> {card}
+                    Card - {user.currencySymbol} {card}
                   </h6>
                   <h6 className="mx-2">
-                    Refund - <FaIndianRupeeSign /> {refund}
+                    Refund - {user.currencySymbol} {refund}
                   </h6>
                 </div>
               </nav>

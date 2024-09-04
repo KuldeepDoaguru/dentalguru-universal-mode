@@ -155,7 +155,10 @@ const accountantLoginUser = (req, res) => {
         branches.doctor_payment,
         branches.sharemail,
         branches.sharewhatsapp,
-        branches.sharesms
+        branches.sharesms,
+        branches.branch_currency,
+        branches.currency_symbol,
+        branches.timezone
       FROM 
         employee_register 
       JOIN 
@@ -237,6 +240,9 @@ const accountantLoginUser = (req, res) => {
           sharemail: user.sharemail,
           sharewhatsapp: user.sharewhatsapp,
           sharesms: user.sharesms,
+          branchCurrency: user.branch_currency,
+          currencySymbol: user.currency_symbol,
+          timeZone: user.timezone,
           token: token,
         },
       });
@@ -793,13 +799,14 @@ const getSecurityAmountDataBySID = (req, res) => {
 };
 
 const updateRefundAmount = (req, res) => {
-  const date = moment().tz("Asia/Kolkata").format("DD-MM-YYYY HH:mm:ss");
   try {
     const sid = req.params.sid;
-    const { refund_amount, refund_by, payment_status, remaining_amount } =
-      req.body;
+    const { refund_amount, refund_by, payment_status, remaining_amount, timeZone } =
+    req.body;
 
-    if (!refund_amount || !refund_by || !payment_status) {
+    const date = moment().tz(timeZone).format("DD-MM-YYYY HH:mm:ss");
+    
+    if (!refund_amount || !refund_by || !payment_status || timeZone) {
       return res.status(400).json({
         success: false,
         message: "All fields are required",
@@ -905,11 +912,15 @@ const updatePatientSecurityAmt = (req, res) => {
       notes,
       received_by,
       remaining_amount,
+      timeZone,
     } = req.body;
 
     const payment_date = moment()
-      .tz("Asia/Kolkata")
+      .tz(timeZone)
       .format("DD-MM-YYYY HH:mm:ss");
+      
+    console.log(payment_date);
+      return;
 
     const updatePatientQuery = `
           UPDATE security_amount
@@ -991,9 +1002,6 @@ const getPatientBillsAndSecurityAmountByBranch = (req, res) => {
 };
 
 const makeBillPayment = (req, res) => {
-  const payment_date_time = moment()
-    .tz("Asia/Kolkata")
-    .format("DD-MM-YYYY HH:mm:ss");
   try {
     const bid = req.params.bid;
     const branch = req.params.branch;
@@ -1006,7 +1014,13 @@ const makeBillPayment = (req, res) => {
       receiver_name,
       receiver_emp_id,
       pay_by_sec_amt,
+      timeZone,
     } = req.body;
+
+    const payment_date_time = moment()
+      .tz(timeZone)
+      .format("DD-MM-YYYY HH:mm:ss");
+
     const selectQuery =
       "SELECT * FROM patient_bills WHERE branch_name = ? AND bill_id = ?";
 
@@ -2564,9 +2578,6 @@ const getPatientDetailsForBill = (req, res) => {
 };
 
 const updateBillforSitting = (req, res) => {
-  const payment_date_time = moment()
-    .tz("Asia/Kolkata")
-    .format("DD-MM-YYYY HH:mm:ss");
   try {
     const tpid = req.params.tpid;
     const branch = req.params.branch;
@@ -2579,7 +2590,13 @@ const updateBillforSitting = (req, res) => {
       receiver_name,
       receiver_emp_id,
       pay_by_sec_amt,
+      timeZone,
     } = req.body;
+
+    const payment_date_time = moment()
+      .tz(timeZone)
+      .format("DD-MM-YYYY HH:mm:ss");
+
     const selectQuery =
       "SELECT * FROM patient_bills WHERE branch_name = ? AND tp_id = ?";
 

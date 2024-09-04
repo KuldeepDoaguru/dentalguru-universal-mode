@@ -148,7 +148,7 @@ const VoucherPaid = () => {
                       <td className="table-sno">
                         <td className="table-sno" style={{ width: "60%" }}>
                           <h6>
-                            Rupees (in Words) : Indian Rupee Fourt-Five Thousand
+                            Amount (in Words) : Indian Rupee Fourt-Five Thousand
                             Eight Hundred Only
                           </h6>
                         </td>

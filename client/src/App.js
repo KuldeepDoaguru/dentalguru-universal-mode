@@ -422,7 +422,7 @@ function App() {
           }
         />
         <Route
-          path="/security-amount"
+          path="/security_amount"
           element={
             user.employee_name === null ? (
               <UniversalLogin />

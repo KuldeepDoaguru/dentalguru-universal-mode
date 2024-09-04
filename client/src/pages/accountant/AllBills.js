@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 import Sider from "../../components/Sider";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {useSelector } from 'react-redux'
+
 import BranchDetails from "../../components/BranchDetails";
 
 const AllBills = () => {
@@ -11,6 +13,7 @@ const AllBills = () => {
   const initialTab = localStorage.getItem("selectedTab") || "tab1";
   const [selectedTab, setSelectedTab] = useState(initialTab);
   const [showPaid, setShowPaid] = useState(false);
+  const user = useSelector((state) => state.user);
 
   console.log(showPaid);
   return (
@@ -110,12 +113,12 @@ const AllBills = () => {
                         <div className="container box-amount">
                           <div>
                             <h4>Total Amount</h4>
-                            <p className="fw-bold">10000 INR </p>
+                            <p className="fw-bold"> {user.currencySymbol} 10000  </p>
                             <hr />
                             <h4>Paid Amount</h4>
                             {showPaid ? (
                               <>
-                                <p className="fw-bold">10000 INR </p>
+                                <p className="fw-bold"> {user.currencySymbol} 10000  </p>
                               </>
                             ) : (
                               <>

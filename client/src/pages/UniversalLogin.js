@@ -65,7 +65,8 @@ const UniversalLogin = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/accountantLoginUser",
+        // "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/accountantLoginUser",
+        "http://localhost:8888/api/v2/accountant/accountantLoginUser",
         {
           email,
           password,
@@ -73,7 +74,6 @@ const UniversalLogin = () => {
         }
       );
       console.log(response.data.user);
-
       const userData = {
         name: response.data.user.email,
         id: response.data.user.employee_ID,
@@ -90,6 +90,9 @@ const UniversalLogin = () => {
         hospital_name: response.data.user.hospital_name,
         branch_address: response.data.user.branch_address,
         branch_contact: response.data.user.branch_contact,
+        branchCurrency: response.data.user.branchCurrency,
+        currencySymbol: response.data.user.currencySymbol,
+        timeZone: response.data.user.timeZone,
         token: response.data.user.token,
       };
       localStorage.setItem("userData", JSON.stringify(userData));

@@ -41,13 +41,26 @@ const Compleated = () => {
 
   const filteredPatients = patientDetails.filter((patient) => {
     const fullName =
-      `${patient.patient_name} ${patient.assigned_doctor_name}`.toLowerCase();
-    const formattedDate = moment(patient.created_date).format("YYYY-MM-DD");
+      `${patient.patient_name} ${patient.assigned_doctor_name}.toLowerCase()`;
+
+    const formattedDate = patient?.created_date
+      ? moment(patient?.created_date, "DD-MM-YYYYTHH:mm").format("DD/MM/YYYY")
+      : "";
+
+    // Parse and format dateFilter to DD-MM-YYYY
+    const formattedDateFilter = dateFilter
+      ? moment(dateFilter, "YYYY-MM-DD").format("DD/MM/YYYY")
+      : "";
+
+    console.log("Formatted Date:", formattedDate);
+    console.log("Date Filter:", formattedDateFilter);
+
     return (
       fullName.includes(searchQuery.toLowerCase()) &&
-      (!dateFilter || formattedDate === dateFilter)
+      (!formattedDateFilter || formattedDate === formattedDateFilter)
     );
   });
+
 
   const goBack = () => {
     window.history.go(-1);
@@ -165,11 +178,7 @@ const Compleated = () => {
 
                                   <td>{patient.assigned_doctor_name}</td>
                                   <td>{patient.lab_name}</td>
-                                  <td>
-                                    {moment(patient.created_date).format(
-                                      "DD/MM/YYYY"
-                                    )}
-                                  </td>
+                                  <td>{patient?.created_date ? moment( patient?.created_date, "DD-MM-YYYYTHH:mm" ).format("DD/MM/YYYY hh:mm A"): ""}</td>
                                   <td>{patient.test}</td>
 
                                   <td>{patient.payment}</td>

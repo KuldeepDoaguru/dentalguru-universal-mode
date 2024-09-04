@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import {useSelector } from 'react-redux'
 import { IoArrowBackSharp } from "react-icons/io5";
 
 const PatientsLabBills = () => {
   const goBack = () => {
     window.history.go(-1);
   };
+  const user = useSelector((state) => state.user);
   return (
     <>
       <Container>
@@ -143,7 +145,7 @@ const PatientsLabBills = () => {
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}>
-                        ₹ 0.00
+                        { user.currencySymbol } 0.00
                       </td>
                     </tr>
                   </tbody>
@@ -156,7 +158,7 @@ const PatientsLabBills = () => {
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}>
-                        ₹ 0.00
+                        { user.currencySymbol } 0.00
                       </td>
                     </tr>
                   </tbody>
@@ -170,7 +172,7 @@ const PatientsLabBills = () => {
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}>
-                        ₹ 0.00
+                        { user.currencySymbol } 0.00
                       </td>
                     </tr>
                   </tbody>

@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import {useSelector } from 'react-redux'
 import { IoArrowBackSharp } from "react-icons/io5";
 
 const AllDuaAmount = () => {
   const goBack = () => {
     window.history.go(-1);
   };
+  const user = useSelector((state) => state.user);
   return (
     <>
       <Container>
@@ -70,7 +72,7 @@ const AllDuaAmount = () => {
               <div class=" rounded d-flex justify-content-end">
                 <div class="card" style={{ width: "18rem" }}>
                   <div className="ms-4 mt-2">
-                    <h1>- ₹45,400.00</h1>
+                    <h1>- { user.currencySymbol }45,400.00</h1>
                     <h6 className="text-danger ms-4">HAVE TO PAID</h6>
                     <hr />
                   </div>
@@ -115,7 +117,7 @@ const AllDuaAmount = () => {
                         Basic
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        ₹ 33,333.00
+                        { user.currencySymbol } 33,333.00
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
                         Income Tex
@@ -131,13 +133,13 @@ const AllDuaAmount = () => {
                         House Rent Allowance
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        ₹ 16,667.00
+                        { user.currencySymbol } 16,667.00
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
                         Provident Fund
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        ₹ 4,000.00
+                        { user.currencySymbol } 4,000.00
                       </td>
                     </tr>
                   </tbody>
@@ -150,7 +152,7 @@ const AllDuaAmount = () => {
                         Professional Tax
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        ₹ 2,00.00
+                        { user.currencySymbol } 2,00.00
                       </td>
                     </tr>
                   </tbody>
@@ -160,13 +162,13 @@ const AllDuaAmount = () => {
                         Gross Earnings
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        ₹ 50,000.00
+                        { user.currencySymbol } 50,000.00
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
                         Total Deductions
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        ₹ 4,200.00
+                        { user.currencySymbol } 4,200.00
                       </td>
                     </tr>
                   </tbody>
@@ -188,7 +190,7 @@ const AllDuaAmount = () => {
                         <p>Gross Earnings - Total Deductions</p>
                       </td>
                       <td className="table-small" style={{ width: "17%" }}>
-                        - ₹ 45,800.00
+                        - { user.currencySymbol } 45,800.00
                       </td>
                     </tr>
                   </tbody>

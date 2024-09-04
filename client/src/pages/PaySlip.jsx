@@ -180,7 +180,7 @@ const PaySlip = () => {
                 <div class=" rounded d-flex justify-content-end">
                   <div class="card" style={{ width: "18rem" }}>
                     <div className="ms-4 mt-2">
-                      <h1>₹{slipData[0]?.payable_salary}</h1>
+                      <h1>{ user.currencySymbol }{slipData[0]?.payable_salary}</h1>
                       <h6 className="text-success">Employee Net Pay</h6>
                     </div>
                   </div>
@@ -205,17 +205,17 @@ const PaySlip = () => {
                   <tbody>
                     <tr className="table-row">
                       <td className="table-sno">Basic</td>
-                      <td className="table-small">₹ {slipData[0]?.salary}</td>
+                      <td className="table-small">{ user.currencySymbol } {slipData[0]?.salary}</td>
                       <td className="table-small">Income Tax</td>
-                      <td className="table-small">₹ 0</td>
+                      <td className="table-small">{ user.currencySymbol } 0</td>
                     </tr>
                   </tbody>
                   <tbody>
                     <tr className="table-row">
                       <td className="table-sno">House Rent Allowance</td>
-                      <td className="table-small">₹ 0</td>
+                      <td className="table-small">{ user.currencySymbol } 0</td>
                       <td className="table-small">Provident Fund</td>
-                      <td className="table-small">₹ 0</td>
+                      <td className="table-small">{ user.currencySymbol } 0</td>
                     </tr>
                   </tbody>
 
@@ -224,7 +224,7 @@ const PaySlip = () => {
                       <td className="table-sno" style={{ width: "10%" }}></td>
                       <td className="table-small"></td>
                       <td className="table-small">Leave Deduction</td>
-                      <td className="table-small">₹ 0</td>
+                      <td className="table-small">{ user.currencySymbol } 0</td>
                     </tr>
                   </tbody>
                   <tbody>
@@ -232,9 +232,9 @@ const PaySlip = () => {
                       <td className="table-sno" style={{ width: "10%" }}>
                         Gross Earnings
                       </td>
-                      <td className="table-small">₹ {slipData[0]?.salary}</td>
+                      <td className="table-small">{ user.currencySymbol } {slipData[0]?.salary}</td>
                       <td className="table-small">Total Deductions</td>
-                      <td className="table-small">₹ 10000.00</td>
+                      <td className="table-small">{ user.currencySymbol } 10000.00</td>
                     </tr>
                   </tbody>
                 </table>
@@ -252,7 +252,7 @@ const PaySlip = () => {
                       <p>Gross Earnings - Total Deductions</p>
                     </td>
                     <td className="table-small" style={{ width: "17%" }}>
-                      ₹ {slipData[0]?.payable_salary}
+                      { user.currencySymbol } {slipData[0]?.payable_salary}
                     </td>
                   </tr>
                 </tbody>
