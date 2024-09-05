@@ -15,7 +15,7 @@ function DeleteNotes() {
     useEffect(()=>{
         const fetchNotes = async () => {
             try {
-              const response = await axios.get(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/getpatienttest-notes/${id}`,
+              const response = await axios.get(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/getpatienttest-notes/${id}`,
               {
                 headers: {
                   'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ fetchNotes()
     const handleDeleteNote = async (noteId) => {
         const isConfirmed = window.confirm("Are you sure you want to delete this Notes?");
        if(isConfirmed){ try {
-          const response = await axios.delete(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/delete-patienttest-notes/${noteId}`,
+          const response = await axios.delete(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/delete-patienttest-notes/${noteId}`,
           {
             headers: {
               'Content-Type': 'application/json',

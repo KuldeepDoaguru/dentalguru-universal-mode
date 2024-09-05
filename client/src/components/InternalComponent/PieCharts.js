@@ -84,7 +84,7 @@
 //   useEffect(() => {
 //     const fetchData = async () => {
 //       try {
-//         const response = await axios.get('https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details', {
+//         const response = await axios.get('https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details', {
 //           headers: {
 //             'Content-Type': 'application/json',
 //             'Authorization': `Bearer ${token}`,
@@ -190,7 +190,7 @@ const PieCharts = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details', {
+        const response = await axios.get('https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,

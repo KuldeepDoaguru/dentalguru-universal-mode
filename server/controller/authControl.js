@@ -64,9 +64,24 @@ const LoginDoctor = (req, res) => {
         message: "Invalid email or password",
       });
     }
+    const query = `
+    SELECT
+      employee_register.*,
+      branches.branch_currency,
+      branches.currency_symbol,
+      branches.timezone
+    FROM
+      employee_register
+    JOIN
+      branches
+    ON
+      employee_register.branch_name = branches.branch_name
+    WHERE
+      employee_email = ?
+  `;
 
-    db.query(
-      `SELECT * FROM employee_register WHERE employee_email = ?`,
+    db.query( query,
+      // `SELECT * FROM employee_register WHERE employee_email = ?`,
       [email],
       (err, result) => {
         if (err) {
@@ -295,9 +310,10 @@ const patienttestdata = async (req, res) => {
     payment,
     payment_status,
     lab_type,
+    timeZone,
   
   } = req.body;
-  const created_date =  moment().tz("Asia/Kolkata").format("YYYY-MM-DD HH:mm:ss");
+  const created_date =  moment().tz(timeZone).format("YYYY-MM-DD HH:mm:ss");
 
   const sql = `INSERT INTO patient_lab_test_details (testid, patient_uhid, patient_name, test, result, unit,cost,collection_date,authenticate_date, payment,
     payment_status,lab_type,created_date) VAlUES (?,?,?,?,?,?,?,?,?,?,?,?)`;
@@ -377,10 +393,11 @@ const patientpayment = async (req, res) => {
     patient_name,
     payment,
     payment_status,
+    timeZone,
   } = req.body;
 
   
-  const created_date =  moment().tz("Asia/Kolkata").format("YYYY-MM-DD HH:mm:ss");
+  const created_date =  moment().tz(timeZone).format("YYYY-MM-DD HH:mm:ss");
 
 
   const sql = `INSERT INTO patient_lab_test_details (testid, patient_uhid, patient_name, payment, payment_status,created_date) VALUES (?,?,?,?,?,?)`;

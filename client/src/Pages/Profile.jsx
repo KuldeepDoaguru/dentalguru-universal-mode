@@ -262,7 +262,7 @@ const Profile = () => {
   const getEmployeeData = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/getEmployeeDetails/${branch}/${user.employee_ID}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/getEmployeeDetails/${branch}/${user.employee_ID}`,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -295,7 +295,7 @@ const Profile = () => {
       console.log(inEmpData, empProfilePicture);
 
       const response = await axios.put(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/editEmployeeDetails/${branch}/${user.employee_ID}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/editEmployeeDetails/${branch}/${user.employee_ID}`,
         formData,
         {
           headers: {

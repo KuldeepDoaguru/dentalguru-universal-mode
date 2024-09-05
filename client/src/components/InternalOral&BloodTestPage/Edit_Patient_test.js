@@ -27,7 +27,7 @@ function Edit_Patient_test() {
       const fetchPatientTestDetails = async () => {
         try {
           const response = await axios.get(
-            `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab//get-patient-test-details-by-id/${id}`,
+            `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab//get-patient-test-details-by-id/${id}`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function Edit_Patient_test() {
       try {
        
         const response = await axios.put(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${id}`,
           {patient_test: patienttest, 
             test: patienttest , result:patientresult, unit:patientunit,cost:patientcost ,collection_date:   patientcollection_date,authenticate_date:patientauthenticate_date},
             {

@@ -16,7 +16,7 @@ const goBack = () => {
   useEffect(() => {
     const fetchYearlyTest = async () => {
       try {
-        const response = await axios.get('https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details');
+        const response = await axios.get('https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details');
         const yearAgo = new Date();
         yearAgo.setFullYear(yearAgo.getFullYear() - 1);
         const yearlyTests = response.data.filter(test => new Date(test.created_date) >= yearAgo);
@@ -37,7 +37,7 @@ const goBack = () => {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
         );
 
         if (response.status === 200) {

@@ -18,7 +18,7 @@ function WeeklyTest() {
   useEffect(() => {
     const fetchWeeklyTest = async () => {
       try {
-        const response = await axios.get('https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details');
+        const response = await axios.get('https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details');
         const weekAgo = new Date();
         weekAgo.setDate(weekAgo.getDate() - 7);
         const weeklyTests = response.data.filter(test => new Date(test.created_date) >= weekAgo);
@@ -39,7 +39,7 @@ function WeeklyTest() {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
         );
 
         if (response.status === 200) {

@@ -15,7 +15,7 @@ function PrintFooter() {
 
     try {
       const { data } = await axios.get(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/getBranchDetailsByBranch/${branch}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/getBranchDetailsByBranch/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",

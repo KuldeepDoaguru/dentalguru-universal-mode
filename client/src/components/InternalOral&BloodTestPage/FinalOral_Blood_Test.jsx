@@ -56,7 +56,7 @@ function FinalOral_Blood_Test() {
     const fetchPatientDetails = async () => {
       try {
         const response = await axios.get(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ function FinalOral_Blood_Test() {
   const fetchPatientLabReports = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-lab-reports/${id}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-lab-reports/${id}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ function FinalOral_Blood_Test() {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/delete-patient-lab-report/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/delete-patient-lab-report/${id}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ function FinalOral_Blood_Test() {
     const fetchPatientTestDetails = async () => {
       try {
         const response = await axios.get(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details-by-id/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details-by-id/${id}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ function FinalOral_Blood_Test() {
     const fetchNotes = async () => {
       try {
         const response = await axios.get(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/getpatienttest-notes/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/getpatienttest-notes/${id}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ function FinalOral_Blood_Test() {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -215,7 +215,7 @@ function FinalOral_Blood_Test() {
 
     try {
       const response = await axios.put(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patent-test/${id}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patent-test/${id}`,
         {
          
           result: patientresult,

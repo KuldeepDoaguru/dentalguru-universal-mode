@@ -26,7 +26,7 @@ const MarkAttendance = () => {
   const getTodayAttendance = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/getTodayAttendance/${branch_name}/${employee_ID}/${date}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/getTodayAttendance/${branch_name}/${employee_ID}/${date}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const MarkAttendance = () => {
     try {
       setLoading(true)
       const response = await axios.post(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/markAttendanceLogin",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/markAttendanceLogin",
         {
           branch_name,
           employee_ID,
@@ -104,7 +104,7 @@ const MarkAttendance = () => {
       setLoading1(true)
      
       const response = await axios.put(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/markAttendanceLogout",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/markAttendanceLogout",
         {
           branch_name,
           employee_ID,

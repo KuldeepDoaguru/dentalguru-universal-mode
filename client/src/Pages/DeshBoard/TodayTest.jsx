@@ -20,7 +20,7 @@ function TodayTest() {
     const fetchTodayTestData = async () => {
       try {
         const response = await axios.get(
-          "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details"
+          "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details"
         );
         // Filter the response data to get only today's tests
         const todayTests = response.data.filter((test) => {
@@ -44,7 +44,7 @@ function TodayTest() {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
         );
 
         if (response.status === 200) {

@@ -14,7 +14,7 @@
 //     const fetchPatientDetails = async () => {
 //       try {
 //         const response = await axios.get(
-//           `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details`
+//           `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details`
 //         );
 //         setPatientDetails(response.data.result);
 //         console.log(response.data.result);
@@ -219,7 +219,7 @@
 //     const fetchPatientDetails = async () => {
 //       try {
 //         const response = await axios.get(
-//           `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details` ,
+//           `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details` ,
 //           {
 //             headers: {
 //               'Content-Type': 'application/json',
@@ -496,7 +496,8 @@ function TableData() {
     const fetchPatientDetails = async () => {
       try {
         const response = await axios.get(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details`,
+          // `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details`,
           {
             headers: {
               "Content-Type": "application/json",

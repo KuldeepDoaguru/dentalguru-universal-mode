@@ -31,7 +31,7 @@ const LabAttendant = () => {
     
     try {
       const response = await axios.get(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-branches",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-branches",
         {
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +62,8 @@ const LabAttendant = () => {
     try {
       setloading(true)
       const response = await axios.post(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/lab-attendant-login",
+        // "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/lab-attendant-login",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/lab-attendant-login",
         {
           email,
           password,

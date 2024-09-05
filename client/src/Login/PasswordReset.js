@@ -22,7 +22,7 @@ const PasswordReset = () => {
   //   e.preventDefault();
   //   try {
   //     const response = await axios.post(
-  //       "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/sendOtp",
+  //       "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/sendOtp",
   //       {
   //         email,
   //       }
@@ -46,7 +46,7 @@ const PasswordReset = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/sendOtp",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/sendOtp",
         {
           email,
         }
@@ -67,7 +67,7 @@ const PasswordReset = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/verifyOtp",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/verifyOtp",
         {
           email,
           otp,
@@ -87,7 +87,7 @@ const PasswordReset = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        "https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/resetPassword",
+        "https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/resetPassword",
         {
           email,
           password: newPassword,

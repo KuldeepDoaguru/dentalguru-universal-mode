@@ -41,7 +41,7 @@ function ApplyLeave() {
     
      
     try{
-        const response = await axios.get(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-leaves/${branch}/${employeeId}`,{
+        const response = await axios.get(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-leaves/${branch}/${employeeId}`,{
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -131,7 +131,7 @@ function ApplyLeave() {
         }
         try {
           setLoading(true)
-            const response = await axios.post('https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/apply-leave', updatedFormData,{
+            const response = await axios.post('https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/apply-leave', updatedFormData,{
               headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`

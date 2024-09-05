@@ -17,7 +17,7 @@ function EditNotes() {
     // Fetch notes from the backend API
     const fetchNotes = async () => {
       try {
-        const response = await axios.get(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/getpatienttest-notes/${id}`,
+        const response = await axios.get(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/getpatienttest-notes/${id}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ function EditNotes() {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patienttest-notes`, { notes },
+      const response = await axios.put(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patienttest-notes`, { notes },
       {
         headers: {
           'Content-Type': 'application/json',

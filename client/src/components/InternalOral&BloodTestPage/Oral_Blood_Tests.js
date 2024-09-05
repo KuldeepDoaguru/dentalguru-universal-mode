@@ -62,7 +62,7 @@
 //     const fetchPatientDetails = async () => {
 //       try {
 //         const response = await axios.get(
-//           `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
+//           `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
 //           {
 //             headers: {
 //               'Content-Type': 'application/json',
@@ -172,7 +172,7 @@
 //     try {
 //       setLoading(true);
 //       // Update the test status
-//       const responsee = await axios.put(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`, [],
+//       const responsee = await axios.put(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`, [],
 //         {
 //           headers: {
 //             'Content-Type': 'application/json',
@@ -196,7 +196,7 @@
 //       });
 
 //       const response = await axios.put(
-//         `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
+//         `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
 //         formData,
 //         {
 //           headers: {
@@ -484,7 +484,7 @@
 //     const fetchPatientDetails = async () => {
 //       try {
 //         const response = await axios.get(
-//           `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
+//           `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
 //           {
 //             headers: {
 //               'Content-Type': 'application/json',
@@ -580,7 +580,7 @@
 //     try {
 //             setLoading(true);
 //             // Update the test status
-//             const responsee = await axios.put(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`, [],
+//             const responsee = await axios.put(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`, [],
 //               {
 //                 headers: {
 //                   'Content-Type': 'application/json',
@@ -604,7 +604,7 @@
 //             });
 
 //             const response = await axios.put(
-//               `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
+//               `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
 //               formData,
 //               {
 //                 headers: {
@@ -832,7 +832,7 @@ function Oral_Blood_Tests() {
     const fetchPatientDetails = async () => {
       try {
         const response = await axios.get(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
           {
             headers: {
               'Content-Type': 'application/json',
@@ -928,7 +928,7 @@ function Oral_Blood_Tests() {
     try {
       setLoading(true);
       // Update the test status
-      const responsee = await axios.put(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`, [],
+      const responsee = await axios.put(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`, [],
         {
           headers: {
             'Content-Type': 'application/json',
@@ -952,7 +952,7 @@ function Oral_Blood_Tests() {
       });
 
       const response = await axios.put(
-        `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
+        `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
         formData,
         {
           headers: {
@@ -1240,7 +1240,7 @@ const Wrapper = styled.div`
 //     const fetchPatientDetails = async () => {
 //       try {
 //         const response = await axios.get(
-//           `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
+//           `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,
 //           {
 //             headers: {
 //               "Content-Type": "application/json",
@@ -1346,7 +1346,7 @@ const Wrapper = styled.div`
 //       setLoading(true);
 //       // Update the test status
 //       const responsee = await axios.put(
-//         `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`,
+//         `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`,
 //         [],
 //         {
 //           headers: {
@@ -1372,7 +1372,7 @@ const Wrapper = styled.div`
 //       });
 
 //       const response = await axios.put(
-//         `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
+//         `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-patent-test-data/${patientbill_no}`,
 //         formData,
 //         {
 //           headers: {

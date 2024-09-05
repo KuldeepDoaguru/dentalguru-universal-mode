@@ -565,6 +565,7 @@ import Header from '../../components/MainComponents/Header'
 import Sider from '../../components/MainComponents/Sider'
 import { IoArrowBackSharp } from 'react-icons/io5'
 import { Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux'
 
 function Sencivity() {
   const [patientbill_no , setPatientbill_no] = useState('')
@@ -583,7 +584,9 @@ function Sencivity() {
 
   const navigate = useNavigate();
   const {id} = useParams();
- 
+  
+  const user = useSelector(state => state.auth.user);
+
   const goBack = () => {
      navigate('/')
   };
@@ -603,21 +606,21 @@ function Sencivity() {
   
     try {
       // Update the test status
-      const responsee = await axios.put(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`);
+      const responsee = await axios.put(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/update-test-status/${id}`);
       if (responsee.status === 200) {
         console.log('Test status successfully updated');
       }
       console.log(patientbill_no);
   
       // Submit the patient test details
-      const response = await axios.post(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/paitent-test/${patientbill_no}`, {
+      const response = await axios.post(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/paitent-test/${patientbill_no}`, {
         test: patienttest,
         result: patientresult,
         unit: patientunit,
         collection_date: patientcollection_date,
         authenticate_date: patientauthenticate_date,
-        lab_type:labType
-  
+        lab_type:labType,
+        timeZone: user.timeZone,
       });
   
       // Check if the submission was successful

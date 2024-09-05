@@ -34,7 +34,7 @@ function CreateNotes() {
         try {
           
           for (const note of selectedNotes) {
-            const response = await axios.post("https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patienttest-notes", {
+            const response = await axios.post("https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patienttest-notes", {
               noteTexts: [note],
               testId: id,
             },

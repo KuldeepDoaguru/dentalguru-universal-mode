@@ -33,7 +33,7 @@ const PaymentTest = () => {
   };
    
   const currentUser = useSelector(state => state.auth.user);
-
+  console.log(currentUser);
 
   const branch = currentUser.branch_name
  const address = currentUser.address
@@ -55,7 +55,7 @@ const PaymentTest = () => {
   useEffect(() => {
     const fetchPatientDetails = async () => {
       try {
-        const response = await axios.get(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,{
+        const response = await axios.get(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-details-by-id/${id}`,{
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -75,7 +75,7 @@ const PaymentTest = () => {
 
     const fetchPatientTestCost = async () => {
       try {
-        const response = await axios.post(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-cost`, {
+        const response = await axios.post(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-cost`, {
           test_name: patienttest
         },
         {
@@ -97,7 +97,7 @@ const PaymentTest = () => {
   const fetchPatientTestDetails = async () => {
     try {
       const response = await axios.get(
-       `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details-by-id/${id}`,
+       `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details-by-id/${id}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ const PaymentTest = () => {
 
   // const handlePayButtonClick = async () => {
   //   try {
-  //     const response = await axios.post(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patient-test-payment/${id}`, {
+  //     const response = await axios.post(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patient-test-payment/${id}`, {
   //       patient_uhid: patientUHID,
   //       patient_name: patientName,
   //       payment: patientcost,
@@ -141,11 +141,12 @@ const PaymentTest = () => {
   const handlePayButtonClick = async () => {
     try {
       setLoading(true)
-      const response = await axios.post(`https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patient-test-payment/${id}`, {
+      const response = await axios.post(`https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patient-test-payment/${id}`, {
         patient_uhid: patientUHID,
         patient_name: patientName,
         payment: patientcost,
         payment_status: labtestpaymentstatus,
+        timeZone: userName.timeZone,
       },
       {
         headers: {
@@ -252,7 +253,7 @@ const PaymentTest = () => {
                     <div class=" rounded d-flex justify-content-end mt-5 me-lg-5 me-md-1">
                       <div class="card" style={{ width: "18rem" }}>
                         <div className="ms-4 mt-2">
-                          <h1> ₹ {patientcost}</h1>
+                          <h1> {currentUser.currencySymbol} {patientcost}</h1>
                           <h5 className="text-success ms-4">
                             Patient Amount {paymentStatus}
                           </h5>

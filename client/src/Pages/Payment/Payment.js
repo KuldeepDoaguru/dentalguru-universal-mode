@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { IoArrowBackSharp } from "react-icons/io5";
 import Sider from "../../components/MainComponents/Sider";
 import Header from "../../components/MainComponents/Header";
+import { useSelector } from "react-redux";
 const Payment = () => {
+  const user = useSelector(state => state.auth.user);
   const goBack = () => {
     window.history.go(-1);
   };
@@ -90,7 +92,7 @@ const Payment = () => {
                     <div class=" rounded d-flex justify-content-end mt-5 me-lg-5 me-md-1">
                       <div class="card" style={{ width: "18rem" }}>
                         <div className="ms-4 mt-2">
-                          <h1> ₹2,425.00</h1>
+                          <h1> {user.currencySymbol} 2,425.00</h1>
                           <h5 className="text-success ms-4">
                             Patient Net Paid
                           </h5>

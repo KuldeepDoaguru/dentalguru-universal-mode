@@ -45,7 +45,7 @@ import './font.css';
 function App() {
 
   const user = useSelector(state => state.auth.user);
- 
+  console.log(user);
   return (
     <>
     <div className="div" style={{overflow:"hidden"}}>
@@ -59,8 +59,6 @@ function App() {
         <Route path="/branch-details" element={user ? <BranchInfo />:<Navigate to="/" />} />
         <Route path="/lab-attendant-profile" element={user ? <Profile />:<Navigate to="/" />} />
          
-       
-
         <Route path="/Sencivity" element={user?<Sencivity />: <Navigate to = "/"/>} />
         <Route path="/CBCTest" element={user?<CBCTest />: <Navigate to = '/'/>} />
         <Route path="/OPGXRay" element={user?<OPGXRay />: <Navigate to = '/'/>} />

@@ -18,7 +18,7 @@ function MonthlyTest() {
   useEffect(() => {
     const fetchMonthlyTest = async () => {
       try {
-        const response = await axios.get('https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details');
+        const response = await axios.get('https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/get-patient-test-details');
         const monthAgo = new Date();
         monthAgo.setMonth(monthAgo.getMonth() - 1);
         const monthlyTests = response.data.filter(test => new Date(test.created_date) >= monthAgo);
@@ -39,7 +39,7 @@ function MonthlyTest() {
     if (isConfirmed) {
       try {
         const response = await axios.delete(
-          `https://dentalguru-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
+          `https://dentalguru-global-lab.vimubds5.a2hosted.com/api/lab/patent-details/${id}`
         );
 
         if (response.status === 200) {
