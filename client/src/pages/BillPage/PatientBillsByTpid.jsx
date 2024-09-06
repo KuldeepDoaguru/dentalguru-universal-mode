@@ -723,7 +723,7 @@ const PatientBillsByTpid = () => {
                     <h4>Total Amount In Words :</h4>
                   </div>
                   <div className="text-word">
-                    <p className="m-0">{numWords(totalBillvalueWithoutGst)}</p>
+                    <p className="m-0">{numWords(totalBillvalueWithoutGst).toUpperCase()}</p>
                   </div>
                 </div>
                 <div className="">

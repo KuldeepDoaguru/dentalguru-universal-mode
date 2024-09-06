@@ -7,8 +7,10 @@ import SittingBillDetails from "./SittingBillDetails";
 import SittingPaidBillDetails from "./SittingPaidBillDetails";
 import PatientsDue from "../components/PatientsDueOurPaid/PatientsDue";
 import PatientsPaid from "../components/PatientsDueOurPaid/PatientsPaid";
+import { useSelector } from "react-redux";
 
 function Invoices() {
+  const user = useSelector((state) => state.user);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -51,6 +53,7 @@ function Invoices() {
           </div> */}
 
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
+                  <div className="d-flex">
                   <li className="nav-item" role="presentation">
                     <button
                       className={`nav-link nav-link1 ${
@@ -104,8 +107,9 @@ function Invoices() {
                       Paid Invoices
                     </button>
                   </li>
-
-                  <div className="tab-content" id="myTabContent">
+                  </div>
+                  <div id="myTabContent">
+                  <div className="tab-content" >
                     <div
                       className={`tab-pane fade ${
                         activeTab === "dueSittingBill" ? "show active" : ""
@@ -168,6 +172,7 @@ function Invoices() {
                       </ul>
                     </div>
                   </div>
+                  </div>
                 </ul>
               </div>
             </div>
@@ -213,11 +218,11 @@ const Wrapper = styled.div`
       margin-left: 0.1rem;
     }
     @media screen and (min-width: 1700px) and (max-width: 2000px) {
-      margin-left: 0rem;
+      margin-left: 2rem;
     }
 
-    @media screen and (min-width: 2000px) and (max-width: 2500px) {
-      margin-left: 0rem;
+    @media screen and (min-width: 2000px) {
+      margin-left: 2rem;
     }
   }
 
@@ -245,11 +250,21 @@ const Wrapper = styled.div`
     }
   }
   #myTab {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    
     @media screen and (max-width: 768px) {
       width: 90%;
       margin-left: 1.2rem;
     }
+    @media screen and (min-width: 2000px) {
+      align-items: center;
+    }
   }
+  #myTab {
+
+  }
+
   #myTabContent {
     @media screen and (max-width: 768px) {
       width: 100%;

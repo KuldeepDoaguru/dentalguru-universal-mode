@@ -898,11 +898,15 @@ const Wrapper = styled.div`
     @media screen and (min-width: 1020px) and (max-width: 1500px) {
       margin-left: -2rem;
     }
-    @media screen and (min-width: 1500px) and (max-width: 1700px) {
+    /* @media screen and (min-width: 1500px) and (max-width: 1700px) {
       margin-left: 0.1rem;
     }
     @media screen and (min-width: 1700px) and (max-width: 2200px) {
       margin-left: -1rem;
+    } */
+
+    @media screen and (min-width: 1500px)  {
+      padding-left: 13%; 
     }
   }
   #tableres {

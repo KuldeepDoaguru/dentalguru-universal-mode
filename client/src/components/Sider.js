@@ -59,9 +59,9 @@ const Sider = () => {
             <hr /> */}
             {/* <li className="">
               <Link
-                to="/security-amount"
+                to="/security_amount"
                 class={`nav-link  align-middle ${getSidebarClass(
-                  "/security-amount"
+                  "/security_amount"
                 )}`}
               >
                 <div className="link-div">
@@ -125,9 +125,9 @@ const Sider = () => {
 
                 <li className="w-100">
                   <Link
-                    to="/security-amount"
+                    to="/security_amount"
                     className={`nav-link  ${getSidebarClass(
-                      "/security-amount"
+                      "/security_amount"
                     )}`}
                   >
                     <span className="text-center text-light dash-text">

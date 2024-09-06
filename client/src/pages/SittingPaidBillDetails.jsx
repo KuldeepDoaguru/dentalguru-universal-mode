@@ -301,10 +301,10 @@ function SittingPaidBillDetails() {
                                 {"Dr. "}
                                 {item.doctor_name}
                               </td>
-                              <td>{item.sitting_amount}</td>
+                              <td>{`${user.currencySymbol} ${item.sitting_amount || 0 }`}</td>
                               {/* <td>{item.pay_direct}</td>
                                 <td>{item.pay_security_amount}</td> */}
-                              <td>{item.paid_amount}</td>
+                              <td>{`${user.currencySymbol} ${item.paid_amount || 0}`}</td>
                               <td>{item?.date?.split(" ")[0]}</td>
                               <td>
                                 <Link

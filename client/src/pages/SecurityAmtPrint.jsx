@@ -430,7 +430,7 @@ const SecurityAmtPrint = () => {
     //         <button
     //           type="button"
     //           className="btn btn-primary btn-lg"
-    //           onClick={() => navigate("/security-amount")}
+    //           onClick={() => navigate("/security_amount")}
     //         >
     //           Go back
     //         </button>

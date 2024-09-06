@@ -642,11 +642,7 @@ const SittingBill = () => {
                   </div>
                   <div className="text-word">
                     <p className="m-0 fw-bold">
-                      {" "}
-                      {numToWords(
-                        sittingBill[0]?.paid_amount
-                      ).toUpperCase()}{" "}
-                       ONLY
+                      {(sittingBill[0]?.paid_amount !== null) ? numToWords(sittingBill[0]?.paid_amount).toUpperCase()+" ONLY" : " "}
                     </p>
                   </div>
                 </div>

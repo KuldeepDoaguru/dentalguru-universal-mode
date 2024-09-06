@@ -303,13 +303,12 @@ function PatientsDue() {
                                   {"Dr. "}
                                   {item.assigned_doctor_name}
                                 </td>
-                                <td>{item.total_amount}</td>
-                                <td>{item.paid_amount}</td>
-                                <td>{item.pay_by_sec_amt}</td>
+                                <td>{`${user.currencySymbol} ${item.total_amount || 0}`}</td>
+                                <td>{`${user.currencySymbol} ${item.paid_amount || 0}`}</td>
+                                <td>{`${user.currencySymbol} ${item.pay_by_sec_amt || 0}`}</td>
                                 <td>
-                                  {Number(item.total_amount) -
-                                    (Number(item.paid_amount) +
-                                      Number(item.pay_by_sec_amt))}
+                                  {`${user.currencySymbol} ${Number(item.total_amount) - (Number(item.paid_amount) +
+                                      Number(item.pay_by_sec_amt))}`}
                                 </td>
                                 <td>
                                   {item?.bill_date

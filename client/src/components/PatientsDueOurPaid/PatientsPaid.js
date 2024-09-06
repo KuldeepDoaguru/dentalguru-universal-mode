@@ -266,9 +266,9 @@ const PatientsPaid = () => {
                                     </td>
                                     <td>{item.patient_mobile}</td>
                                     <td className="text-capitalize">{`Dr. ${item.assigned_doctor_name}`}</td>
-                                    <td>{item.total_amount}</td>
-                                    <td>{item.paid_amount}</td>
-                                    <td>{item.pay_by_sec_amt}</td>
+                                    <td>{`${user.currencySymbol} ${item.total_amount || 0}`}</td>
+                                    <td>{`${user.currencySymbol} ${item.paid_amount || 0}`}</td>
+                                    <td>{`${user.currencySymbol} ${item.pay_by_sec_amt || 0}`}</td>
                                     <td>
                                       {/* {moment(
                                                 item.payment_date_time?.split(

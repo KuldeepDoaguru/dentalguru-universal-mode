@@ -25,7 +25,7 @@ const OpdMainIncome = () => {
                 id="set"
               >
                 {/* <OpdIncome /> */}
-                <OpdCollection />
+                <OpdCollection /> 
               </div>
             </div>
           </div>

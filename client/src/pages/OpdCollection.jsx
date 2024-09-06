@@ -276,7 +276,8 @@ function OpdCollection() {
             <h3>OPD Collection</h3>
           </div>
           {/* <div className="row"> */}
-          <div className="row d-flex justify-content-around mt-4">
+          {/* <div className="row overrite-row d-flex justify-content-around mt-4"> */}
+          <div className="row overrite-row d-flex mt-4">
             <div className="col-lg-12" id="head">
               <nav class="shadow rounded navbar navbar-light bg-light">
                 <h6 className="mx-3 my-1 my-md-0">Search By Patient</h6>
@@ -451,7 +452,7 @@ function OpdCollection() {
                               >
                                 {data.appointment_status}
                               </td>
-                              <td>{data.opd_amount}</td>
+                              <td>{`${user.currencySymbol} ${data.opd_amount}`}</td>
                               <td className="text-capitalize">
                                 {data.payment_Mode}
                               </td>
@@ -476,7 +477,7 @@ function OpdCollection() {
                               </td>
                               <td>
                                 <Link
-                                  to={`/print_Opd_Reciept/${data.appoint_id}`}
+                                  to={`/OpdBills/${data.appoint_id}`} 
                                 >
                                   {/* {data.payment_Status == "paid" && (
                                     <button className="btn btn-success">
@@ -643,12 +644,12 @@ const Wrapper = styled.div`
       width: auto;
       margin: auto;
     }
-    @media screen and (min-width: 1500px) and (max-width: 2000px) {
+    /* @media screen and (min-width: 1500px) and (max-width: 2000px) {
       width: 98%;
     }
     @media screen and (min-width: 2000px) and (max-width: 2500px) {
       width: 98%;
-    }
+    } */
   }
   th {
     background-color: #201658;
@@ -682,5 +683,10 @@ const Wrapper = styled.div`
 
   .no-data-container h4 {
     margin: 0;
+  }
+  .widget-area-2 {
+  }
+  .overrite-row {
+    margin-left: calc(.5* 1.5rem);
   }
 `;
