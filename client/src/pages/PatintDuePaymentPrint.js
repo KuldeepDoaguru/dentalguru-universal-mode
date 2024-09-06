@@ -42,7 +42,7 @@ const PatintDuePaymentPrint = () => {
   const branchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const PatintDuePaymentPrint = () => {
   const secuirtyAmtBytpuhid = async () => {
     try {
       const res = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSecurityAmountDataByTPUHID/${tpid}/${uhid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSecurityAmountDataByTPUHID/${tpid}/${uhid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const PatintDuePaymentPrint = () => {
   const getBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientBillsAndSecurityAmountByBranch/${user.branch}/${bid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientBillsAndSecurityAmountByBranch/${user.branch}/${bid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -94,7 +94,7 @@ const PatintDuePaymentPrint = () => {
   const getPatientDetailsByBill = async () => {
     try {
       const response = axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientDetailsForBill/${user.branch}/${uhid}/${bid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientDetailsForBill/${user.branch}/${uhid}/${bid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -183,7 +183,7 @@ const PatintDuePaymentPrint = () => {
     try {
       console.log(remainingSecurityAmount);
       const response = await axios.put(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRemainingSecurityAmount/${tpid}/${uhid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRemainingSecurityAmount/${tpid}/${uhid}`,
         {
           remaining_amount: remainingSecurityAmount,
         },
@@ -210,7 +210,7 @@ const PatintDuePaymentPrint = () => {
     try {
       setLoading(true);
       const response = await axios.put(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/makeBillPayment/${user.branch}/${bid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/makeBillPayment/${user.branch}/${bid}`,
         {
           paid_amount: updatedPaidAmt,
           payment_status: "paid",

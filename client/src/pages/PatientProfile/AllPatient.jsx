@@ -25,7 +25,7 @@ function AllPatient() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-Patients/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-Patients/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",

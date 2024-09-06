@@ -26,7 +26,7 @@ function SittingPaidBillDetails() {
     setLoadingEffect(true);
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSittingBillDue/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSittingBillDue/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -27,7 +27,7 @@ const Overview = () => {
   const getTreatmentsDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const Overview = () => {
   const getPrescriptionDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPrescriptionViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPrescriptionViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const Overview = () => {
   const getBillDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBillsViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBillsViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const Overview = () => {
   const getExaminationDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getExaminationViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getExaminationViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const Overview = () => {
   const getAppointDetailsPat = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAllAppointmentByPatientId/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAllAppointmentByPatientId/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -25,7 +25,7 @@
 //   const getOpdAmt = async () => {
 //     try {
 //       const { data } = await axios.get(
-//         `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentDetailsViaIDOPD/${bid}`
+//         `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentDetailsViaIDOPD/${bid}`
 //       );
 //       setOpdAmount(data);
 //     } catch (error) {
@@ -36,7 +36,7 @@
 //   const branchDetails = async () => {
 //     try {
 //       const { data } = await axios.get(
-//         `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`
+//         `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`
 //       );
 //       setBranchData(data);
 //     } catch (error) {
@@ -234,7 +234,7 @@ const PrintOpdBill = () => {
     console.log(user.id);
     try {
       const viewDoc = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetails/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetails/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -255,7 +255,7 @@ const PrintOpdBill = () => {
   const getBill = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-appointment-by-id/${branch}/${bid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-appointment-by-id/${branch}/${bid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -363,7 +363,7 @@ const PrintOpdBill = () => {
 
       cogoToast.success("OPD Amount bill Sending to email");
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -417,7 +417,7 @@ const PrintOpdBill = () => {
       }
 
       const res = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapp",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapp",
         formData,
         {
           headers: {

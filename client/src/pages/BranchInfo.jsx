@@ -21,7 +21,7 @@ const BranchInfo = () => {
   const getBranchDetail = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-branch-detail/${branch}`
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-branch-detail/${branch}`
       );
       console.log(response);
       setBranchDetail(response.data.data);
@@ -33,7 +33,7 @@ const BranchInfo = () => {
   const getBranchHolidays = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-branch-holidays/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-branch-holidays/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -17,7 +17,7 @@ import animationData from "../../pages/loading-effect.json";
 import Lottie from "react-lottie";
 import moment from "moment";
 
-const Accountant_Dashboard = () => {
+const Accountant_Dashboard = () => { 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
@@ -38,7 +38,7 @@ const Accountant_Dashboard = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBillsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBillsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const Accountant_Dashboard = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentData/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentData/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -137,7 +137,7 @@ const Accountant_Dashboard = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSittingBillDue/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSittingBillDue/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",

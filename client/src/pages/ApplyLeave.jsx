@@ -35,7 +35,7 @@ function ApplyLeave() {
   const getLeaves = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-leaves/${branch}/${employeeId}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-leaves/${branch}/${employeeId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -120,7 +120,7 @@ function ApplyLeave() {
       };
       try {
         const response = await axios.post(
-          "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/apply-leave",
+          "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/apply-leave",
           updatedFormData,
           {
             headers: {

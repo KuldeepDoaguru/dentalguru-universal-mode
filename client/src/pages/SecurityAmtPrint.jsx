@@ -26,7 +26,7 @@ const SecurityAmtPrint = () => {
     console.log(user.id);
     try {
       const viewDoc = await axios.get(
-        ` https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetails/${user.branch}`,
+        ` https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetails/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const SecurityAmtPrint = () => {
   //   const getBill = async () => {
   //     try {
   //       const response = await axios.get(
-  //         `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-appointment-by-id/${branch}/${appointmentId}`
+  //         `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-appointment-by-id/${branch}/${appointmentId}`
   //       );
   //       console.log(response?.data?.data);
   //       setData(response?.data?.data);
@@ -65,7 +65,7 @@ const SecurityAmtPrint = () => {
   const getSecurityRec = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSecurityAmountDataBySID/${sid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSecurityAmountDataBySID/${sid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -90,7 +90,7 @@ const SecurityAmtPrint = () => {
   // const getPatientTreatmentDetails = async (uhid) => {
   //   try {
   //     const response = await axios.get(
-  //       `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientDeatilsByUhidFromSecurityAmt/${branch}/${uhid}`,
+  //       `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientDeatilsByUhidFromSecurityAmt/${branch}/${uhid}`,
   //       {
   //         headers: {
   //           "Content-Type": "application/json",
@@ -181,7 +181,7 @@ const SecurityAmtPrint = () => {
 
       cogoToast.success("Security Amount bill Sending to email");
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -235,7 +235,7 @@ const SecurityAmtPrint = () => {
       }
 
       const res = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapp",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapp",
         formData,
         {
           headers: {

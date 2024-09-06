@@ -105,7 +105,7 @@ const SecurityAmount = () => {
     if (name === "appointment_id") {
       try {
         const { data } = await axios.get(
-          `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentDetailsViaID/${value}`,
+          `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentDetailsViaID/${value}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -147,7 +147,7 @@ const SecurityAmount = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/addSecurityAmount",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/addSecurityAmount",
         addSecurityAmount,
         {
           headers: {
@@ -168,7 +168,7 @@ const SecurityAmount = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSecurityAmountDataByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSecurityAmountDataByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -189,7 +189,7 @@ const SecurityAmount = () => {
   const makePaymentNow = async (id) => {
     try {
       const response = await axios.put(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateSecurityAmount/${id}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateSecurityAmount/${id}`,
         [],
         {
           headers: {
@@ -238,8 +238,8 @@ const SecurityAmount = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        // `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRefundAmount/${selected}`,
-        `http://localhost:8888/api/v2/accountant/updateRefundAmount/${selected}`,
+        // `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRefundAmount/${selected}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/updateRefundAmount/${selected}`,
         {
           refund_by: user.name,
           payment_status: "Refunded",
@@ -283,8 +283,8 @@ const SecurityAmount = () => {
     };
     try {
       const response = await axios.put(
-        // `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
-        `http://localhost:8888/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
+        // `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/updatePatientSecurityAmt/${selected}`,
         updatedData,
         {
           headers: {
@@ -335,7 +335,7 @@ const SecurityAmount = () => {
   const billDetailsSms = async () => {
     try {
       const { data } = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendSMS",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendSMS",
         formDetails,
         {
           headers: {
@@ -353,7 +353,7 @@ const SecurityAmount = () => {
   const sendWhatsappTextOnly = async () => {
     try {
       const res = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapptextonly",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapptextonly",
         formDetails,
         {
           headers: {
@@ -377,7 +377,7 @@ const SecurityAmount = () => {
   const refundBillDetailsSms = async () => {
     try {
       const { data } = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendSMS",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendSMS",
         refundformDetails,
         {
           headers: {
@@ -395,7 +395,7 @@ const SecurityAmount = () => {
   const RefundSendWhatsappTextOnly = async () => {
     try {
       const res = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapptextonly",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapptextonly",
         refundformDetails,
         {
           headers: {

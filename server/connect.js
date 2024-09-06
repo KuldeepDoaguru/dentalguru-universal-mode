@@ -3,10 +3,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "dental_guru_universal",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
 });
 
 // Connect to the databases

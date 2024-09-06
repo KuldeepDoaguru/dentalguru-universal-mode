@@ -25,7 +25,7 @@ const PatintPaidPaymentPrint = () => {
   const getPaidBillData = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/paidBillDetails/${user.branch}/${bid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/paidBillDetails/${user.branch}/${bid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const PatintPaidPaymentPrint = () => {
   const branchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",

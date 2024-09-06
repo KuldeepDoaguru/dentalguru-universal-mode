@@ -33,7 +33,7 @@ const Cards = () => {
   const getOpdData = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getOPDDetailsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getOPDDetailsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -107,7 +107,7 @@ const Cards = () => {
   const getTreatmentData = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentDetailsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentDetailsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -204,7 +204,7 @@ const Cards = () => {
   const getVoucherAmount = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getVoucherListByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getVoucherListByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -246,7 +246,7 @@ const Cards = () => {
   const getPatientBill = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientBillsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getPatientBillsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",

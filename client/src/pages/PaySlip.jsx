@@ -25,7 +25,7 @@ const PaySlip = () => {
   const getSalarySlip = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getEmployeeListByBranchByID/${user.branch}/${slid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getEmployeeListByBranchByID/${user.branch}/${slid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const PaySlip = () => {
   const branchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",

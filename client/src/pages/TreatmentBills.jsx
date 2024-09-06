@@ -49,7 +49,7 @@ const TreatmentBills = () => {
   const getTreatmentBill = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentTotal/${bid}/${uhid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentTotal/${bid}/${uhid}`,
         {
           headers: {
             "Content-Type": "application/json",

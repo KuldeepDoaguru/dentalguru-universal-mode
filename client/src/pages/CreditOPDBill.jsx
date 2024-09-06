@@ -49,7 +49,7 @@ function CreditOPDBill() {
     setLoadingEffect(true);
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-appointments/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-appointments/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -223,7 +223,7 @@ function CreditOPDBill() {
     }
     try {
       const res = await axios.put(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/ChangeStatusToPaidOPDBill/${id}/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/ChangeStatusToPaidOPDBill/${id}/${branch}`,
         {},
         {
           headers: {

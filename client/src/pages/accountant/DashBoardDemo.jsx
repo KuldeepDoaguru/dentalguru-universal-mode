@@ -38,7 +38,7 @@ const DashBoardDemo = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBillsByBranch/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBillsByBranch/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const DashBoardDemo = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentData/${user.branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentData/${user.branch}`,
         {
           headers: {
             "Content-Type": "application/json",

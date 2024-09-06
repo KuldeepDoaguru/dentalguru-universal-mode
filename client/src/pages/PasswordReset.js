@@ -19,7 +19,7 @@ const PasswordReset = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendOtp",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendOtp",
         {
           email,
         }
@@ -41,7 +41,7 @@ const PasswordReset = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/verifyOtp",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/verifyOtp",
         {
           email,
           otp,
@@ -64,7 +64,7 @@ const PasswordReset = () => {
     try {
       setLoading(true);
       const response = await axios.put(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/resetPassword",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/resetPassword",
         {
           email,
           password: newPassword,

@@ -49,7 +49,7 @@ const VoucherCreater = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/voucherCreate",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/voucherCreate",
         vdata,
         {
           headers: {

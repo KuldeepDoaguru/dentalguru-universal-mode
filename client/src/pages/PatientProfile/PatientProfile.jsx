@@ -23,7 +23,7 @@ const PatientProfile = () => {
   const getPatient = async () => {
     try {
       const response = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-Patient-by-id/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-Patient-by-id/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const PatientProfile = () => {
   const getOngoingTreat = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentViaUhid/${branch}/${pid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getTreatmentViaUhid/${branch}/${pid}`,
         {
           headers: {
             "Content-Type": "application/json",

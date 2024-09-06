@@ -1,3 +1,6 @@
+- > Accountant controller mai path sahi karna hai lcoalhost dala hai waha par bas 
+- > 
+
 1. AllDuaAmount 
     - > amount in words likha hua hai 
     - > isko america ke hisaab se alag hot ahai 

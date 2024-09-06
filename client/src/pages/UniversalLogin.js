@@ -31,7 +31,7 @@ const UniversalLogin = () => {
   const getBranchList = async () => {
     try {
       const response = await axios.get(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-branches"
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/get-branches"
       );
       console.log(response.data.data);
       setBranchList(response.data.data);
@@ -65,8 +65,8 @@ const UniversalLogin = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        // "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/accountantLoginUser",
-        "http://localhost:8888/api/v2/accountant/accountantLoginUser",
+        // "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/accountantLoginUser", 
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/accountantLoginUser",
         {
           email,
           password,

@@ -33,7 +33,7 @@ const SittingBill = () => {
   const getBranchDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getBranchDetailsByBranch/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const SittingBill = () => {
   const getPatientDetail = async () => {
     try {
       const res = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentsWithPatientDetailsById/${tpid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getAppointmentsWithPatientDetailsById/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const SittingBill = () => {
   const getLabAllData = async () => {
     try {
       const res = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/lab-details/${tpid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/lab-details/${tpid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -98,7 +98,7 @@ const SittingBill = () => {
   const getSittingBillbyId = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSittingBillbyId/${branch}/${sbid}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getSittingBillbyId/${branch}/${sbid}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -117,7 +117,7 @@ const SittingBill = () => {
   const getDoctorDetails = async () => {
     try {
       const { data } = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getEmployeeDetailsbyId/${branch}/${getPatientData[0]?.doctor_id}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getEmployeeDetailsbyId/${branch}/${getPatientData[0]?.doctor_id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -136,7 +136,7 @@ const SittingBill = () => {
   const getExamineDetails = async () => {
     try {
       const res = await axios.get(
-        `https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/getDentalDataByTpid/${tpid}/${branch}`,
+        `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/getDentalDataByTpid/${tpid}/${branch}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -241,7 +241,7 @@ const SittingBill = () => {
         console.log(key, value);
       }
       const response = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
         formData,
         {
           headers: {
@@ -293,7 +293,7 @@ const SittingBill = () => {
       }
 
       const res = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapp",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendWhatsapp",
         formData,
         {
           headers: {
@@ -316,7 +316,7 @@ const SittingBill = () => {
   const billDetailsSms = async () => {
     try {
       const { data } = await axios.post(
-        "https://dentalguru-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendSMS",
+        "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/sendSMS",
         formDetails,
         {
           headers: {
