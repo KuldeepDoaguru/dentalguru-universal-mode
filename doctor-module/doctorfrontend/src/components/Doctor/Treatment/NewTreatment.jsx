@@ -22,6 +22,8 @@ const NewTreatment = () => {
   const { refreshTable, currentUser } = useSelector((state) => state.user);
   const branch = user.currentUser.branch_name;
   const token = user.currentUser.token;
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
   const [getPatientData, setGetPatientData] = useState([]);
   const [uniqueValue, setUniqueValue] = useState([]);
   const [getExamTeeth, setGetExamTeeth] = useState([]);

@@ -81,17 +81,10 @@ const TreatSuggest = () => {
         (treatment) => treatment.treatment_name === prevInputItem.treatment_name
       );
 
-      if (branchData[0]?.hospital_category === "Nabh") {
-        return {
-          ...prevInputItem,
-          total_cost: treatment?.nabh,
-        };
-      } else {
-        return {
-          ...prevInputItem,
-          total_cost: treatment?.non_nabh,
-        };
-      }
+      return {
+        ...prevInputItem,
+        total_cost: treatment?.treatment_cost,
+      };
     });
   };
 
@@ -388,6 +381,7 @@ const TreatSuggest = () => {
     assigned_doctor_name: employeeName,
     lab_name: labData.lab_name,
     test: labData.test,
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(formsData);
@@ -596,6 +590,7 @@ const TreatSuggest = () => {
     frequency: prescriptionData?.frequency,
     duration: prescriptionData?.duration,
     note: prescriptionData?.note,
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(medicineInput);

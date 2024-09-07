@@ -15,6 +15,8 @@ const QPrescriptionForm = () => {
   const { refreshTable } = useSelector((state) => state.user);
   const user = useSelector((state) => state.user);
   console.log(user);
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
 
   const token = user.currentUser.token;
   const [appointments, setAppointments] = useState({});
@@ -36,6 +38,7 @@ const QPrescriptionForm = () => {
     frequency: "",
     duration: "",
     note: "",
+    timezone: branchData[0]?.timezone,
   });
 
   const ChiefComplainTOList = async () => {

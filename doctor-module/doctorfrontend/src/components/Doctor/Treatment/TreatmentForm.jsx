@@ -23,6 +23,8 @@ const TreatmentForm = () => {
   console.log(user.currentUser.employee_ID);
   const branch = user.currentUser.branch_name;
   console.log(branch);
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
   const [treatments, setTreatments] = useState([]);
   const [showBookingPopup, setShowBookingPopup] = useState(false);
   const [treatStats, setTreatStats] = useState();
@@ -430,6 +432,7 @@ const TreatmentForm = () => {
     dir_rec_doctor_id: user.currentUser.employee_ID,
     sitting_payment_status: formData.sitting_payment_status,
     note: formData.note,
+    timezone: branchData[0]?.timezone,
   };
   console.log(formDetails);
   console.log(pendingAmountValue);
@@ -478,6 +481,7 @@ const TreatmentForm = () => {
         : rawNetAmount - formData.paid_amount,
     payment_status: "pending",
     note: formData.note,
+    timezone: branchData[0]?.timezone,
   };
 
   const generateBillSitting = async () => {

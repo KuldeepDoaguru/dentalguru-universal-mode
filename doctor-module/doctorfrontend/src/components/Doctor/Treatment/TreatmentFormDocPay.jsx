@@ -426,6 +426,7 @@ const TreatmentFormDocPay = () => {
     dir_rec_doctor_id: user.currentUser.employee_ID,
     sitting_payment_status: formData.sitting_payment_status,
     note: formData.note,
+    timezone: branchData[0]?.timezone,
   };
   console.log(formDetails);
   console.log(pendingAmountValue);
@@ -494,6 +495,7 @@ const TreatmentFormDocPay = () => {
           : "Credit"
         : formData.sitting_payment_status,
     note: formData.note,
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(sittingForm);

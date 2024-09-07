@@ -222,6 +222,7 @@ const PrescriptionQuick = () => {
         `Dear ${getPatientData[0]?.patient_name}, Please find the attached Prescription file.`
       );
       formData.append("file", pdfData, "prescription.pdf");
+      formData.append("filename", "prescription.pdf");
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
@@ -230,7 +231,6 @@ const PrescriptionQuick = () => {
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
           },
         }
@@ -483,10 +483,15 @@ const PrescriptionQuick = () => {
                             <td>{item.treatment_name}</td>
                             <td>{item.selected_teeth}</td>
                             <td>{item?.selected_teeth?.split(", ").length}</td>
-                            <td>{item.totalCost}</td>
+
                             <td>
+                              {branchData[0]?.currency_symbol}
                               {item.totalCost *
                                 item?.selected_teeth?.split(", ").length}
+                            </td>
+                            <td>
+                              {branchData[0]?.currency_symbol}
+                              {item.totalCost}
                             </td>
                             <td>{item.note}</td>
                           </tr>

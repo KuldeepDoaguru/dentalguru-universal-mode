@@ -28,6 +28,8 @@ const SecurityAmount = () => {
   const user = useSelector((state) => state.user);
   const token = user.currentUser.token;
   console.log(branch);
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
   const [formData, setFormData] = useState({
     tp_id: tpid,
     branch_name: currentUser ? currentUser.branch_name : "",
@@ -226,6 +228,7 @@ const SecurityAmount = () => {
     payment_Mode: formData.payment_Mode,
     transaction_Id: formData.transaction_Id,
     received_by: formData.received_by,
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(formsCorrect);

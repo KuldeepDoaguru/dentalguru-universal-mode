@@ -333,6 +333,8 @@ const ExaminationPatientTest = ({ tpid }) => {
   const user = useSelector((state) => state.user);
   const branch = user.currentUser.branch_name;
   const token = user.currentUser.token;
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
   console.log(branch);
 
   const handleChiefListChange = () => {
@@ -1017,6 +1019,7 @@ const ExaminationPatientTest = ({ tpid }) => {
     advice: inputItem.advice,
     onExamination: inputItem.onExamination,
     diagnosis_category: dcat,
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(formData);
@@ -1025,7 +1028,7 @@ const ExaminationPatientTest = ({ tpid }) => {
     try {
       const res = await axios.post(
         "https://dentalguru-global-doctor.vimubds5.a2hosted.com/api/doctor/addChiefComplainTOList",
-        { complain: inputItem.chiefComplain }
+        { complain: inputItem.chiefComplain, timezone: branchData[0]?.timezone }
       );
       cogoToast.success("Chief Complain added to the list");
     } catch (error) {

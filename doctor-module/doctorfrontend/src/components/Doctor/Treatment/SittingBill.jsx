@@ -193,7 +193,7 @@ const SittingBill = () => {
     const imgWidth = 210; // A4 width in mm
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight, undefined, "FAST");
     pdf.save("sitting bill.pdf");
   };
 
@@ -230,7 +230,8 @@ const SittingBill = () => {
         "textMatter",
         `Dear ${getPatientData[0]?.patient_name}, Please find the attached sitting bill file.`
       );
-      formData.append("file", pdfData, "prescription.pdf");
+      formData.append("file", pdfData, "sitting-bill.pdf");
+      formData.append("filename", "sitting-bill.pdf");
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
@@ -501,13 +502,26 @@ const SittingBill = () => {
                         <td>{item.treatment}</td>
                         <td>{item.teeth_number}</td>
                         <td>{item.teeth_qty}</td>
-                        <td>{item.treatment_cost}</td>
-                        <td>{item.cost_per_qty}</td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.treatment_cost}
+                        </td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.cost_per_qty}
+                        </td>
                         <td>{item.discount}%</td>
-                        <td>{item.final_cost}</td>
-                        <td>{item.sitting_amount}</td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.final_cost}
+                        </td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.sitting_amount}
+                        </td>
                         <td>
                           {" "}
+                          {branchData[0]?.currency_symbol}
                           {item.payment_status === "Pending"
                             ? 0
                             : item.paid_amount === null
@@ -649,10 +663,11 @@ const SittingBill = () => {
                           Total Amount Recieved:
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
+                          {branchData[0]?.currency_symbol}
                           {sittingBill[0]?.payment_status === "pending" ||
                           sittingBill[0]?.payment_status === "Pending"
                             ? 0
-                            : sittingBill[0]?.paid_amount}
+                            : sittingBill[0]?.sitting_amount}
                         </td>
                       </tr>
                     </tbody>

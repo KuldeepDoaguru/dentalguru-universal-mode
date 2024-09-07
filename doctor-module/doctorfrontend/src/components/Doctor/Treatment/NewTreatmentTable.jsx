@@ -157,6 +157,7 @@ const NewTreatmentTable = () => {
       totalFinalBillValue - (totalPaidValue + totSecurityAmountUsedValue),
     pay_by_sec_amt: totSecurityAmountUsedValue,
     payment_status: "pending",
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(billInputField);
@@ -305,13 +306,23 @@ const NewTreatmentTable = () => {
                   <td>{item.dental_treatment}</td>
                   <td>{item.no_teeth}</td>
                   <td>{item.qty}</td>
-                  <td>{item.total_amt}</td>
-                  <td>{item.cost_amt}</td>
+                  <td>
+                    {branchData[0]?.currency_symbol}
+                    {item.total_amt}
+                  </td>
+                  <td>
+                    {branchData[0]?.currency_symbol}
+                    {item.cost_amt}
+                  </td>
                   <td>{item.disc_amt}</td>
 
-                  <td>{item.net_amount}</td>
+                  <td>
+                    {branchData[0]?.currency_symbol}
+                    {item.net_amount}
+                  </td>
                   <td>
                     {" "}
+                    {branchData[0]?.currency_symbol}
                     {item.sitting_payment_status === "Pending" ||
                     item.sitting_payment_status === "pending"
                       ? item.sec_rec_amt > 0

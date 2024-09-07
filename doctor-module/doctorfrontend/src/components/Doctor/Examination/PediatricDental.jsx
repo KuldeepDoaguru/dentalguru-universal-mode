@@ -227,6 +227,8 @@ const PediatricDentalTest = ({ tpid }) => {
   const user = useSelector((state) => state.user);
   const branch = user.currentUser.branch_name;
   const token = user.currentUser.token;
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
   console.log(branch);
   const navigate = useNavigate();
 
@@ -777,6 +779,7 @@ const PediatricDentalTest = ({ tpid }) => {
     advice: inputItem.advice,
     onExamination: inputItem.onExamination,
     diagnosis_category: dcat,
+    timezone: branchData[0]?.timezone,
   };
 
   const updateAppointmentData = async () => {

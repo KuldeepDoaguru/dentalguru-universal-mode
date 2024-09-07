@@ -196,7 +196,7 @@ const PatientBillsByTpid = () => {
 
   console.log(billDetails);
   const totalBillvalueWithoutGst = getTreatData?.reduce((total, item) => {
-    if (billDetails[0]?.due_amount === billDetails[0]?.net_amount) {
+    if (billDetails[0]?.pending_amount === billDetails[0]?.net_amount) {
       return total + Number(item.paid_amount);
     } else {
       return (
@@ -259,7 +259,7 @@ const PatientBillsByTpid = () => {
     const imgWidth = 210; // A4 width in mm
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight, undefined, "FAST");
     pdf.save("final bill.pdf");
   };
 
@@ -272,7 +272,16 @@ const PatientBillsByTpid = () => {
       const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.addImage(
+        imgData,
+        "PNG",
+        0,
+        0,
+        imgWidth,
+        imgHeight,
+        undefined,
+        "FAST"
+      );
       const pdfData = pdf.output("blob");
       console.log(pdfData);
 
@@ -287,7 +296,8 @@ const PatientBillsByTpid = () => {
         "textMatter",
         `Dear ${getPatientData[0]?.patient_name}, Please find the attached final bill file.`
       );
-      formData.append("file", pdfData, "prescription.pdf");
+      formData.append("file", pdfData, "final-bill.pdf");
+      formData.append("filename", "final-bill.pdf");
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
@@ -613,12 +623,21 @@ const PatientBillsByTpid = () => {
                         <td>{item.dental_treatment}</td>
                         <td>{item.no_teeth}</td>
                         <td>{item.qty}</td>
-                        <td>{item.cost_amt}</td>
-                        <td>{item.total_amt}</td>
-                        <td>{item.disc_amt}</td>
-                        <td>{item.paid_amount}</td>
                         <td>
-                          {" "}
+                          {branchData[0]?.currency_symbol}
+                          {item.cost_amt}
+                        </td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.total_amt}
+                        </td>
+                        <td>{item.disc_amt}</td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
+                          {item.paid_amount}
+                        </td>
+                        <td>
+                          {branchData[0]?.currency_symbol}
                           {item.sitting_payment_status === "Pending"
                             ? 0
                             : item.paid_amount}
@@ -639,8 +658,10 @@ const PatientBillsByTpid = () => {
                     <td className="heading-title text-danger fw-bold">
                       {/* Calculate total cost here */}
                       {/* Assuming getTreatData is an array of objects with 'net_amount' property */}
+                      {branchData[0]?.currency_symbol}
                       {billDetails[0]?.total_amount -
-                        billDetails[0]?.paid_amount}
+                        (billDetails[0]?.paid_amount +
+                          billDetails[0]?.pay_by_sec_amt)}
                     </td>
                   </tr>
                 </tfoot>
@@ -662,6 +683,7 @@ const PatientBillsByTpid = () => {
                               100),
                         0
                       )} */}
+                      {branchData[0]?.currency_symbol}
                       {billDetails[0]?.total_amount}
                     </td>
 
@@ -672,10 +694,11 @@ const PatientBillsByTpid = () => {
                             ? total
                             : total + Number(item.paid_amount),
                         0
-                      )}
-                       */}
+                      )} */}
 
-                      {billDetails[0]?.paid_amount}
+                      {branchData[0]?.currency_symbol}
+                      {billDetails[0]?.paid_amount +
+                        billDetails[0]?.pay_by_sec_amt}
                     </td>
                   </tr>
                 </tfoot>
@@ -692,7 +715,11 @@ const PatientBillsByTpid = () => {
                   </div>
                   <div className="text-word">
                     <p className="m-0 px-1">
-                      {numWords(billDetails[0]?.paid_amount)}
+                      {numWords(
+                        billDetails[0]?.paid_amount +
+                          billDetails[0]?.pay_by_sec_amt
+                      )}{" "}
+                      only
                     </p>
                   </div>
                 </div>
@@ -748,7 +775,9 @@ const PatientBillsByTpid = () => {
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
                           {billDetails[0]?.payment_status === "Paid" &&
-                            billDetails[0]?.total_amount - payafterTreat}
+                            `${branchData[0]?.currency_symbol} ${
+                              billDetails[0]?.total_amount - payafterTreat
+                            }`}
                         </td>
                       </tr>
                     </tbody>
@@ -759,6 +788,7 @@ const PatientBillsByTpid = () => {
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
                           {/* {totalBillvalueWithoutGst} */}
+                          {branchData[0]?.currency_symbol}
                           {billDetails[0]?.paid_amount}
                         </td>
                       </tr>
@@ -858,7 +888,7 @@ const PatientBillsByTpid = () => {
                 ) : (
                   <>
                     <button
-                      className="btn btn-info no-print mx-3 mt-2 mb-2 text-white shadow"
+                      className="btn btn-info no-print mx-3 mt-2 mb-3 text-white shadow"
                       style={{
                         backgroundColor: "#0dcaf0",
                         border: "#0dcaf0",

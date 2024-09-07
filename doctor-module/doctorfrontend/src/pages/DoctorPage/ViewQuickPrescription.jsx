@@ -10,7 +10,6 @@ import styled from "styled-components";
 const ViewQuickPrescription = () => {
   const { uhid, appointId } = useParams();
   console.log(useParams());
-
   const user = useSelector((state) => state.user);
   const token = user.currentUser.token;
   console.log(user);
@@ -94,7 +93,7 @@ const ViewQuickPrescription = () => {
   console.log(getTreatMedicine);
 
   const goBack = () => {
-    window.history.go(-1);
+    navigate(`/doctor-dashboard`);
   };
 
   const handleButton = async () => {

@@ -431,7 +431,11 @@ const PatintDuePaymentPrint = () => {
                             <div class=" rounded d-flex justify-content-end mt-5">
                               <div class="card cardwid">
                                 <div className="ms-4 mt-2">
-                                  <h1> ₹{billAmount[0]?.total_amount}</h1>
+                                  <h1>
+                                    {" "}
+                                    {branch[0]?.currency_symbol}
+                                    {billAmount[0]?.total_amount}
+                                  </h1>
                                   <h5 className="text-danger">
                                     Total Treatment Amount
                                   </h5>
@@ -480,7 +484,8 @@ const PatintDuePaymentPrint = () => {
                             </td>
 
                             <td className="fw-bolder amount-width">
-                              ₹{billAmount[0]?.total_amount}
+                              {branch[0]?.currency_symbol}
+                              {billAmount[0]?.total_amount}
                             </td>
                           </tr>
                           <tr>
@@ -491,7 +496,8 @@ const PatintDuePaymentPrint = () => {
                               </h6>
                             </td>
                             <td className="fw-bolder amount-width">
-                              ₹ {billAmount[0]?.paid_amount}
+                              {branch[0]?.currency_symbol}
+                              {billAmount[0]?.paid_amount}
                             </td>
                           </tr>
                           <tr>
@@ -502,7 +508,8 @@ const PatintDuePaymentPrint = () => {
                               </h6>
                             </td>
                             <td className="fw-bolder amount-width">
-                              ₹ {billAmount[0]?.pay_by_sec_amt}
+                              {branch[0]?.currency_symbol}
+                              {billAmount[0]?.pay_by_sec_amt}
                             </td>
                           </tr>
                           <tr>
@@ -512,7 +519,8 @@ const PatintDuePaymentPrint = () => {
                               </h6>
                             </td>
                             <td className="fw-bolder amount-width">
-                              ₹ {dueAmt}
+                              {branch[0]?.currency_symbol}
+                              {dueAmt}
                             </td>
                           </tr>
                           <tr>
@@ -524,7 +532,7 @@ const PatintDuePaymentPrint = () => {
                             </td>
 
                             <td className="fw-bolder amount-width">
-                              ₹
+                              {branch[0]?.currency_symbol}
                               {saAmt[0]?.remaining_amount
                                 ? saAmt[0]?.remaining_amount
                                 : 0}
@@ -537,7 +545,8 @@ const PatintDuePaymentPrint = () => {
                               </h6>
                             </td>
                             <td className="fw-bolder amount-width">
-                              ₹{remainingSecurityAmount}
+                              {branch[0]?.currency_symbol}
+                              {remainingSecurityAmount}
                             </td>
                           </tr>
                           <tr>
@@ -547,7 +556,8 @@ const PatintDuePaymentPrint = () => {
                               </h6>
                             </td>
                             <td className="fw-bolder amount-width">
-                              ₹{finalAmt}
+                              {branch[0]?.currency_symbol}
+                              {finalAmt}
                             </td>
                           </tr>
                         </tbody>

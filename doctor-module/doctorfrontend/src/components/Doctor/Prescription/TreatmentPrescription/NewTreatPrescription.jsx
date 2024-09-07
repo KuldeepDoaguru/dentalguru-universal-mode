@@ -21,6 +21,8 @@ const NewTreatPrescription = () => {
   const branch = user.currentUser.branch_name;
   const employeeName = user.currentUser.employee_name;
   console.log(branch);
+  const branchData = useSelector((state) => state.branch.currentBranch);
+  console.log(branchData);
   const [getPatientData, setGetPatientData] = useState([]);
   const [getExaminData, setGetExaminData] = useState([]);
   const [getTreatData, setGetTreatData] = useState([]);
@@ -207,6 +209,7 @@ const NewTreatPrescription = () => {
     frequency: prescriptionData?.frequency,
     duration: prescriptionData?.duration,
     note: prescriptionData?.note,
+    timezone: branchData[0]?.timezone,
   };
 
   console.log(medicineInput);
