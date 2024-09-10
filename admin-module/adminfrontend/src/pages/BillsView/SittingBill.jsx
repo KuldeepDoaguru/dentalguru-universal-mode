@@ -120,6 +120,10 @@ const SittingBill = () => {
     }
   });
 
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [trimmedKeyword]);
+
   const totalOpdAmount = searchFilter.reduce((total, item) => {
     return total + Number(item.sitting_amount);
   }, 0);

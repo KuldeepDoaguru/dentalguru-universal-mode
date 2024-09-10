@@ -167,8 +167,11 @@ const AdminTreatSetting = () => {
 
   const totalCount = treatList.length;
 
+  const trimmedKeyword = keyword.trim().toLowerCase();
+  console.log(trimmedKeyword);
+
   const searchFilter = treatList.filter((lab) =>
-    lab.treatment_name.toLowerCase().includes(keyword.toLowerCase())
+    lab.treatment_name.toLowerCase().includes(trimmedKeyword)
   );
 
   const totalPages = Math.ceil(searchFilter.length / complaintsPerPage);
@@ -178,6 +181,10 @@ const AdminTreatSetting = () => {
     const endIndex = startIndex + complaintsPerPage;
     return searchFilter?.slice(startIndex, endIndex);
   };
+
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [trimmedKeyword]);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);

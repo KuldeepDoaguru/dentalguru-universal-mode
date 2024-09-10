@@ -223,6 +223,7 @@ const ViewSittingBill = () => {
         `Dear ${getPatientData[0]?.patient_name}, Please find the attached sitting bill file.`
       );
       formData.append("file", pdfData, "sitting_bill.pdf");
+      formData.append("filename", "sitting_bill.pdf");
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
@@ -668,9 +669,7 @@ const ViewSittingBill = () => {
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
                           {getBranch[0]?.currency_symbol}
-                          {sittingBill[0]?.payment_status === "Credit"
-                            ? sittingBill[0]?.final_cost
-                            : sittingBill[0]?.paid_amount}
+                          {sittingBill[0]?.sitting_amount}
                         </td>
                       </tr>
                     </tbody>
@@ -694,7 +693,7 @@ const ViewSittingBill = () => {
         </div>
 
         {/* print button */}
-        <div className="container-fluid">
+        <div className="container-fluid no-print">
           <div className="text-center">
             <button
               className="btn btn-info no-print mx-3 mb-3 mt-2 text-white shadow"

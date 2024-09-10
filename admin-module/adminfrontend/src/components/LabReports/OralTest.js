@@ -162,9 +162,11 @@ const OralTest = () => {
                                   <td>{patient.assigned_doctor_name}</td>
                                   <td>{patient.lab_name}</td>
                                   <td>
-                                    {moment(patient.created_date).format(
-                                      "DD/MM/YYYY"
-                                    )}
+                                    {patient.created_date?.split(" ")[0]}{" "}
+                                    {moment(
+                                      patient.created_date?.split(" ")[1],
+                                      "HH:mm:sssssss"
+                                    ).format("hh:mm A")}
                                   </td>
                                   <td>{patient.test}</td>
                                   {patient.test_status === "done" && (

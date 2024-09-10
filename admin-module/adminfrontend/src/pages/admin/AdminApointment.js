@@ -134,6 +134,9 @@ const AdminAppointment = () => {
   console.log(searchFilter);
 
   const totalPages = Math.ceil(searchFilter.length / complaintsPerPage);
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [searchFilter]);
 
   const filterAppointDataByMonth = () => {
     const startIndex = currentPage * complaintsPerPage;
