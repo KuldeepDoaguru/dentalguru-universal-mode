@@ -55,8 +55,8 @@ const Bill = () => {
                     <th>Bill Id</th>
 
                     <th>Doctor</th>
-                    <th>Total Amount(INR)</th>
-                    <th>Direct Paid Amount(INR)</th>
+                    <th>Total Amount</th>
+                    <th>Direct Paid Amount</th>
 
                     <th>Pay by Security Amount</th>
                     <th>Payment Mode</th>
@@ -77,9 +77,9 @@ const Bill = () => {
                         <td>{item.bill_id}</td>
 
                         <td className="text-capitalize">{`Dr. ${item.assigned_doctor_name}`}</td>
-                        <td>{item.total_amount}</td>
-                        <td>{item.paid_amount}</td>
-                        <td>{item.pay_by_sec_amt}</td>
+                        <td>{`${user.currencySymbol}${item.total_amount || 0}`}</td>
+                        <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
+                        <td>{`${user.currencySymbol}${item.pay_by_sec_amt || 0}`}</td>
                         <td className="text-capitalize">{item.payment_mode}</td>
                         <td>
                           {item.payment_date_time

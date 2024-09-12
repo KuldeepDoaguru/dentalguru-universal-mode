@@ -660,7 +660,7 @@ const SittingBill = () => {
                   </div>
                   <div className="text-word">
                     <p className="m-0 fw-bold">
-                      {user.currencySymbol}{(sittingBill[0]?.paid_amount !== null) ? numToWords(sittingBill[0]?.paid_amount).toUpperCase()+" ONLY" : " "}
+                    {`${numToWords(sittingBill[0]?.paid_amount || 0).toUpperCase()}`}
                     </p>
                   </div>
                 </div>

@@ -283,9 +283,9 @@ const Overview = () => {
                               "DD-MM-YYYYTHH:mm:ss"
                             ).format("DD/MM/YYYY hh:mm A")}
                           </td>
-                          <td>{item.total_amount}</td>
-                          <td>{item.paid_amount}</td>
-                          <td>{item.pay_by_sec_amt}</td>
+                          <td>{`${user.currencySymbol}${item.total_amount || 0}`}</td>
+                          <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
+                          <td>{`${user.currencySymbol}${item.pay_by_sec_amt || 0}`}</td>
                           <td>{item.payment_status}</td>
                         </tr>
                       </>

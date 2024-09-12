@@ -676,9 +676,7 @@ const CreditSittingBill = () => {
                     </div>
                     <div className="text-word">
                       <p className="m-0 fw-bold">
-                        {!sittingBill[0]?.paid_amount || `${numToWords(
-                          sittingBill[0]?.paid_amount
-                        ).toUpperCase()} ONLY`}
+                        {`${numToWords(sittingBill[0]?.paid_amount || 0).toUpperCase()}`}
                       </p>
                     </div>
                   </div>

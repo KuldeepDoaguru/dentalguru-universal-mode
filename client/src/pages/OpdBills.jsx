@@ -626,7 +626,7 @@ const PrintOpdBill = () => {
                       OPD
                     </td>
                     <td className="text-end pe-4">
-                      {data.opd_amount}
+                      {`${user.currencySymbol}${data.opd_amount || 0}`}
                       {".00"}
                     </td>
                   </tr>
@@ -639,12 +639,12 @@ const PrintOpdBill = () => {
                     ></th>
 
                     <th scope="col" className="text-start pt-4 second-th">
-                      Payable Amount INR
+                      Payable Amount 
                     </th>
 
                     <th scope="col" className="text-end pe-4 pt-4">
                       {" "}
-                      {data.opd_amount}
+                      {`${user.currencySymbol}${data.opd_amount || 0}`}
                       {".00"}
                     </th>
                   </tr>
@@ -652,18 +652,18 @@ const PrintOpdBill = () => {
                     <th scope="col" className="" style={{ width: "30%" }}></th>
                     <th scope="col" className="text-start second-th">
                       {" "}
-                      Amount Paid INR
+                      Amount Paid 
                     </th>
 
                     <th scope="col" className="text-end pe-4">
-                      {data.opd_amount}
+                      {`${user.currencySymbol}${data.opd_amount || 0}`}
                       {".00"}
                     </th>
                   </tr>
 
                   {/* <tr>
                   <th scope="col" className='' style={{ width: '30%' }}></th>
-                  <th scope="col" className='text-start second-th'>Net Payable {" "}INR</th>
+                  <th scope="col" className='text-start second-th'>Net Payable {" "}</th>
                   
                   <th scope="col" className='text-end pe-4'>{totalAmount}{".00"}</th>
                    </tr> */}

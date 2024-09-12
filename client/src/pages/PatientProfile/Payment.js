@@ -49,7 +49,7 @@ function Bill() {
             <thead>
               <tr>
                 <th>Receipt Id</th>
-                <th>Amount Paid(INR)</th>
+                <th>Amount Paid</th>
                 <th>Bill Id</th>
                 <th>Billed Service</th>
                 <th>Payment Mode</th>

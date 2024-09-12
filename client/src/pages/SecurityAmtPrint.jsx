@@ -679,7 +679,7 @@ const SecurityAmtPrint = () => {
 
                   {/* <tr>
                   <th scope="col" className='' style={{ width: '30%' }}></th>
-                  <th scope="col" className='text-start second-th'>Net Payable {" "}INR</th>
+                  <th scope="col" className='text-start second-th'>Net Payable {" "}</th>
                   
                   <th scope="col" className='text-end pe-4'>{totalAmount}{".00"}</th>
                    </tr> */}

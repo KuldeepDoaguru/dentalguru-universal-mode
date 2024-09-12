@@ -704,6 +704,7 @@ const PatientBillsByTpid = () => {
                       Treatment Total:
                     </td>
                     <td className="heading-title">
+                      {user.currencySymbol}
                       {netVal.reduce(
                         (total, item) =>
                           total +
@@ -738,7 +739,7 @@ const PatientBillsByTpid = () => {
                     <h4>Total Amount In Words :</h4>
                   </div>
                   <div className="text-word">
-                    <p className="m-0">{numWords(totalBillvalueWithoutGst).toUpperCase()}</p>
+                    <p className="m-0">{numWords(totalBillvalueWithoutGst || 0).toUpperCase()}</p>
                   </div>
                 </div>
                 <div className="">

@@ -308,9 +308,9 @@ const Accountant_Dashboard = () => {
                                         <td>{item.patient_mobile}</td>
                                         <td>{item.patient_email}</td>
                                         <td className="text-capitalize">{`Dr. ${item.assigned_doctor_name}`}</td>
-                                        <td>{item.total_amount}</td>
-                                        <td>{item.paid_amount}</td>
-                                        <td>{item.pay_by_sec_amt}</td>
+                                        <td>{`${user.currencySymbol}${item.total_amount || 0}`}</td>
+                                        <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
+                                        <td>{`${user.currencySymbol}${item.pay_by_sec_amt || 0}`}</td>
                                         <td className="text-capitalize">
                                           {item.payment_mode}
                                         </td>
@@ -556,10 +556,10 @@ const Accountant_Dashboard = () => {
                                             {"Dr. "}
                                             {item.doctor_name}
                                           </td>
-                                          <td>{item.sitting_amount}</td>
+                                          <td>{`${user.currencySymbol}${item.sitting_amount || 0}`}</td>
                                           {/* <td>{item.pay_direct}</td>
                                 <td>{item.pay_security_amount}</td> */}
-                                          <td>{item.paid_amount}</td>
+                                          <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
                                           <td>{item?.date?.split(" ")[0]}</td>
                                         </tr>
                                       </>

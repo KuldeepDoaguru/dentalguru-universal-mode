@@ -1,6 +1,11 @@
 # 12 sep 
 - > jitne bhi jagah amoutn hai or 0 kardo bas 
+- > all-patient route mai next previous mai kaam css
+    - pata nahi ku header and footer nahi aa rahe 
+- > invoices?tab=paid  route mai next perrvious work nai kar raha hai 
+- ><p className="m-0">{numWords(totalBillvalueWithoutGst || 0).toUpperCase()}</p> is syntext ka use karo
 - > 
+
 
 # late 6 sep
 - > inr ko change karna hai isis ko dekhn ahia 
