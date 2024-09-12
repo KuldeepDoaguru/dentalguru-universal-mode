@@ -1,3 +1,7 @@
+# 12 sep 
+- > jitne bhi jagah amoutn hai or 0 kardo bas 
+- > 
+
 # late 6 sep
 - > inr ko change karna hai isis ko dekhn ahia 
 - > 
