@@ -84,7 +84,7 @@ function Registration() {
                           <div className="col-sm-12 col-md-10 text-center ms-4">
                             <p>
                               Already have an account?{" "}
-                              <Link to="/receptionist_login"> Login here </Link>
+                              <Link className="text-decoration-none" to="/receptionist_login"> Login here </Link>
                             </p>
                           </div>
                         </form>

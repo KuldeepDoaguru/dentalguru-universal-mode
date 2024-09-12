@@ -25,16 +25,17 @@ function FinalCreditInvoice() {
   const getBillPaidList = async () => {
     setLoadingEffect(true);
     try {
-      const { data } = await axios.get(
+      const response = await axios.get(
         `https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/paidBillLIst/${branch}`,
         {
-          //   headers: {
-          //     "Content-Type": "application/json",
-          //     Authorization: `Bearer ${token}`,
-          //   },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
         }
       );
-      setPaidList(data);
+      console.log(response)
+      setPaidList(response.data);
       setLoadingEffect(false);
     } catch (error) {
       console.log(error);
@@ -42,12 +43,12 @@ function FinalCreditInvoice() {
     }
   };
 
-  console.log(paidList);
+  // console.log(paidList);
   const filterForPaidBills = paidList?.filter((item) => {
     return item.payment_mode === "Credit";
   });
 
-  console.log(filterForPaidBills);
+  // console.log(filterForPaidBills);
 
   useEffect(() => {
     getBillPaidList();
@@ -331,7 +332,7 @@ function FinalCreditInvoice() {
                                 </td>
                                 <td>{item.tp_id}</td>
                                 <td>
-                                  <Link to={`/patient_profile/${item.uhid}`}>
+                                  <Link className="text-decoration-none"  to={`/patient_profile/${item.uhid}`}>
                                     {item.uhid}
                                   </Link>
                                 </td>

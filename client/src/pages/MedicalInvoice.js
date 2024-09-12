@@ -13,7 +13,7 @@ const MedicalInvoice = () => {
         <div className="container-fluid">
           <div className="row Button mt-2">
             <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-              <Link to="/PatientsDue">
+              <Link className="text-decoration-none" to="/PatientsDue">
                 <IoArrowBackSharp className="fs-1 text-black" />
               </Link>
             </div>
@@ -201,7 +201,7 @@ const MedicalInvoice = () => {
         </div>
         <div className="d-flex justify-content-center mb-5 mt-3">
           <div className="table-small">
-            <Link to="/MedicalInvoice">
+            <Link className="text-decoration-none" to="/MedicalInvoice">
               <button
                 className="btn px-5 py-3"
                 style={{

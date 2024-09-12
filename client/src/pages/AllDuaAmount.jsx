@@ -117,7 +117,7 @@ const AllDuaAmount = () => {
                         Basic
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        { user.currencySymbol } 33,333.00
+                        { user.currencySymbol }33,333.00
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
                         Income Tex
@@ -133,13 +133,13 @@ const AllDuaAmount = () => {
                         House Rent Allowance
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        { user.currencySymbol } 16,667.00
+                        { user.currencySymbol }16,667.00
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
                         Provident Fund
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        { user.currencySymbol } 4,000.00
+                        { user.currencySymbol }4,000.00
                       </td>
                     </tr>
                   </tbody>
@@ -152,7 +152,7 @@ const AllDuaAmount = () => {
                         Professional Tax
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        { user.currencySymbol } 2,00.00
+                        { user.currencySymbol }2,00.00
                       </td>
                     </tr>
                   </tbody>
@@ -162,13 +162,13 @@ const AllDuaAmount = () => {
                         Gross Earnings
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        { user.currencySymbol } 50,000.00
+                        { user.currencySymbol }50,000.00
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
                         Total Deductions
                       </td>
                       <td className="table-small" style={{ width: "20%" }}>
-                        { user.currencySymbol } 4,200.00
+                        { user.currencySymbol }4,200.00
                       </td>
                     </tr>
                   </tbody>
@@ -190,7 +190,7 @@ const AllDuaAmount = () => {
                         <p>Gross Earnings - Total Deductions</p>
                       </td>
                       <td className="table-small" style={{ width: "17%" }}>
-                        - { user.currencySymbol } 45,800.00
+                        - { user.currencySymbol }45,800.00
                       </td>
                     </tr>
                   </tbody>

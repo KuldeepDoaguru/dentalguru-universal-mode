@@ -333,12 +333,12 @@ const SecAmountReport = () => {
                                         <td>{item.patient_name}</td>
                                         <td>{item.patient_number}</td>
                                         <td>{item.assigned_doctor}</td>
-                                        <td>{item.amount}</td>
-                                        <td>{item.remaining_amount}</td>
+                                        <td>{`${user.currencySymbol}${item.amount || 0}`}</td>
+                                        <td>{`${user.currencySymbol}${item.remaining_amount || 0}`}</td>
                                         <td>{item.payment_Mode}</td>
                                         <td>{item.transaction_Id}</td>
                                         <td>{item.payment_status}</td>
-                                        <td>{item.refund_amount}</td>
+                                        <td>{`${user.currencySymbol}${item.refund_amount || 0}`}</td>
                                         <td>
                                           {item.refund_date?.split("T")[0]}
                                         </td>

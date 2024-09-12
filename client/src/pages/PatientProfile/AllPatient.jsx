@@ -172,7 +172,7 @@ function AllPatient() {
                             {displayedAppointments?.map((data, index) => (
                               <tr key={index}>
                                 <td>
-                                  <Link to={`/patient_profile/${data.uhid}`}>
+                                  <Link className="text-decoration-none" to={`/patient_profile/${data.uhid} `}>
                                     {data.uhid}
                                   </Link>
                                 </td>

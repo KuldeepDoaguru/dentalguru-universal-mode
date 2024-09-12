@@ -118,6 +118,7 @@ const VoucherList = () => {
                                   </td>
                                   <td className="table-small">
                                     <Link
+                                    className="text-decoration-none"
                                       to={`/VoucherPaidListPrint/${item.voucher_id}`}
                                     >
                                       <button

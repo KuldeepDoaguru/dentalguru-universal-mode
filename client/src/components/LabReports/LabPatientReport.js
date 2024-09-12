@@ -210,10 +210,7 @@ const LabPatientReport = () => {
 
                                       <td>{patient.assigned_doctor_name}</td>
                                       <td>{patient.lab_name}</td>
-                                      <td>
-                                        {moment(patient.created_date).format(
-                                          "DD/MM/YYYY"
-                                        )}
+                                      <td> {patient?.created_date ? moment( patient?.created_date, "DD-MM-YYYYTHH:mm" ).format("DD/MM/YYYY hh:mm A"): ""}
                                       </td>
                                       <td>{patient.test}</td>
                                       {patient.test_status === "done" && (

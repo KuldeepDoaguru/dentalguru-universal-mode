@@ -62,7 +62,7 @@ const ClinicSetting = () => {
                         <div className="col-12">
                           <div class="row g-5">
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/lab-setting">
+                              <Link className="text-decoration-none" to="/lab-setting">
                                 <div className="card">
                                   <div class="card-body d-flex justify-content-center text-light align-items-center">
                                     <h4 className="text-light">History</h4>
@@ -72,7 +72,7 @@ const ClinicSetting = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/calender-setting">
+                              <Link className="text-decoration-none" to="/calender-setting">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className="d-flex justify-content-center text-light align-items-center">
@@ -84,7 +84,7 @@ const ClinicSetting = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/drug-setting">
+                              <Link className="text-decoration-none" to="/drug-setting">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -96,7 +96,7 @@ const ClinicSetting = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/communication-setting">
+                              <Link className="text-decoration-none" to="/communication-setting">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -108,7 +108,7 @@ const ClinicSetting = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/prescription-templates">
+                              <Link className="text-decoration-none" to="/prescription-templates">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -120,7 +120,7 @@ const ClinicSetting = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/treatment-setting">
+                              <Link className="text-decoration-none" to="/treatment-setting">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">

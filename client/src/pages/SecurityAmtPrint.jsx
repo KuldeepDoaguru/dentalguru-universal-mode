@@ -660,7 +660,7 @@ const SecurityAmtPrint = () => {
 
                     <th scope="col" className="text-end pe-4 pt-4">
                       {" "}
-                      {` ${user.currencySymbol} ${recData[0]?.amount}`}
+                      {` ${user.currencySymbol}${recData[0]?.amount}`}
                       {".00"}
                     </th>
                   </tr>
@@ -672,7 +672,7 @@ const SecurityAmtPrint = () => {
                     </th>
 
                     <th scope="col" className="text-end pe-4">
-                      {` ${user.currencySymbol} ${recData[0]?.amount}`}
+                      {` ${user.currencySymbol}${recData[0]?.amount}`}
                       {".00"}
                     </th>
                   </tr>

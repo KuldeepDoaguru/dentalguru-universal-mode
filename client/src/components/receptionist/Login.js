@@ -58,7 +58,7 @@ const Login = () => {
 
                           <div className="col-5 ms-3">
                             <p>
-                              <Link to="/receptionist_registration">
+                              <Link className="text-decoration-none"  to="/receptionist_registration">
                                 Forgot Password?
                               </Link>
                             </p>
@@ -75,7 +75,7 @@ const Login = () => {
                           {/* <div className="col-sm-12 col-md-10 text-center ms-4">
                             <p>
                               Don't have an account?
-                              <Link to="/receptionist_registration">
+                              <Link className="text-decoration-none" to="/receptionist_registration">
                                 {" "}
                                 Register here
                               </Link>

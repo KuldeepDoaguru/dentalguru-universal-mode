@@ -44,7 +44,7 @@ const AccountReportDash = () => {
                         <div className="col-12">
                           <div class="row g-5 mb-5">
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/security-amount-report">
+                              <Link className="text-decoration-none" to="/security-amount-report">
                                 <div className="card">
                                   <div class="card-body d-flex justify-content-center text-light align-items-center">
                                     <h4 className="text-light">
@@ -56,7 +56,7 @@ const AccountReportDash = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/secuirty-refund">
+                              <Link className="text-decoration-none" to="/secuirty-refund">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -68,7 +68,7 @@ const AccountReportDash = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/opd-income-report">
+                              <Link className="text-decoration-none" to="/opd-income-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -80,7 +80,7 @@ const AccountReportDash = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/opd-refund">
+                              <Link className="text-decoration-none" to="/opd-refund">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className="d-flex justify-content-center text-light align-items-center">
@@ -92,11 +92,11 @@ const AccountReportDash = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/sitting-report">
+                              <Link className="text-decoration-none" to="/sitting-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className="d-flex justify-content-center text-light align-items-center">
-                                      Per Sitting Report
+                                      Sitting Report
                                     </h4>
                                   </div>
                                 </div>
@@ -104,7 +104,7 @@ const AccountReportDash = () => {
                             </div>
 
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/treat-income-report">
+                              <Link className="text-decoration-none" to="/treat-income-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -115,7 +115,7 @@ const AccountReportDash = () => {
                               </Link>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/due-payment-report">
+                              <Link className="text-decoration-none" to="/due-payment-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -126,7 +126,7 @@ const AccountReportDash = () => {
                               </Link>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                              <Link to="/paid-payment-report">
+                              <Link className="text-decoration-none" to="/paid-payment-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -138,7 +138,7 @@ const AccountReportDash = () => {
                             </div>
 
                             {/* <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/voucher-report">
+                              <Link className="text-decoration-none" to="/voucher-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -150,7 +150,7 @@ const AccountReportDash = () => {
                             </div> */}
 
                             {/* <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/purchase-report">
+                              <Link className="text-decoration-none" to="/purchase-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">
@@ -161,7 +161,7 @@ const AccountReportDash = () => {
                               </Link>
                             </div> */}
                             <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
-                              <Link to="/lab-patient-report">
+                              <Link className="text-decoration-none" to="/lab-patient-report">
                                 <div className="card">
                                   <div class="card-body">
                                     <h4 className=" d-flex justify-content-center text-light align-items-center">

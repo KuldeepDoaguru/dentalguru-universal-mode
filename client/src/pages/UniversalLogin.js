@@ -216,7 +216,7 @@ const UniversalLogin = () => {
 
                           <div className="col-5 ms-3">
                             <p>
-                              <Link to="/password-reset">Forgot Password?</Link>
+                              <Link className="text-decoration-none" to="/password-reset">Forgot Password?</Link>
                             </p>
                           </div>
 
@@ -228,7 +228,7 @@ const UniversalLogin = () => {
                             >
                               {loading ? "Loading..." : "Login"}
                             </button>
-                            {/* <Link to="/accountant-dashboard">
+                            {/* <Link className="text-decoration-none" to="/accountant-dashboard">
                               <button
                                 type="button"
                                 className="btn btn-primary btn-lg"

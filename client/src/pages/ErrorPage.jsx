@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <div>
       <h1>Oops! 404 Page not found</h1>
-      <Link to="/">Home</Link>
+      <Link className="text-decoration-none" to="/">Home</Link>
     </div>
   );
 };

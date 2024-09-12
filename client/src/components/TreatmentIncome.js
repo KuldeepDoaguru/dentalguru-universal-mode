@@ -482,6 +482,7 @@ const TreatmentIncome = () => {
                                         {item.payment_Status !== "Pending" &&
                                         item.payment_Status !== "" ? (
                                           <Link
+                                          className="text-decoration-none"
                                             to={`/TreatmentBills/${item.appoint_id}/${item.uhid}`}
                                             target="_blank"
                                           >

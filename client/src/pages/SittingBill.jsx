@@ -204,14 +204,21 @@ const SittingBill = () => {
       alert("Email id not available");
       return;
     }
+  
     try {
       const element = contentRef.current;
-      const canvas = await html2canvas(element, { scale: 2 }); // Increase the scale for better quality
+      console.log("check element ,: ",element);
+      // const canvas = await html2canvas(element, { scale: 2 }); // Increase the scale for better quality
+      const canvas = await html2canvas(element, { scale: 2 }).catch(error => {
+        console.error("Error with html2canvas:", error);
+      });
+      console.log(canvas); // Check if the canvas is correctly capturing the element
       const imgData = canvas.toDataURL("image/jpeg", 0.75); // Use JPEG with 75% quality
       const pdf = new jsPDF();
       const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
+  
+      // Add image to PDF
       pdf.addImage(
         imgData,
         "JPEG",
@@ -222,9 +229,17 @@ const SittingBill = () => {
         undefined,
         "FAST"
       );
-      const pdfData = pdf.output("blob");
-      console.log(pdfData);
+  
+      // Download the PDF locally
+      const pdfFileName = `prescription_${getPatientData[0]?.patient_name}.pdf`;
+      pdf.save(pdfFileName); // Trigger the download on the frontend
+  
+      // Create a blob from the PDF
+      const pdfBlob = pdf.output("blob");
+      console.log(pdfBlob); // Check if this logs the blob correctly
 
+  
+      // Prepare form data for sending via email
       const formData = new FormData();
       formData.append("email", getPatientData[0]?.emailid);
       formData.append("patient_name", getPatientData[0]?.patient_name);
@@ -236,31 +251,33 @@ const SittingBill = () => {
         "textMatter",
         `Dear ${getPatientData[0]?.patient_name}, Please find the attached final bill file.`
       );
-      formData.append("file", pdfData, "prescription.pdf");
-      for (let [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
+      formData.append("file", pdfBlob, "prescription.pdf"); // Appending the PDF blob with file name
+  
+      // Send the PDF via email
       const response = await axios.post(
         "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`, // Ensure token is valid
           },
         }
       );
+  
       cogoToast.success("Treatment bill sent successfully");
       console.log("PDF sent successfully:", response.data);
     } catch (error) {
       console.error("Error sending PDF:", error);
     }
   };
+  
+  
+  
 
   const sendPrescriptionWhatsapp = async () => {
     try {
-      const element = contentRef.current;
       const canvas = await html2canvas(element, { scale: 2 }); // Increase the scale for better quality
+      const element = contentRef.current;
       const imgData = canvas.toDataURL("image/jpeg", 0.75); // Use JPEG with 75% quality
       const pdf = new jsPDF();
       const imgWidth = 210; // A4 width in mm
@@ -418,6 +435,7 @@ const SittingBill = () => {
           </div>
 
           <div ref={contentRef}>
+          <div>
             <div className="row">
               <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div className="clinic-logo">
@@ -776,6 +794,7 @@ const SittingBill = () => {
               Appointment Dashboard
             </button> */}
           </div>
+        </div>
         </div>
         <div className="container-fluid">
           <div className="text-center">

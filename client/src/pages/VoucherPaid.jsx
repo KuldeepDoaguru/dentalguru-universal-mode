@@ -11,7 +11,7 @@ const VoucherPaid = () => {
         <div className="container-fluid">
           <div className="row Button mt-2">
             <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-              <Link to="/VoucherCreater">
+              <Link className="text-decoration-none" to="/VoucherCreater">
                 <IoArrowBackSharp className="fs-1 text-black" />
               </Link>
             </div>

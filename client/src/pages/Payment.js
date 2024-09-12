@@ -129,7 +129,7 @@ const Payment = () => {
                             </p>
                             <p class="mb-0">
                               <span class="fw-bold ms-1">Price :</span>
-                              <span class="c-green"> { user.currencySymbol } 2,425.00</span>
+                              <span class="c-green"> { user.currencySymbol }2,425.00</span>
                             </p>
                             <p class="mb-0 mt-1 ms-1">
                               This Amount is for the Treatment of Braces.

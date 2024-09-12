@@ -354,17 +354,17 @@ const SittingReport = () => {
                                   <td>{item.treatment}</td>
                                   <td>{item.teeth_number}</td>
                                   <td>{item.teeth_qty}</td>
-                                  <td>{item.treatment_cost}</td>
-                                  <td>{item.cost_per_qty}</td>
+                                  <td>{`${user.currencySymbol}${item.treatment_cost || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.cost_per_qty || 0}`}</td>
                                   {/* <td>{item.date?.split("T")[0]}</td> */}
-                                  <td>{item.discount}</td>
-                                  <td>{item.final_cost}</td>
-                                  <td>{item.sitting_amount}</td>
-                                  <td>{item.paid_amount}</td>
-                                  <td>{item.pending_amount}</td>
-                                  <td>{item.pay_direct}</td>
-                                  <td>{item.pay_security_amount}</td>
-                                  <td>{item.pending_sitting_amount}</td>
+                                  <td>{item.discount}%</td>
+                                  <td>{`${user.currencySymbol}${item.final_cost || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.sitting_amount || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.pending_amount || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.pay_direct || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.pay_security_amount || 0}`}</td>
+                                  <td>{`${user.currencySymbol}${item.pending_sitting_amount || 0}`}</td>
                                   <td>{item.payment_mode}</td>
                                   <td>{item.payment_status}</td>
                                   <td>{item.note}</td>

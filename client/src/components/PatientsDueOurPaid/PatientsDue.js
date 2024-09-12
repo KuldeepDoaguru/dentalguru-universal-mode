@@ -290,7 +290,7 @@ function PatientsDue() {
                               <tr className="table-row">
                                 <td className="table-sno">{item.tp_id}</td>
                                 <td>
-                                  <Link to={`/patient_profile/${item.uhid}`}>
+                                  <Link className="text-decoration-none" to={`/patient_profile/${item.uhid}`}>
                                     {item.uhid}
                                   </Link>
                                 </td>
@@ -303,11 +303,11 @@ function PatientsDue() {
                                   {"Dr. "}
                                   {item.assigned_doctor_name}
                                 </td>
-                                <td>{`${user.currencySymbol} ${item.total_amount || 0}`}</td>
-                                <td>{`${user.currencySymbol} ${item.paid_amount || 0}`}</td>
-                                <td>{`${user.currencySymbol} ${item.pay_by_sec_amt || 0}`}</td>
+                                <td>{`${user.currencySymbol}${item.total_amount || 0}`}</td>
+                                <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
+                                <td>{`${user.currencySymbol}${item.pay_by_sec_amt || 0}`}</td>
                                 <td>
-                                  {`${user.currencySymbol} ${Number(item.total_amount) - (Number(item.paid_amount) +
+                                  {`${user.currencySymbol}${Number(item.total_amount) - (Number(item.paid_amount) +
                                       Number(item.pay_by_sec_amt))}`}
                                 </td>
                                 <td>
@@ -319,7 +319,8 @@ function PatientsDue() {
                                     : ""}
                                 </td>
                                 <td>
-                                  <Link
+                                  <Link 
+                                  className="text-decoration-none"
                                     to={`/PatintDuePaymentPrint/${item.bill_id}/${item.tp_id}/${item.uhid}`}
                                   >
                                     <button

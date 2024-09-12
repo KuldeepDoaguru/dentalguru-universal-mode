@@ -282,14 +282,17 @@ const PatientBillsByTpid = () => {
       alert("Email id not available");
       return;
     }
+  
     try {
       const element = contentRef.current;
+      console.log("check element ,: ",element);
       const canvas = await html2canvas(element, { scale: 2 }); // Increase the scale for better quality
       const imgData = canvas.toDataURL("image/jpeg", 0.75);
       const pdf = new jsPDF();
       const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
+  
+      // Add the image to the PDF
       pdf.addImage(
         imgData,
         "JPEG",
@@ -300,9 +303,14 @@ const PatientBillsByTpid = () => {
         undefined,
         "FAST"
       );
+  
+      // Download the PDF locally
+      const pdfFileName = `prescription_${getPatientData[0]?.patient_name}.pdf`;
+      pdf.save(pdfFileName); // Trigger the download to the user's browser
+  
+      // Create a blob from the PDF for sending via email
       const pdfData = pdf.output("blob");
-      console.log(pdfData);
-
+  
       const formData = new FormData();
       formData.append("email", getPatientData[0]?.emailid);
       formData.append("patient_name", getPatientData[0]?.patient_name);
@@ -315,9 +323,13 @@ const PatientBillsByTpid = () => {
         `Dear ${getPatientData[0]?.patient_name}, Please find the attached final bill file.`
       );
       formData.append("file", pdfData, "prescription.pdf");
+  
+      // Log the form data for debugging
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
+  
+      // Send the PDF via email
       const response = await axios.post(
         "https://dentalguru-global-accountant.vimubds5.a2hosted.com/api/v2/accountant/prescriptionOnMail",
         formData,
@@ -328,12 +340,14 @@ const PatientBillsByTpid = () => {
           },
         }
       );
+  
       cogoToast.success("Treatment bill sent successfully");
       console.log("PDF sent successfully:", response.data);
     } catch (error) {
       console.error("Error sending PDF:", error);
     }
   };
+  
 
   const sendPrescriptionWhatsapp = async () => {
     try {

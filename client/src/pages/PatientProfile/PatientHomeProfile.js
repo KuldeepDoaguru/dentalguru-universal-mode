@@ -92,7 +92,7 @@ const PatientHomeProfile = () => {
                     <tbody>
                       <tr>
                         <td>
-                          <Link to="/Patient-profile">P459</Link>
+                          <Link className="text-decoration-none" to="/Patient-profile">P459</Link>
                         </td>
                         <td>Umer Qureshi</td>
                         <td>934839222</td>

@@ -280,7 +280,7 @@ const OpdRefund = () => {
                                   <td>{item.patient_name}</td>
                                   <td>{item.mobileno}</td>
                                   <td>{item.treatment_provided}</td>
-                                  <td>{item.opd_amount}</td>
+                                  <td>{`${user.currencySymbol}${item.opd_amount || 0}`}</td>
                                   <td>{item.assigned_doctor_name}</td>
                                   <td>{item.created_at}</td>
                                   <td>{item.payment_Mode}</td>

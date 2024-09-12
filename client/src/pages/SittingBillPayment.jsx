@@ -423,7 +423,7 @@ function SittingBillPayment() {
                               <div class=" rounded d-flex justify-content-end mt-5 me-5">
                                 <div class="card" style={{ width: "18rem" }}>
                                   <div className="ms-4 mt-2">
-                                    <h1> { user.currencySymbol } {billAmount[0]?.sitting_amount}</h1>
+                                    <h1> { user.currencySymbol }{billAmount[0]?.sitting_amount}</h1>
 
                                     <h5 className="text-danger">
                                       Total Treatment Amount
@@ -711,7 +711,7 @@ function SittingBillPayment() {
                 </td>
 
                 <td className="fw-bolder">
-                  { user.currencySymbol } {billAmount[0]?.total_amount}
+                  { user.currencySymbol }{billAmount[0]?.total_amount}
                 </td>
               </tr>
               <tr>
@@ -722,7 +722,7 @@ function SittingBillPayment() {
                   </h6>
                 </td>
                 <td className="fw-bolder">
-                  { user.currencySymbol } {billAmount[0]?.paid_amount}
+                  { user.currencySymbol }{billAmount[0]?.paid_amount}
                 </td>
               </tr>
               <tr>
@@ -733,7 +733,7 @@ function SittingBillPayment() {
                   </h6>
                 </td>
                 <td className="fw-bolder">
-                  { user.currencySymbol } {billAmount[0]?.pay_by_sec_amt}
+                  { user.currencySymbol }{billAmount[0]?.pay_by_sec_amt}
                 </td>
               </tr>
               <tr>
@@ -742,7 +742,7 @@ function SittingBillPayment() {
                     <span class=""></span>Total Due Amount
                   </h6>
                 </td>
-                <td className="fw-bolder">{ user.currencySymbol } {dueAmt ? dueAmt : 0}</td>
+                <td className="fw-bolder">{ user.currencySymbol }{dueAmt ? dueAmt : 0}</td>
               </tr>
               <tr>
                 <td colspan="1">
@@ -766,7 +766,7 @@ function SittingBillPayment() {
                   </h6>
                 </td>
                 <td className="fw-bolder">
-                  { user.currencySymbol } {remainingSecurityAmount}
+                  { user.currencySymbol }{remainingSecurityAmount}
                 </td>
               </tr>
               <tr>
@@ -776,7 +776,7 @@ function SittingBillPayment() {
                   </h6>
                 </td>
                 <td className="fw-bolder">
-                  { user.currencySymbol } {finalAmt ? finalAmt : 0}
+                  { user.currencySymbol }{finalAmt ? finalAmt : 0}
                 </td>
               </tr>
             </tbody>

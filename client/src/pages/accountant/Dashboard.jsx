@@ -296,7 +296,7 @@ const Accountant_Dashboard = () => {
                                         </td>
                                         <td>
                                           {" "}
-                                          <Link
+                                          <Link className="text-decoration-none"
                                             to={`/patient_profile/${item.uhid}`}
                                           >
                                             {item.uhid}
@@ -407,7 +407,7 @@ const Accountant_Dashboard = () => {
                                             {item.appoint_id}
                                           </td>
                                           <td className="table-small">
-                                            <Link
+                                            <Link className="text-decoration-none"
                                               to={`/patient_profile/${item.patient_uhid}`}
                                             >
                                               {item.patient_uhid}
@@ -541,7 +541,7 @@ const Accountant_Dashboard = () => {
                                             {item.tp_id}
                                           </td>
                                           <td>
-                                            <Link
+                                            <Link className="text-decoration-none"
                                               to={`/patient_profile/${item.uhid}`}
                                             >
                                               {item.uhid}

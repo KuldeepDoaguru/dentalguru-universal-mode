@@ -198,7 +198,7 @@ const LabIncome = () => {
                             01/04/2024
                           </td>
                           <td className="table-small" style={{ width: "10%" }}>
-                            <Link to="/PatientsLabBills">
+                            <Link className="text=decoration-none"  to="/PatientsLabBills">
                               <button
                                 className="btn"
                                 style={{
@@ -241,7 +241,7 @@ const LabIncome = () => {
                             01/02/2024
                           </td>
                           <td className="table-small" style={{ width: "10%" }}>
-                            <Link to="/PatientsLabBills">
+                            <Link className="text=decoration-none" to="/PatientsLabBills">
                               <button
                                 className="btn"
                                 style={{
@@ -284,7 +284,7 @@ const LabIncome = () => {
                             01/04/2024
                           </td>
                           <td className="table-small" style={{ width: "10%" }}>
-                            <Link to="/PatientsLabBills">
+                            <Link className="text=decoration-none" to="/PatientsLabBills">
                               <button
                                 className="btn"
                                 style={{

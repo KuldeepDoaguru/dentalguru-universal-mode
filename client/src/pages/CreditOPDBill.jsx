@@ -20,9 +20,10 @@ function CreditOPDBill() {
   const user = useSelector((state) => state.user);
   const branch = user.branch;
   const token = user?.token;
-  const [selectedDate, setSelectedDate] = useState(
-    new Date().toISOString()?.split("T")[0]
-  ); // Initialize with today's date
+  const [selectedDate, setSelectedDate] = useState(""); // Initialize with today's date
+  // const [selectedDate, setSelectedDate] = useState(
+  //   new Date().toISOString()?.split("T")[0]
+  // ); // Initialize with today's date
   const [appointmentsData, setAppointmentData] = useState([]);
 
   const [loadingEffect, setLoadingEffect] = useState(false);
@@ -43,7 +44,7 @@ function CreditOPDBill() {
     };
   };
 
-  console.log(selectedDateAppData);
+  // console.log(selectedDateAppData);
 
   const getAppointments = async () => {
     setLoadingEffect(true);
@@ -67,6 +68,7 @@ function CreditOPDBill() {
       //   (patient) => patient.treatment_provided === "OPD" && patient.appointment_status !=="Cancel"
       // );
 
+      console.log(filteredPatients);
       setAppointmentData(filteredPatients);
       setLoadingEffect(false);
     } catch (error) {
@@ -79,6 +81,7 @@ function CreditOPDBill() {
     const filteredResults = appointmentsData.filter((row) =>
       row?.created_at?.includes(selectedDate)
     );
+    console.log(filteredResults);
     setSelectedDateAppData(filteredResults);
     handleSearch({ target: { value: searchTerm } });
   }, [appointmentsData, selectedDate]);
@@ -426,7 +429,7 @@ function CreditOPDBill() {
                             <tr key={index}>
                               <td>{data.appoint_id}</td>
                               <td>
-                                <Link to={`/patient_profile/${data.uhid}`}>
+                                <Link className="text-decoration-none" to={`/patient_profile/${data.uhid}`}>
                                   {data.uhid}
                                 </Link>
                               </td>

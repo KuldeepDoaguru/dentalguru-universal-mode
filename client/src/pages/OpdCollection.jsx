@@ -359,22 +359,22 @@ function OpdCollection() {
                 </div>
                 <div className="d-flex mx-2 mt-2">
                   <h6 className="mx-2">
-                    Total - {user.currencySymbol} {total}
+                    Total - {user.currencySymbol}{total}
                   </h6>
                   <h6 className="mx-2">
-                    Cash - {user.currencySymbol} {cash}
+                    Cash - {user.currencySymbol}{cash}
                   </h6>
                   <h6 className="mx-2">
-                    Credit - {user.currencySymbol} {credit}
+                    Credit - {user.currencySymbol}{credit}
                   </h6>
                   <h6 className="mx-2">
-                    UPI -{user.currencySymbol} {upi}
+                    UPI -{user.currencySymbol}{upi}
                   </h6>
                   <h6 className="mx-2">
-                    Card - {user.currencySymbol} {card}
+                    Card - {user.currencySymbol}{card}
                   </h6>
                   <h6 className="mx-2">
-                    Refund - {user.currencySymbol} {refund}
+                    Refund - {user.currencySymbol}{refund}
                   </h6>
                 </div>
               </nav>
@@ -424,7 +424,7 @@ function OpdCollection() {
                             <tr key={index}>
                               <td>{data.appoint_id}</td>
                               <td>
-                                <Link to={`/patient_profile/${data.uhid}`}>
+                                <Link className="text-decoration-none" to={`/patient_profile/${data.uhid}`}>
                                   {data.uhid}
                                 </Link>
                               </td>
@@ -452,7 +452,7 @@ function OpdCollection() {
                               >
                                 {data.appointment_status}
                               </td>
-                              <td>{`${user.currencySymbol} ${data.opd_amount}`}</td>
+                              <td>{`${user.currencySymbol}${data.opd_amount}`}</td>
                               <td className="text-capitalize">
                                 {data.payment_Mode}
                               </td>
@@ -477,6 +477,7 @@ function OpdCollection() {
                               </td>
                               <td>
                                 <Link
+                                  className="text-decoration-none"
                                   to={`/OpdBills/${data.appoint_id}`} 
                                 >
                                   {/* {data.payment_Status == "paid" && (

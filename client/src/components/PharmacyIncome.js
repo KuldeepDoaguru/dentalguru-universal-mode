@@ -203,7 +203,7 @@ const PharmacyIncome = () => {
                           <td className="table-small" style={{ width: "15%" }}>
                             <Link to="/PharmacyBills">
                               <button
-                                className="btn"
+                                className="btn text-decoration-none"
                                 style={{
                                   backgroundColor: "#FFA600",
                                 }}
@@ -245,7 +245,7 @@ const PharmacyIncome = () => {
                           <td className="table-small" style={{ width: "15%" }}>
                             <Link to="/PharmacyBills">
                               <button
-                                className="btn"
+                                className="btn text-decoration-none"
                                 style={{
                                   backgroundColor: "#FFA600",
                                 }}

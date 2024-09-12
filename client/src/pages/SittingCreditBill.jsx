@@ -338,7 +338,7 @@ function SittingCreditBill() {
                               <tr className="table-row">
                                 <td className="table-sno">{item.tp_id}</td>
                                 <td>
-                                  <Link to={`/patient_profile/${item.uhid}`}>
+                                  <Link className="text-decoration-none" to={`/patient_profile/${item.uhid}`}>
                                     {item.uhid}
                                   </Link>
                                 </td>
@@ -374,7 +374,7 @@ function SittingCreditBill() {
                                   )}
                                 </td>
                                 <td>
-                                  <Link
+                                  <Link className="text-decoration-none"
                                     to={`/ViewCreditPatientSittingBill/${item.tp_id}/${item.sb_id}`}
                                   >
                                     <button

@@ -245,7 +245,7 @@ const PaidByUs = () => {
                                     className="table-small"
                                     style={{ width: "10%" }}
                                   >
-                                    <Link>
+                                    <Link className="text-decoration-none">
                                       <button className="btn btn-warning">
                                         Get Action
                                       </button>

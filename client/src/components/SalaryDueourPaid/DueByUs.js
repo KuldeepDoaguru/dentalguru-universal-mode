@@ -127,7 +127,7 @@ const DueByUs = () => {
                                     className="table-small"
                                     style={{ width: "10%" }}
                                   >
-                                    <Link to="/AllDuaAmount">
+                                    <Link className="text-decoration-none" to="/AllDuaAmount">
                                       <button
                                         className="btn"
                                         style={{
@@ -189,7 +189,7 @@ const DueByUs = () => {
                                     className="table-small"
                                     style={{ width: "10%" }}
                                   >
-                                    <Link to="/AllDuaAmount">
+                                    <Link className="text-decoration-none" to="/AllDuaAmount">
                                       <button
                                         className="btn"
                                         style={{
@@ -252,7 +252,7 @@ const DueByUs = () => {
                                     className="table-small"
                                     style={{ width: "10%" }}
                                   >
-                                    <Link to="/AllDuaAmount">
+                                    <Link className="text-decoration-none" to="/AllDuaAmount">
                                       <button
                                         className="btn"
                                         style={{

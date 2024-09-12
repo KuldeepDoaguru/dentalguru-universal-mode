@@ -145,7 +145,7 @@ const PatientsLabBills = () => {
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}>
-                        { user.currencySymbol } 0.00
+                        { user.currencySymbol }0.00
                       </td>
                     </tr>
                   </tbody>
@@ -158,7 +158,7 @@ const PatientsLabBills = () => {
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}>
-                        { user.currencySymbol } 0.00
+                        { user.currencySymbol }0.00
                       </td>
                     </tr>
                   </tbody>
@@ -172,7 +172,7 @@ const PatientsLabBills = () => {
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}></td>
                       <td className="table-small" style={{ width: "10%" }}>
-                        { user.currencySymbol } 0.00
+                        { user.currencySymbol }0.00
                       </td>
                     </tr>
                   </tbody>

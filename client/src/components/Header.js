@@ -27,7 +27,7 @@ const Header = () => {
       <div>
         <nav className="navbar navbar-expand-lg ">
           <div className="container-fluid">
-            <Link to="/accountant-dashboard">
+            <Link className="text-decoration-none" to="/accountant-dashboard">
               <img
                 src="https://res.cloudinary.com/dq5upuxm8/image/upload/v1717595664/dental%20guru/test_1_liu3zb.png"
                 alt="Logo"
@@ -37,7 +37,7 @@ const Header = () => {
             </Link>
             <li style={{ listStyle: "none" }}>
               <Link
-                className="nav-link active text-white mt-2 mx-2 fs-5"
+                className="nav-link active text-white mt-2 mx-2 fs-5 text-decoration-none"
                 to="/"
               >
                 DentalGuru
@@ -78,7 +78,7 @@ const Header = () => {
                   </a>
                   <ul className="dropdown-menu second-dropdown">
                     <li>
-                      <Link className="dropdown-item" to="/accountant-profile">
+                      <Link className="dropdown-item text-decoration-none" to="/accountant-profile">
                         View Profile
                       </Link>
                     </li>
@@ -86,7 +86,7 @@ const Header = () => {
                       <hr className="dropdown-divider" />
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/view-clinic-details">
+                      <Link className="dropdown-item text-decoration-none" to="/view-clinic-details">
                         View Clinic Details
                       </Link>
                     </li>

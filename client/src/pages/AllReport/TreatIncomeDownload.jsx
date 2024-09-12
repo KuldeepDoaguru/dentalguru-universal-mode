@@ -252,7 +252,7 @@ const TreatIncomeDownload = () => {
                                   <td>{item.assigned_doctor_name}</td>
                                   <td>{item.assigned_doctor_id}</td>
                                   <td>{item.dental_treatment}</td>
-                                  <td>{item.net_amount}</td>
+                                  <td>{`${user.currencySymbol}${item.net_amount || 0}`}</td>
                                   {/* <td>{item.payment_Mode}</td> */}
                                   <td>{item.date?.split("T")[0]}</td>
                                   <td>{item.sitting_payment_status}</td>

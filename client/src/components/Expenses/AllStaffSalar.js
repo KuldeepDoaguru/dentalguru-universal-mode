@@ -172,7 +172,7 @@ const AllStaffSalar = () => {
                               <td className="table-small">{item.pay_month}</td>
                               <td className="table-small">{item.pay_status}</td>
                               <td className="table-small">
-                                <Link to={`/PaySlip/${item.sl_id}`}>
+                                <Link className="text-decoration-none" to={`/PaySlip/${item.sl_id}`}>
                                   <button className="btn">Pay Slip</button>
                                 </Link>
                               </td>

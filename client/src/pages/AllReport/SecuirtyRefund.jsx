@@ -296,7 +296,7 @@ const SecuirtyRefund = () => {
                                   <td>{item.uhid}</td>
                                   <td>{item.patient_name}</td>
                                   <td>{item.patient_number}</td>
-                                  <td>{item.refund_amount}</td>
+                                  <td>{`${user.currencySymbol}${item.refund_amount || 0}`}</td>
                                   <td>{item.refund_by}</td>
                                 </tr>
                               </>

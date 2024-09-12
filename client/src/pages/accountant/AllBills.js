@@ -113,12 +113,12 @@ const AllBills = () => {
                         <div className="container box-amount">
                           <div>
                             <h4>Total Amount</h4>
-                            <p className="fw-bold"> {user.currencySymbol} 10000  </p>
+                            <p className="fw-bold"> {user.currencySymbol}10000  </p>
                             <hr />
                             <h4>Paid Amount</h4>
                             {showPaid ? (
                               <>
-                                <p className="fw-bold"> {user.currencySymbol} 10000  </p>
+                                <p className="fw-bold"> {user.currencySymbol}10000  </p>
                               </>
                             ) : (
                               <>

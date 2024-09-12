@@ -139,17 +139,17 @@ const AddPatientBill = () => {
 
                                 <ul className="dropdown-menu">
                                   <li>
-                                    <Link className="dropdown-item" to="#">
+                                    <Link className="dropdown-item text-decoration-none" to="#">
                                       Male
                                     </Link>
                                   </li>
                                   <li>
-                                    <Link className="dropdown-item" to="#">
+                                    <Link className="dropdown-item text-decoration-none" to="#">
                                       Female
                                     </Link>
                                   </li>
                                   <li>
-                                    <Link className="dropdown-item" to="#">
+                                    <Link className="dropdown-item text-decoration-none" to="#">
                                       Other
                                     </Link>
                                   </li>
@@ -292,7 +292,7 @@ const AddPatientBill = () => {
                             Root Canal
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 200.00
+                            { user.currencySymbol }200.00
                           </td>
                           <td className="table-small" style={{ width: "25%" }}>
                             1
@@ -314,7 +314,7 @@ const AddPatientBill = () => {
                             Root Canal
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 3500.00
+                            { user.currencySymbol }3500.00
                           </td>
                           <td className="table-small" style={{ width: "25%" }}>
                             2
@@ -337,7 +337,7 @@ const AddPatientBill = () => {
                             X-ray
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 500.00
+                            { user.currencySymbol }500.00
                           </td>
                           <td className="table-small" style={{ width: "25%" }}>
                             2
@@ -359,7 +359,7 @@ const AddPatientBill = () => {
                             X-ray
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 850.00
+                            { user.currencySymbol }850.00
                           </td>
                           <td className="table-small" style={{ width: "25%" }}>
                             1
@@ -376,13 +376,13 @@ const AddPatientBill = () => {
                             House Rent Allowance
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 16,667.00
+                            { user.currencySymbol }16,667.00
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
                             Provident Fund
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 4,000.00
+                            { user.currencySymbol }4,000.00
                           </td>
                         </tr>
                       </tbody> */}
@@ -401,7 +401,7 @@ const AddPatientBill = () => {
                             Professional Tax
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 2,00.00
+                            { user.currencySymbol }2,00.00
                           </td>
                         </tr>
                       </tbody> */}
@@ -412,13 +412,13 @@ const AddPatientBill = () => {
                             Gross Earnings
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 50,000.00
+                            { user.currencySymbol }50,000.00
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
                             Total Deductions
                           </td>
                           <td className="table-small" style={{ width: "20%" }}>
-                            { user.currencySymbol } 4,200.00
+                            { user.currencySymbol }4,200.00
                           </td>
                         </tr>
                       </tbody> */}
@@ -444,7 +444,7 @@ const AddPatientBill = () => {
                       </ul>
                       <p class="text-black float-start">
                         <span class="text-black me-3"> Total Amount</span>
-                        <span className="fs-5"> {user.currencySymbol} 1221</span>
+                        <span className="fs-5"> {user.currencySymbol}1221</span>
                       </p>
                     </div>
                   </div>

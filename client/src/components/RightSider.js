@@ -17,7 +17,7 @@ const RightSider = () => {
               <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div className="rounded pb-3 rightcont shadow">
                   <div className="d-flex flex-column pt-3 px-4">
-                    <Link to="/AccountantSalaryMain" target="_blank">
+                    <Link className="text-decoration-none" to="/AccountantSalaryMain" target="_blank">
                       <div class="d-flex gap-3 align-items-center">
                         <div className="">
                           <FaHandHoldingDollar className="fs-2 text-light" />
@@ -40,7 +40,7 @@ const RightSider = () => {
               <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div className="rounded pb-3 rightcont shadow">
                   <div className="d-flex flex-column pt-3 px-4">
-                    <Link to="/DoctorMainSalary" target="_blank">
+                    <Link className="text-decoration-none" to="/DoctorMainSalary" target="_blank">
                       <div class="d-flex gap-3 align-items-center">
                         <div className="">
                           <FaUserDoctor className="fs-2 text-light" />
@@ -61,7 +61,7 @@ const RightSider = () => {
               <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div className="rounded pb-3 rightcont shadow">
                   <div className="d-flex flex-column pt-3 px-4">
-                    <Link to="/ReceptionistSalaryMain" target="_blank">
+                    <Link className="text-decoration-none" to="/ReceptionistSalaryMain" target="_blank">
                       <div class="d-flex gap-3 align-items-center">
                         <div className="">
                           <FaHospitalUser className="fs-2 text-light" />
@@ -84,7 +84,7 @@ const RightSider = () => {
               <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div className="rounded pb-3 rightcont shadow">
                   <div className="d-flex flex-column pt-3 px-4">
-                    <Link to="/OtherMainSalary" target="_blank">
+                    <Link className="text-decoration-none" to="/OtherMainSalary" target="_blank">
                       <div class="d-flex gap-3 align-items-center">
                         <div className="">
                           <GrUserWorker className="fs-2 text-light" />

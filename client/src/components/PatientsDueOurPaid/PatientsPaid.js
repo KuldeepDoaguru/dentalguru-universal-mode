@@ -256,6 +256,7 @@ const PatientsPaid = () => {
                                     <td>{item.tp_id}</td>
                                     <td>
                                       <Link
+                                      className="text-decoration-none"
                                         to={`/patient_profile/${item.uhid}`}
                                       >
                                         {item.uhid}
@@ -266,9 +267,9 @@ const PatientsPaid = () => {
                                     </td>
                                     <td>{item.patient_mobile}</td>
                                     <td className="text-capitalize">{`Dr. ${item.assigned_doctor_name}`}</td>
-                                    <td>{`${user.currencySymbol} ${item.total_amount || 0}`}</td>
-                                    <td>{`${user.currencySymbol} ${item.paid_amount || 0}`}</td>
-                                    <td>{`${user.currencySymbol} ${item.pay_by_sec_amt || 0}`}</td>
+                                    <td>{`${user.currencySymbol}${item.total_amount || 0}`}</td>
+                                    <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
+                                    <td>{`${user.currencySymbol}${item.pay_by_sec_amt || 0}`}</td>
                                     <td>
                                       {/* {moment(
                                                 item.payment_date_time?.split(
@@ -289,6 +290,7 @@ const PatientsPaid = () => {
                                     </td>
                                     <td>
                                       <Link
+                                      className="text-decoration-none"
                                         // to={`/PatintPaidPaymentPrint/${item.bill_id}`}
                                         to={`/patient-bill/${item.bill_id}/${item.tp_id}`}
                                       >

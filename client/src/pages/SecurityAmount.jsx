@@ -509,6 +509,7 @@ const SecurityAmount = () => {
                                         <td>{item.appointment_id}</td>
                                         <td>
                                           <Link
+                                          className="text-decoration-none"
                                             to={`/patient_profile/${item.uhid}`}
                                           >
                                             {item.uhid}
@@ -519,8 +520,8 @@ const SecurityAmount = () => {
                                         </td>
                                         <td>{item.patient_number}</td>
                                         <td className="text-capitalize">{`Dr. ${item.assigned_doctor}`}</td>
-                                        <td>{item.amount}</td>
-                                        <td>{item.remaining_amount}</td>
+                                        <td>{`${user.currencySymbol}${item.amount || 0}`}</td>
+                                        <td>{`${user.currencySymbol}${item.remaining_amount || 0}`}</td>
                                         <td className="text-capitalize">
                                           {item.payment_Mode}
                                         </td>
@@ -548,7 +549,7 @@ const SecurityAmount = () => {
                                             </h6>
                                           </div>
                                         </td>
-                                        <td>{item.refund_amount}</td>
+                                        <td>{`${user.currencySymbol}${item.refund_amount || 0}`}</td>
                                         <td>
                                           {/* {item?.remaining_amount === 0 && ( */}
                                           {true ? (
@@ -604,6 +605,7 @@ const SecurityAmount = () => {
                                             </button>
                                           ) : (
                                             <Link
+                                            className="text-decoration-none"
                                               to={`/security-amount-reciept/${item.sa_id}`}
                                             >
                                               <button className="btn btn-success">

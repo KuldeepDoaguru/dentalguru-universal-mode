@@ -25,7 +25,7 @@ const Sider = () => {
               <Link
                 to="/accountant-dashboard"
                 class={`nav-link  align-middle ${getSidebarClass(
-                  "/accountant-dashboard"
+                  "/accountant-dashboard text-decoration-none"
                 )}`}
               >
                 <div className="link-div">
@@ -114,7 +114,7 @@ const Sider = () => {
                 <li className="w-100">
                   <Link
                     to="/OpdMainIncome"
-                    className={`nav-link  ${getSidebarClass("/OpdMainIncome")}`}
+                    className={`text-decoration-none nav-link  ${getSidebarClass("/OpdMainIncome")}`}
                   >
                     <span className="text-center text-light dash-text">
                       OPD Income
@@ -126,7 +126,7 @@ const Sider = () => {
                 <li className="w-100">
                   <Link
                     to="/security_amount"
-                    className={`nav-link  ${getSidebarClass(
+                    className={`text-decoration-none nav-link  ${getSidebarClass(
                       "/security_amount"
                     )}`}
                   >
@@ -184,7 +184,7 @@ const Sider = () => {
                 <li>
                   <Link
                     to="/invoices"
-                    className={`nav-link  ${getSidebarClass("/invoices")}`}
+                    className={` text-decoration-none nav-link  ${getSidebarClass("/invoices")}`}
                   >
                     <span className="d-none d-sm-inline text-light dash-text">
                       Invoices
@@ -196,7 +196,7 @@ const Sider = () => {
                 <li>
                   <Link
                     to="/all_credit_invoice"
-                    className={`nav-link  ${getSidebarClass(
+                    className={`text-decoration-none nav-link  ${getSidebarClass(
                       "/all_credit_invoice"
                     )}`}
                   >
@@ -340,7 +340,7 @@ const Sider = () => {
               <div className={`link-div ${"/settings"}`}>
                 <Link
                   to="/attendance-leave"
-                  class={`nav-link  align-middle ${getSidebarClass(
+                  class={`text-decoration-none nav-link  align-middle ${getSidebarClass(
                     "/attendance-leave"
                   )}`}
                 >
@@ -362,7 +362,7 @@ const Sider = () => {
               <div className={`link-div ${"/settings"}`}>
                 <Link
                   to="/account-report-dashboard"
-                  class={`nav-link  align-middle ${getSidebarClass(
+                  class={`text-decoration-none nav-link  align-middle ${getSidebarClass(
                     "/account-report-dashboard"
                   )}`}
                 >

@@ -260,7 +260,7 @@ const OpdReportDownload = () => {
                                 <td>{item.mobileno}</td>
                                 <td>{item.assigned_doctor_name}</td>
                                 <td>{item.assigned_doctor_id}</td>
-                                <td>{item.opd_amount}</td>
+                                <td>{`${user.currencySymbol}${item.opd_amount || 0}`}</td>
                                 <td>{item.payment_Mode}</td>
                                 <td>{item.payment_Status}</td>
                               </tr>

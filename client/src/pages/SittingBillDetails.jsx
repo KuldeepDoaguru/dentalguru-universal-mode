@@ -286,7 +286,7 @@ function SittingBillDetails() {
                             <tr className="table-row">
                               <td className="table-sno">{item.tp_id}</td>
                               <td>
-                                <Link to={`/patient_profile/${item.uhid}`}>
+                                <Link className="text-decoration-none" to={`/patient_profile/${item.uhid}`}>
                                   {item.uhid}
                                 </Link>
                               </td>
@@ -299,18 +299,18 @@ function SittingBillDetails() {
                                 {"Dr. "}
                                 {item.doctor_name}
                               </td>
-                              <td>{`${user.currencySymbol} ${item.sitting_amount || 0}`}</td>
+                              <td>{`${user.currencySymbol}${item.sitting_amount || 0}`}</td>
                               {/* <td>{item.pay_direct}</td>
                                 <td>{item.pay_security_amount}</td> */}
                               <td>
                                 {item.payment_status === "pending"
                                 //  ? item.sitting_amount
-                                  ? `${user.currencySymbol} ${item.sitting_amount || 0}`
+                                  ? `${user.currencySymbol}${item.sitting_amount || 0}`
                                   : 0}
                               </td>
                               <td>{item?.date?.split(" ")[0]}</td>
                               <td>
-                                <Link
+                                <Link className="text-decoration-none"
                                   to={`/SittingBillPayment/${item.sb_id}/${item.tp_id}/${item.uhid}`}
                                 >
                                   <button

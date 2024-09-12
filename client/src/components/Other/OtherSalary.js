@@ -79,7 +79,7 @@ const OtherSalary = () => {
                             01/04/2024
                           </td>
                           <td className="table-small" style={{ width: "15%" }}>
-                            <Link to="/PaySlip">
+                            <Link className="text-decoration-none" to="/PaySlip">
                               <button
                                 className="btn"
                                 style={{
@@ -120,7 +120,7 @@ const OtherSalary = () => {
                             01/04/2024
                           </td>
                           <td className="table-small" style={{ width: "15%" }}>
-                            <Link to="/PaySlip">
+                            <Link className="text-decoration-none" to="/PaySlip">
                               <button
                                 className="btn"
                                 style={{
@@ -161,7 +161,7 @@ const OtherSalary = () => {
                             01/04/2024
                           </td>
                           <td className="table-small" style={{ width: "15%" }}>
-                            <Link to="/PaySlip">
+                            <Link className="text-decoration-none" to="/PaySlip">
                               <button
                                 className="btn"
                                 style={{
