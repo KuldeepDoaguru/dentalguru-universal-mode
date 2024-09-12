@@ -180,7 +180,7 @@ const PaySlip = () => {
                 <div class=" rounded d-flex justify-content-end">
                   <div class="card" style={{ width: "18rem" }}>
                     <div className="ms-4 mt-2">
-                      <h1>{ user.currencySymbol }{slipData[0]?.payable_salary}</h1>
+                      <h1>{ user.currencySymbol }{slipData[0]?.payable_salary || 0}</h1>
                       <h6 className="text-success">Employee Net Pay</h6>
                     </div>
                   </div>
@@ -205,7 +205,7 @@ const PaySlip = () => {
                   <tbody>
                     <tr className="table-row">
                       <td className="table-sno">Basic</td>
-                      <td className="table-small">{ user.currencySymbol }{slipData[0]?.salary}</td>
+                      <td className="table-small">{ user.currencySymbol }{slipData[0]?.salary || 0}</td>
                       <td className="table-small">Income Tax</td>
                       <td className="table-small">{ user.currencySymbol }0</td>
                     </tr>
@@ -232,7 +232,7 @@ const PaySlip = () => {
                       <td className="table-sno" style={{ width: "10%" }}>
                         Gross Earnings
                       </td>
-                      <td className="table-small">{ user.currencySymbol }{slipData[0]?.salary}</td>
+                      <td className="table-small">{ user.currencySymbol }{slipData[0]?.salary || 0}</td>
                       <td className="table-small">Total Deductions</td>
                       <td className="table-small">{ user.currencySymbol }10000.00</td>
                     </tr>

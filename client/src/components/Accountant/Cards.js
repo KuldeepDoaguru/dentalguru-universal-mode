@@ -317,7 +317,7 @@ const Cards = () => {
                 <div className="cardtext">
                   <h6 className="card-title text-light">Today OPD Income</h6>
                   <p className="card-text text-light fw-semibold">
-                  {`${user.currencySymbol}${totalOpdValue}`}
+                  {`${user.currencySymbol}${totalOpdValue || 0}`}
                   </p>
                 </div>
               </div>
@@ -356,7 +356,7 @@ const Cards = () => {
                 <div className="cardtext">
                   <h6 className="card-title text-light">Today Bill Income</h6>
                   <p className="card-text text-light fw-semibold">
-                    {` ${user.currencySymbol}${totalTreatValue}`}
+                    {` ${user.currencySymbol}${totalTreatValue || 0}`}
                   </p>
                 </div>
               </div>

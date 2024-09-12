@@ -423,7 +423,7 @@ function SittingBillPayment() {
                               <div class=" rounded d-flex justify-content-end mt-5 me-5">
                                 <div class="card" style={{ width: "18rem" }}>
                                   <div className="ms-4 mt-2">
-                                    <h1> { user.currencySymbol }{billAmount[0]?.sitting_amount}</h1>
+                                    <h1> { user.currencySymbol }{billAmount[0]?.sitting_amount || 0}</h1>
 
                                     <h5 className="text-danger">
                                       Total Treatment Amount

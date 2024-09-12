@@ -605,12 +605,12 @@ const CreditSittingBill = () => {
                           <td>{item.treatment}</td>
                           <td>{item.teeth_number}</td>
                           <td>{item.teeth_qty}</td>
-                          <td>{item.treatment_cost}</td>
-                          <td>{item.treatment_cost * item.teeth_qty}</td>
+                          <td>{`${user.currencySymbol}${item.treatment_cost || 0}`}</td>
+                          <td>{`${user.currencySymbol}${item.treatment_cost * item.teeth_qty || 0}`}</td>
                           <td>{item.discount}</td>
-                          <td>{item.final_cost}</td>
-                          <td>{item.sitting_amount}</td>
-                          <td>{item.paid_amount}</td>
+                          <td>{`${user.currencySymbol}${item.final_cost || 0}`}</td>
+                          <td>{`${user.currencySymbol}${item.sitting_amount || 0}`}</td>
+                          <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
                           {/* <td>{item.payment_mode}</td>
                       <td>{item.date?.split(" ")[0]}</td> */}
                           {/* <td>{item.note}</td> */}
@@ -676,11 +676,9 @@ const CreditSittingBill = () => {
                     </div>
                     <div className="text-word">
                       <p className="m-0 fw-bold">
-                        {" "}
-                        {numToWords(
+                        {!sittingBill[0]?.paid_amount || `${numToWords(
                           sittingBill[0]?.paid_amount
-                        ).toUpperCase()}{" "}
-                         ONLY
+                        ).toUpperCase()} ONLY`}
                       </p>
                     </div>
                   </div>
@@ -745,7 +743,7 @@ const CreditSittingBill = () => {
                             Total Amount Received:
                           </td>
                           <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border fw-bold p-1 text-center total-tr fs-6">
-                            {sittingBill[0]?.paid_amount}
+                            {`${user.currencySymbol}${sittingBill[0]?.paid_amount || 0}`}
                           </td>
                         </tr>
                       </tbody>

@@ -658,18 +658,17 @@ const PatientBillsByTpid = () => {
                         <td>{item.dental_treatment}</td>
                         <td>{item.no_teeth}</td>
                         <td>{item.qty}</td>
-                        <td>{item.cost_amt}</td>
-                        <td>{item.total_amt}</td>
-                        <td>{item.disc_amt}</td>
-                        <td>
+                        <td>{`${user.currencySymbol}${item.cost_amt || 0}`}</td>
+                        <td>{`${user.currencySymbol}${item.total_amt || 0}`}</td>
+                        <td>{`${user.currencySymbol}${item.disc_amt || 0}`}</td>
+                        <td>{`${user.currencySymbol}`}
                           {item.total_amt -
                             (item.total_amt * item.disc_amt) / 100}
                         </td>
-                        <td>
-                          {" "}
+                        <td>{`${user.currencySymbol}`}
                           {item.sitting_payment_status === "Pending"
                             ? 0
-                            : item.paid_amount}
+                            : item.paid_amount || 0}
                         </td>
                       </tr>
                     </React.Fragment>
@@ -687,6 +686,7 @@ const PatientBillsByTpid = () => {
                     <td className="heading-title text-danger fw-bold">
                       {/* Calculate total cost here */}
                       {/* Assuming getTreatData is an array of objects with 'net_amount' property */}
+                      {`${user.currencySymbol}`}
                       {billDetails[0]?.total_amount - totalBillvalueWithoutGst
                         ? billDetails[0]?.total_amount -
                           totalBillvalueWithoutGst
@@ -715,6 +715,7 @@ const PatientBillsByTpid = () => {
                     </td>
 
                     <td className="heading-title">
+                      {`${user.currencySymbol}`}
                       {getTreatData.reduce(
                         (total, item) =>
                           item.sitting_payment_status === "Pending"
@@ -791,7 +792,7 @@ const PatientBillsByTpid = () => {
                           Amount Received After Treatment:
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
-                          {totalBillvalueWithoutGst - payafterTreat}
+                          {`${user.currencySymbol}${totalBillvalueWithoutGst - payafterTreat || 0}`}
                         </td>
                       </tr>
                     </tbody>
@@ -801,7 +802,7 @@ const PatientBillsByTpid = () => {
                           Total Amount Recieved:
                         </td>
                         <td className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 border p-1 text-center total-tr">
-                          {totalBillvalueWithoutGst}
+                          {`${user.currencySymbol}${totalBillvalueWithoutGst || 0}`}
                         </td>
                       </tr>
                     </tbody>

@@ -156,7 +156,7 @@ const PatintPaidPaymentPrint = () => {
                           <div class=" rounded d-flex justify-content-end mt-5 me-5">
                             <div class="card" style={{ width: "18rem" }}>
                               <div className="ms-4 mt-2">
-                                <h1> { user.currencySymbol }{paidBill[0]?.total_amount}</h1>
+                                <h1> { user.currencySymbol }{paidBill[0]?.total_amount || 0}</h1>
                                 <h5 className="text-success ms-4">
                                   Patient Net Paid
                                 </h5>
@@ -227,7 +227,7 @@ const PatintPaidPaymentPrint = () => {
                               </h6>
                             </td>
                             <td className="fw-bolder">
-                              { user.currencySymbol }{paidBill[0]?.paid_amount}
+                              { user.currencySymbol }{paidBill[0]?.paid_amount || 0}
                             </td>
                           </tr>
                         </tbody>

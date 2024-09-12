@@ -295,7 +295,7 @@ const DuePaymentReport = () => {
                                   <td>{item.assigned_doctor_name}</td>
                                   <td>{`${user.currencySymbol}${item.total_amount || 0}`}</td>
                                   <td>{`${user.currencySymbol}${item.paid_amount || 0}`}</td>
-                                  <td>{`${user.currencySymbol}${item.pay_by_sec_amt}`}</td>
+                                  <td>{`${user.currencySymbol}${item.pay_by_sec_amt || 0}`}</td>
                                   <td>{item.payment_status}</td>
                                   <td>
                                     {item.payment_date_time?.split("T")[0]}

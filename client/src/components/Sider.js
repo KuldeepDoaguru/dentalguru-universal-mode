@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { FaHandHoldingDollar } from "react-icons/fa6";
+import { FaHandHolding } from "react-icons/fa6";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { FaCommentsDollar } from "react-icons/fa6";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -9,9 +9,11 @@ import { MdOutlineSecurity } from "react-icons/md";
 import { BsFileEarmarkPerson } from "react-icons/bs";
 import { TbReport } from "react-icons/tb";
 import { FaMoneyBills } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 const Sider = () => {
   const location = useLocation();
+  const user = useSelector((state) => state.user);
 
   const getSidebarClass = (path) => {
     return location.pathname === path ? "active-nav" : "";
@@ -100,7 +102,8 @@ const Sider = () => {
                 aria-controls="submenu2"
               >
                 <div className="link-div">
-                  <FaHandHoldingDollar className="fs-1 bi bi-house-door-fill" />
+                  <i style={{marginBottom: "-20px"}} className="text-decoration-none text-white fs-4 ">{`${user.currencySymbol}`}</i>
+                  <FaHandHolding className="fs-1 bi bi-house-door-fill" />
                 </div>
                 <h3 className="text-center text-light dash-text">
                   Earning <IoMdArrowDropdown />

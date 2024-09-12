@@ -197,7 +197,7 @@ const Overview = () => {
             <div className="d-flex justify-content-center align-item-center mt-2 h-100 w-100 shadow rounded">
               <div className="mt-3">
                 <p className="text-center">Payment Pending</p>
-                <h5 className="text-center">{user.currencySymbol}{total}</h5>
+                <h5 className="text-center">{user.currencySymbol}{total || 0}</h5>
               </div>
             </div>
           </div>

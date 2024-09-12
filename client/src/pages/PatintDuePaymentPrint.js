@@ -435,7 +435,7 @@ const PatintDuePaymentPrint = () => {
                               </td>
 
                               <td className="fw-bolder">
-                                { user.currencySymbol }{billAmount[0]?.total_amount}
+                                { user.currencySymbol }{billAmount[0]?.total_amount || 0}
                               </td>
                             </tr>
                             <tr>
@@ -446,7 +446,7 @@ const PatintDuePaymentPrint = () => {
                                 </h6>
                               </td>
                               <td className="fw-bolder">
-                                { user.currencySymbol }{billAmount[0]?.paid_amount}
+                                { user.currencySymbol }{billAmount[0]?.paid_amount || 0}
                               </td>
                             </tr>
                             <tr>
@@ -457,7 +457,7 @@ const PatintDuePaymentPrint = () => {
                                 </h6>
                               </td>
                               <td className="fw-bolder">
-                                { user.currencySymbol }{billAmount[0]?.pay_by_sec_amt}
+                                { user.currencySymbol }{billAmount[0]?.pay_by_sec_amt || 0}
                               </td>
                             </tr>
                             <tr>
@@ -493,7 +493,7 @@ const PatintDuePaymentPrint = () => {
                                 </h6>
                               </td>
                               <td className="fw-bolder">
-                                { user.currencySymbol }{remainingSecurityAmount}
+                                { user.currencySymbol }{remainingSecurityAmount || 0}
                               </td>
                             </tr>
                             <tr>

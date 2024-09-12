@@ -181,7 +181,7 @@ const Compleated = () => {
                                   <td>{patient?.created_date ? moment( patient?.created_date, "DD-MM-YYYYTHH:mm" ).format("DD/MM/YYYY hh:mm A"): ""}</td>
                                   <td>{patient.test}</td>
 
-                                  <td>{patient.payment}</td>
+                                  <td>{`${user.currencySymbol}${patient.payment || 0}`}</td>
                                   <td>{patient.payment_status}</td>
 
                                   {patient.test_status === "done" && (
